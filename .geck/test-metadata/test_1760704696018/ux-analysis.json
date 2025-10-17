@@ -1,0 +1,133 @@
+{
+  "narrative": {
+    "steps": [
+      {
+        "title": "Launch & landing page",
+        "stepStatus": "pass",
+        "details": [
+          "Every test starts with the user opening https://invoify.vercel.app.",
+          "The landing page usually renders, but UI-review repeatedly flags minor style issues (mis-aligned labels, inconsistent padding, vague placeholder text, button style drift)."
+        ]
+      },
+      {
+        "title": "Trying to start Invoice Wizard – Step 1 (Bill From / Bill To)",
+        "stepStatus": "fail",
+        "details": [
+          "Users expect the wizard to open on Step 1.",
+          "Both ‘Bill From’ and ‘Bill To’ sections fail to appear within 5 s, so the journey stops before any data entry.",
+          "Hard failure source: component not mounted or selector mismatch."
+        ]
+      },
+      {
+        "title": "Template system (choose template / upload logo)",
+        "stepStatus": "fail",
+        "details": [
+          "Landing page header never becomes visible → template choices not reachable.",
+          "Logo-upload option cannot be found once page loads → user cannot brand their invoice."
+        ]
+      },
+      {
+        "title": "Live preview (real-time data & step sync)",
+        "stepStatus": "mixed (pass → fail)",
+        "details": [
+          "User successfully types full Bill From / Bill To data and sees it in preview (good).",
+          "When they change values, at least one field (‘Zip’ in test) does not re-render → trust in “live” preview drops.",
+          "Navigation buttons (‘1 . From & To’) sometimes unclickable, so preview cannot sync with wizard steps."
+        ]
+      },
+      {
+        "title": "Signature features (draw, type, upload)",
+        "stepStatus": "fail",
+        "details": [
+          "Canvas for drawing signature, typed-signature field, and upload area are all missing or not visible → user cannot add any signature."
+        ]
+      },
+      {
+        "title": "Line-item calculations",
+        "stepStatus": "fail",
+        "details": [
+          "‘Line Items’ section never appears, so quantity × price totals cannot be tested."
+        ]
+      }
+    ]
+  },
+  "emotional_arc": "Hopeful when the app loads → immediate confusion when key sections never show up → irritation as repeated refreshes/time-outs occur → partial relief when live preview works for initial input → frustration returns when edits don’t update and other core features (templates, signatures, calculations) simply aren’t there → loss of confidence / abandonment.",
+  "qualitative_opportunities": [
+    {
+      "area": "Critical UI elements not rendering (wizard sections, signature areas, templates, line-items)",
+      "why_it_matters": "Blocks users from completing primary tasks; leads to instant churn.",
+      "next_actions": [
+        "Audit component mounting & conditional rendering logic; ensure sections always mount even if data is empty.",
+        "Add robust loading states / skeletons so users know something is happening.",
+        "Implement automated smoke test that asserts presence of every major section on first paint."
+      ]
+    },
+    {
+      "area": "Selector / label mismatches causing automated & human findability issues",
+      "why_it_matters": "If automation can’t locate ‘Bill From’, real users may also miss it; inconsistent labels hurt accessibility.",
+      "next_actions": [
+        "Standardise text labels (‘Bill From:’ not ‘Bill From  :’) and use semantic headings.",
+        "Expose test-friendly data-attributes (e.g., data-testid) to decouple DOM changes from selectors.",
+        "Run accessibility audit for ARIA landmarks so sections are discoverable by assistive tech."
+      ]
+    },
+    {
+      "area": "Live preview not consistently updating",
+      "why_it_matters": "Users rely on WYSIWYG feedback; stale data undermines trust and can generate billing errors.",
+      "next_actions": [
+        "Track down state propagation for every field; add unit tests for each field–preview binding.",
+        "Throttle/debounce input updates if performance is a concern, but guarantee final value sync.",
+        "Show ‘out of sync’ indicator when binding fails."
+      ]
+    },
+    {
+      "area": "Visual consistency (spacing, alignment, button styles, placeholder copy)",
+      "why_it_matters": "Polish signals reliability; inconsistent UI makes the product feel unfinished and distracts from the task.",
+      "next_actions": [
+        "Adopt a design-system/utility-class approach (e.g., Tailwind spacing scale).",
+        "Normalize button component variants and enforce via linting/storybook.",
+        "Replace lorem or vague placeholders with real examples (e.g., “Acme Co.” instead of “Name”)."
+      ]
+    },
+    {
+      "area": "Signature workflows (draw, type, upload) missing",
+      "why_it_matters": "A legally binding invoice must be signable; absence forces users to seek other tools.",
+      "next_actions": [
+        "Verify signature feature flags aren’t accidentally off in prod build.",
+        "If feature is not yet supported, hide menu entries and communicate roadmap.",
+        "Add fallback typed name + timestamp if canvas unavailable."
+      ]
+    },
+    {
+      "area": "Wizard navigation controls unresponsive",
+      "why_it_matters": "Users can’t progress, review, or edit steps.",
+      "next_actions": [
+        "Increase hit-area and ensure buttons are enabled once current step validation passes.",
+        "Use sticky progress bar so navigation is always visible.",
+        "Log navigation errors in analytics to catch in production."
+      ]
+    }
+  ],
+  "first_tackles": [
+    {
+      "rank": 1,
+      "description": "Guarantee core sections mount on initial load (Bill From, Bill To, Line Items, Signature, Template chooser). Smoke-test nightly."
+    },
+    {
+      "rank": 2,
+      "description": "Introduce stable data-testids & clean up heading/label text so both users and automation can reliably find elements."
+    },
+    {
+      "rank": 3,
+      "description": "Fix state binding for live-preview updates (start with fields that currently fail like Zip/Address)."
+    },
+    {
+      "rank": 4,
+      "description": "Apply global spacing & button style tokens to resolve majority of ‘looks off’ UI-review flags quickly."
+    },
+    {
+      "rank": 5,
+      "description": "Hide or clearly mark unfinished features (signature types, logo upload) until fully functional to avoid user confusion."
+    }
+  ]
+}

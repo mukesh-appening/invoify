@@ -1,0 +1,131 @@
+{
+  "narrative": {
+    "steps": [
+      {
+        "title": "Landing on Invoify home (all tests – Step 1)",
+        "stepStatus": "pass",
+        "details": [
+          "Browser opens and reaches https://invoify.vercel.app.",
+          "Basic header and hero elements render, though automated UI review already flags minor layout / typography inconsistencies."
+        ]
+      },
+      {
+        "title": "Trying to start the invoice-creation wizard",
+        "stepStatus": "fail",
+        "details": [
+          "Across ‘Bill From’, ‘Bill To’, line-item, tax, discount and PDF tests the very first assertion that a wizard section is visible times-out.",
+          "Typical locator failures: “Bill From :”, “Bill To :”, “1 . From & To”, “3 . Line Items”.",
+          "Result: No subsequent form-filling, validation or navigation steps are executed (all marked pending)."
+        ]
+      },
+      {
+        "title": "Template & Logo related flows",
+        "stepStatus": "fail",
+        "details": [
+          "UI header (“BETA English Toggle theme”) not found; therefore template list, logo upload, live preview cannot be located.",
+          "All deeper steps (choose template, upload logo, verify persistence) remain pending."
+        ]
+      },
+      {
+        "title": "Live preview real-time update flow",
+        "stepStatus": "mixed",
+        "details": [
+          "Script can type into form fields and see a preview panel (“Live Preview:” heading).",
+          "When fields are modified, at least one crucial value (Zip) fails to update; step flagged as fail."
+        ]
+      },
+      {
+        "title": "Export / email / i18n flows",
+        "stepStatus": "fail",
+        "details": [
+          "Dashboard text (“Dashboard”, language switcher) or date formats not present, so export/email tests abort early.",
+          "PDF generation and multi-format export never reached."
+        ]
+      },
+      {
+        "title": "Common UI review observations (automatic)",
+        "stepStatus": "pass",
+        "details": [
+          "Repeated cosmetic ‘looks off’ flags: mis-aligned inputs & labels, inconsistent padding/margins, button style variance, placeholder copy too generic."
+        ]
+      }
+    ]
+  },
+  "emotional_arc": "Real shoppers would start with optimism (page loads) but very quickly hit a wall: essential wizard sections never appear or take too long → immediate confusion and mistrust. Those who do reach the form encounter alignment/padding quirks that feel unpolished. Live preview sometimes lags, eroding confidence that edits save. Inconsistent button styling and missing language toggle add to an overall sense of an unfinished beta.",
+  "qualitative_opportunities": [
+    {
+      "area": "Critical content not rendering / selector mismatch",
+      "why_it_matters": "Customers can’t even begin key tasks (enter Bill From/Bill To, add line items, taxes, etc.). They will abandon immediately.",
+      "next_actions": [
+        "Audit component mounting logic—are sections hidden behind feature flags or route guards?",
+        "Add explicit page-level loading skeletons or spinners so users know content is coming.",
+        "Stabilise element text & IDs; expose data-test attributes so minor copy tweaks don’t break rendering or tests."
+      ]
+    },
+    {
+      "area": "Perceived performance (5 s timeouts consistently hit)",
+      "why_it_matters": "Waiting for invisible elements feels like a crash; poor FID hurts SEO & user trust.",
+      "next_actions": [
+        "Lazy-load heavy components after first meaningful paint.",
+        "Defer unnecessary fonts/scripts; prioritise wizard HTML in initial bundle.",
+        "Instrument TTI and add performance budgets in CI."
+      ]
+    },
+    {
+      "area": "Layout consistency (spacing, alignment, button styles)",
+      "why_it_matters": "Visual inconsistency signals low quality and can slow data entry.",
+      "next_actions": [
+        "Adopt a design-token system (spacing scale, type ramp).",
+        "Run a UI regression tool (Storybook + Chromatic) to catch drift.",
+        "Audit tailwind/utility classes for duplicated overrides."
+      ]
+    },
+    {
+      "area": "Form validation & live preview sync",
+      "why_it_matters": "Users rely on instant feedback to avoid billing errors; mismatches breed frustration and mistrust.",
+      "next_actions": [
+        "Debounce preview rendering but ensure change-event updates every bound field.",
+        "Add field-level validation hints (e.g., green ticks) so users see success, not only errors.",
+        "Write unit tests for computed totals, taxes, discounts."
+      ]
+    },
+    {
+      "area": "Copy & placeholder clarity",
+      "why_it_matters": "Generic placeholders (‘Name…’) give no clue about desired format; causes user hesitation.",
+      "next_actions": [
+        "Replace lorem / generic placeholders with realistic examples (e.g., “ACME Corp.”, “123-456-7890”).",
+        "Review microcopy for spelling and parallel structure."
+      ]
+    },
+    {
+      "area": "Accessibility & Internationalization controls",
+      "why_it_matters": "Language-switch and header text fail to appear; non-English users blocked.",
+      "next_actions": [
+        "Ensure language picker is in DOM on first load; fallback language strings should be complete.",
+        "Add aria-labels to dynamic buttons and ensure focus order after language change."
+      ]
+    }
+  ],
+  "first_tackles": [
+    {
+      "rank": 1,
+      "description": "Guarantee wizard sections mount immediately—add deterministic IDs / data-test attributes and remove copy-dependent selectors."
+    },
+    {
+      "rank": 2,
+      "description": "Introduce visible loading states to avoid ‘blank screen’ during async component fetch."
+    },
+    {
+      "rank": 3,
+      "description": "Standardise spacing / button styles via a shared design system token file—quick CSS pass will remove majority of ‘looks off’ flags."
+    },
+    {
+      "rank": 4,
+      "description": "Fix live preview binding for all fields (easiest repro: Zip) and add unit tests to prevent regression."
+    },
+    {
+      "rank": 5,
+      "description": "Replace placeholder copy with realistic examples and proof-read for spelling; low effort, high perceived polish."
+    }
+  ]
+}

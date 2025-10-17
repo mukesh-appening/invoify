@@ -1,0 +1,133 @@
+{
+  "narrative": {
+    "steps": [
+      {
+        "title": "Launch site",
+        "stepStatus": "pass",
+        "details": [
+          "Across all tests the browser opens https://invoify.vercel.app without issue."
+        ]
+      },
+      {
+        "title": "Expect ‘Step 1’ wizard sections (Bill From / Bill To)",
+        "stepStatus": "fail",
+        "details": [
+          "Tests looking for the headings “Bill From :” and “Bill To :” time-out – the elements are never found or are off-screen.",
+          "This blocks data-entry flows that follow."
+        ]
+      },
+      {
+        "title": "Landing page interface verification",
+        "stepStatus": "fail",
+        "details": [
+          "Test searching for header text “BETA English Toggle theme” cannot find it, suggesting copy or DOM order differs from expectation."
+        ]
+      },
+      {
+        "title": "Template selection & logo upload areas",
+        "stepStatus": "fail",
+        "details": [
+          "Attempts to locate template controls and logo-upload slot fail; buttons appear visually inconsistent (size / style) and controls may be hidden or unlabeled."
+        ]
+      },
+      {
+        "title": "Live preview population",
+        "stepStatus": "partial-pass",
+        "details": [
+          "Initial data entry into forms is reflected in the preview (pass), but subsequent edits are not reliably shown (fail in update step)."
+        ]
+      },
+      {
+        "title": "Wizard step navigation",
+        "stepStatus": "fail",
+        "details": [
+          "Clicking the button “1 . From & To” times-out; wizard navigation labeling / focus logic may prevent programmatic click or visibility."
+        ]
+      },
+      {
+        "title": "Signature features (draw, type, upload)",
+        "stepStatus": "fail",
+        "details": [
+          "Canvas element for draw signature, typed-signature input, and upload area cannot be found. Tests halt early."
+        ]
+      },
+      {
+        "title": "Visual review—spacing and alignment",
+        "stepStatus": "mixed",
+        "details": [
+          "Automated UI checks repeatedly flag inconsistent padding, margin, label/input alignment, and button style variations."
+        ]
+      }
+    ]
+  },
+  "emotional_arc": "A real shopper would start confident after a quick page load, feel mild confusion when key headings or controls don’t immediately appear, then rapid frustration as they cannot progress (wizard stuck, signature tools missing, live preview not updating). Visual inconsistencies add low-level distrust. Overall sentiment trends from curiosity → irritation → abandonment.",
+  "qualitative_opportunities": [
+    {
+      "area": "Missing / undiscoverable key sections (Bill From, Bill To, Signature areas, Template controls)",
+      "why_it_matters": "If fundamental steps or tools are not visible, users think the app is broken and churn immediately.",
+      "next_actions": [
+        "Ensure these sections render above the fold on first load; avoid lazy-loading behind scroll.",
+        "Add clear section headers with consistent text (e.g., “Bill From”) and ARIA labels.",
+        "Give each interactive zone a visible boundary or onboarding hint so users notice them."
+      ]
+    },
+    {
+      "area": "Wizard navigation and focus management",
+      "why_it_matters": "Users must move between steps smoothly; invisible or unresponsive step buttons cause task failure.",
+      "next_actions": [
+        "Keep the current step button in view; auto-scroll when routing to a step.",
+        "Increase hit-area size and contrast of step buttons; use sequential labels instead of ‘1 . From & To’ which can confuse screen-readers.",
+        "Add instant validation feedback so users trust the Next/Back flow."
+      ]
+    },
+    {
+      "area": "Live preview real-time updates",
+      "why_it_matters": "Immediate feedback is a core product promise; delays or misses erode perceived reliability.",
+      "next_actions": [
+        "Debounce input updates but keep <200 ms latency.",
+        "Bind preview fields directly to reactive form state rather than submitting on blur.",
+        "Highlight changed fields in preview briefly so users see correlation."
+      ]
+    },
+    {
+      "area": "Visual consistency (spacing, alignment, button styling, placeholder copy)",
+      "why_it_matters": "Inconsistent UI looks unprofessional and makes scanning harder, slowing data entry.",
+      "next_actions": [
+        "Adopt a spacing scale (e.g., 4 px multiples) and apply via CSS vars.",
+        "Use a single button component across the app; audit variants.",
+        "Real-world placeholder examples (e.g., “Acme Corp” not “Company Name”)."
+      ]
+    },
+    {
+      "area": "Signature workflows discoverability",
+      "why_it_matters": "Signatures are legally critical; if draw/type/upload areas are hidden or unnamed, users cannot complete invoices.",
+      "next_actions": [
+        "Group all signature options under a clearly labeled “Add Signature” accordion.",
+        "Provide tabs (Draw | Type | Upload) with a default open state.",
+        "Include an empty-state illustration prompting user action."
+      ]
+    }
+  ],
+  "first_tackles": [
+    {
+      "rank": 1,
+      "description": "Make ‘Bill From’ and ‘Bill To’ sections visible on page load with consistent headings and ARIA labels."
+    },
+    {
+      "rank": 2,
+      "description": "Fix wizard step buttons: increase visibility, simplify labels, and auto-scroll into view."
+    },
+    {
+      "rank": 3,
+      "description": "Wire live preview to form state for sub-200 ms updates so edits appear instantly."
+    },
+    {
+      "rank": 4,
+      "description": "Introduce a global spacing & button style guide and refactor obvious inconsistencies."
+    },
+    {
+      "rank": 5,
+      "description": "Add a unified, clearly labeled signature component (tabs for Draw / Type / Upload) to eliminate ‘can’t find’ failures."
+    }
+  ]
+}

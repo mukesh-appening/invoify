@@ -1,0 +1,1037 @@
+[
+  {
+    "id": "test_1760704506784",
+    "testname": "Invoice Creation - Step 1 Bill From Section",
+    "url": "https://invoify.vercel.app",
+    "description": "Test the Bill From section in Step 1 of invoice creation wizard. Verify all required fields can be filled, validation works correctly, and data persists when navigating between steps.",
+    "projectName": "Default",
+    "useSavedLoginState": false,
+    "createdAt": 1760704506784,
+    "generatedSteps": {
+      "steps": [
+        {
+          "stepNumber": 1,
+          "stepDescription": "Open the browser and navigate to https://invoify.vercel.app."
+        },
+        {
+          "stepNumber": 2,
+          "stepDescription": "Ensure the invoice creation wizard opens at Step 1 with the Bill From section clearly visible."
+        },
+        {
+          "stepNumber": 3,
+          "stepDescription": "Fill in all the required fields in the Bill From section with valid data."
+        },
+        {
+          "stepNumber": 4,
+          "stepDescription": "Clear one required field intentionally and attempt to proceed to trigger the validation message."
+        },
+        {
+          "stepNumber": 5,
+          "stepDescription": "Verify that the proper validation error message appears for the empty required field."
+        },
+        {
+          "stepNumber": 6,
+          "stepDescription": "Re-enter valid data into the field that previously failed validation."
+        },
+        {
+          "stepNumber": 7,
+          "stepDescription": "Click the Continue button to navigate to the next step of the invoice creation wizard."
+        },
+        {
+          "stepNumber": 8,
+          "stepDescription": "Navigate back to Step 1 to verify that the data entered in the Bill From section persists."
+        },
+        {
+          "stepNumber": 9,
+          "stepDescription": "Confirm that all previously entered data is still visible and correct in the Bill From fields."
+        },
+        {
+          "stepNumber": 10,
+          "stepDescription": "Take a screenshot of the completed Bill From step to document the test results."
+        }
+      ],
+      "generatedAt": 1760704506784,
+      "stepsSummary": "Test the Bill From section in Step 1 of invoice creation wizard. Verify all required fields can be filled, validation works correctly, and data persists when navigating between steps."
+    }
+  },
+  {
+    "id": "test_1760704526323",
+    "testname": "Invoice Creation - Step 1 Bill To Section",
+    "url": "https://invoify.vercel.app",
+    "description": "Test the Bill To section in Step 1 of invoice creation wizard. Verify receiver information can be filled, validation works, and data persists when navigating between steps.",
+    "projectName": "Default",
+    "useSavedLoginState": false,
+    "createdAt": 1760704526323,
+    "generatedSteps": {
+      "steps": [
+        {
+          "stepNumber": 1,
+          "stepDescription": "Open the browser and navigate to the invoify application URL."
+        },
+        {
+          "stepNumber": 2,
+          "stepDescription": "Wait for the invoice creation wizard to load and display the Bill To section in Step 1."
+        },
+        {
+          "stepNumber": 3,
+          "stepDescription": "Enter receiver details in the Bill To section, filling all required fields with valid information."
+        },
+        {
+          "stepNumber": 4,
+          "stepDescription": "Trigger form validation by attempting to proceed with incomplete or incorrect receiver information to check for error messages."
+        },
+        {
+          "stepNumber": 5,
+          "stepDescription": "Correct any validation errors by updating the receiver information with proper data in the Bill To fields."
+        },
+        {
+          "stepNumber": 6,
+          "stepDescription": "Proceed to the next step of the invoice creation wizard to test navigation."
+        },
+        {
+          "stepNumber": 7,
+          "stepDescription": "Navigate back to Step 1 of the wizard to verify that the previously entered Bill To data persists."
+        },
+        {
+          "stepNumber": 8,
+          "stepDescription": "Confirm that the receiver information entered in the Bill To section remains unchanged and correctly displayed."
+        },
+        {
+          "stepNumber": 9,
+          "stepDescription": "Capture a screenshot of the final state of Step 1 with the Bill To details to document the successful test outcome."
+        }
+      ],
+      "generatedAt": 1760704526323,
+      "stepsSummary": "Test the Bill To section in Step 1 of invoice creation wizard. Verify receiver information can be filled, validation works, and data persists when navigating between steps."
+    }
+  },
+  {
+    "id": "test_1760704547534",
+    "testname": "Template System - Template Selection",
+    "url": "https://invoify.vercel.app",
+    "description": "Test template selection functionality. Verify that users can switch between Template 1 and Template 2, and that the live preview updates immediately when template is changed.",
+    "projectName": "Default",
+    "useSavedLoginState": false,
+    "createdAt": 1760704547534,
+    "generatedSteps": {
+      "steps": [
+        {
+          "stepNumber": 1,
+          "stepDescription": "Open the web browser and navigate to the URL https://invoify.vercel.app"
+        },
+        {
+          "stepNumber": 2,
+          "stepDescription": "Wait for the landing page to load and verify that the main interface is visible"
+        },
+        {
+          "stepNumber": 3,
+          "stepDescription": "Locate and select Template 1 from the available template options"
+        },
+        {
+          "stepNumber": 4,
+          "stepDescription": "Confirm that the live preview updates immediately to reflect Template 1 changes"
+        },
+        {
+          "stepNumber": 5,
+          "stepDescription": "Locate and select Template 2 from the available template options"
+        },
+        {
+          "stepNumber": 6,
+          "stepDescription": "Confirm that the live preview updates immediately to reflect Template 2 changes"
+        },
+        {
+          "stepNumber": 7,
+          "stepDescription": "Take a screenshot of the updated template preview for verification"
+        }
+      ],
+      "generatedAt": 1760704547534,
+      "stepsSummary": "Test template selection functionality. Verify that users can switch between Template 1 and Template 2, and that the live preview updates immediately when template is changed."
+    }
+  },
+  {
+    "id": "test_1760704569914",
+    "testname": "Template System - Logo Upload",
+    "url": "https://invoify.vercel.app",
+    "description": "Test logo upload functionality in invoice templates. Verify that users can upload a logo image, it displays correctly in both templates, and the logo persists when switching between templates.",
+    "projectName": "Default",
+    "useSavedLoginState": false,
+    "createdAt": 1760704569914,
+    "generatedSteps": {
+      "steps": [
+        {
+          "stepNumber": 1,
+          "stepDescription": "Launch the web browser and navigate to the invoify application URL 'https://invoify.vercel.app'."
+        },
+        {
+          "stepNumber": 2,
+          "stepDescription": "Locate the invoice templates section where logo editing is available."
+        },
+        {
+          "stepNumber": 3,
+          "stepDescription": "Identify the option to upload a logo image in the template interface."
+        },
+        {
+          "stepNumber": 4,
+          "stepDescription": "Select a valid logo image file to upload using the upload functionality provided."
+        },
+        {
+          "stepNumber": 5,
+          "stepDescription": "Verify that the uploaded logo appears correctly in the current invoice template preview."
+        },
+        {
+          "stepNumber": 6,
+          "stepDescription": "Switch to a different invoice template within the application."
+        },
+        {
+          "stepNumber": 7,
+          "stepDescription": "Confirm that the previously uploaded logo persists and is displayed correctly in the new template."
+        },
+        {
+          "stepNumber": 8,
+          "stepDescription": "Take a final screenshot to capture the state of the invoice templates displaying the logo."
+        }
+      ],
+      "generatedAt": 1760704569914,
+      "stepsSummary": "Test logo upload functionality in invoice templates. Verify that users can upload a logo image, it displays correctly in both templates, and the logo persists when switching between templates."
+    }
+  },
+  {
+    "id": "test_1760704592136",
+    "testname": "Live Preview System - Real-time Updates",
+    "url": "https://invoify.vercel.app",
+    "description": "Test live preview functionality. Verify that changes made in the form fields are immediately reflected in the live preview panel, and that the preview updates in real-time as users type or modify data.",
+    "projectName": "Default",
+    "useSavedLoginState": false,
+    "createdAt": 1760704592136,
+    "generatedSteps": {
+      "steps": [
+        {
+          "stepNumber": 1,
+          "stepDescription": "Open a web browser and navigate to the invoify live preview URL (https://invoify.vercel.app)."
+        },
+        {
+          "stepNumber": 2,
+          "stepDescription": "Wait for the page to fully load and ensure the live preview panel is visible."
+        },
+        {
+          "stepNumber": 3,
+          "stepDescription": "Identify the form fields on the page that correspond to invoice details."
+        },
+        {
+          "stepNumber": 4,
+          "stepDescription": "Enter sample data into the invoice form fields to simulate a user typing."
+        },
+        {
+          "stepNumber": 5,
+          "stepDescription": "Observe the live preview panel to confirm that the entered data is immediately reflected."
+        },
+        {
+          "stepNumber": 6,
+          "stepDescription": "Modify the data in the form fields and verify that the live preview updates dynamically as changes are made."
+        },
+        {
+          "stepNumber": 7,
+          "stepDescription": "Confirm that all changes are accurately shown in the preview without needing a manual refresh."
+        },
+        {
+          "stepNumber": 8,
+          "stepDescription": "Take a screenshot of the live preview panel to document the final state after all modifications."
+        }
+      ],
+      "generatedAt": 1760704592136,
+      "stepsSummary": "Test live preview functionality. Verify that changes made in the form fields are immediately reflected in the live preview panel, and that the preview updates in real-time as users type or modify data."
+    }
+  },
+  {
+    "id": "test_1760704615157",
+    "testname": "Live Preview System - Wizard Step Synchronization",
+    "url": "https://invoify.vercel.app",
+    "description": "Test live preview synchronization with wizard steps. Verify that the preview updates correctly when navigating between different steps of the invoice creation wizard.",
+    "projectName": "Default",
+    "useSavedLoginState": false,
+    "createdAt": 1760704615157,
+    "generatedSteps": {
+      "steps": [
+        {
+          "stepNumber": 1,
+          "stepDescription": "Open the web browser and navigate to the URL 'https://invoify.vercel.app'."
+        },
+        {
+          "stepNumber": 2,
+          "stepDescription": "Wait until the homepage loads and the invoice creation wizard is visible."
+        },
+        {
+          "stepNumber": 3,
+          "stepDescription": "Identify and select the initial step of the invoice creation wizard, confirming that the live preview displays the default invoice details."
+        },
+        {
+          "stepNumber": 4,
+          "stepDescription": "Navigate to the next wizard step and observe that the live preview updates to reflect the new invoice details."
+        },
+        {
+          "stepNumber": 5,
+          "stepDescription": "Proceed to another step in the wizard and verify that the live preview synchronizes with the updated information."
+        },
+        {
+          "stepNumber": 6,
+          "stepDescription": "Scroll if necessary through the wizard to ensure all live preview changes are visible and accurate."
+        },
+        {
+          "stepNumber": 7,
+          "stepDescription": "Navigate back to a previous wizard step and confirm that the live preview reverts to display the corresponding data."
+        },
+        {
+          "stepNumber": 8,
+          "stepDescription": "Capture a final screenshot of the wizard steps and the updated live preview to verify successful synchronization."
+        }
+      ],
+      "generatedAt": 1760704615157,
+      "stepsSummary": "Test live preview synchronization with wizard steps. Verify that the preview updates correctly when navigating between different steps of the invoice creation wizard."
+    }
+  },
+  {
+    "id": "test_1760704639831",
+    "testname": "Signature System - Draw Signature",
+    "url": "https://invoify.vercel.app",
+    "description": "Test signature drawing functionality. Verify that users can draw signatures using mouse/touch input, the signature appears correctly, and can be saved and displayed in the invoice.",
+    "projectName": "Default",
+    "useSavedLoginState": false,
+    "createdAt": 1760704639831,
+    "generatedSteps": {
+      "steps": [
+        {
+          "stepNumber": 1,
+          "stepDescription": "Launch the web browser and navigate to https://invoify.vercel.app"
+        },
+        {
+          "stepNumber": 2,
+          "stepDescription": "Wait for the page to load fully and ensure the signature drawing canvas is visible"
+        },
+        {
+          "stepNumber": 3,
+          "stepDescription": "Use the mouse or touch input to draw a signature on the designated canvas"
+        },
+        {
+          "stepNumber": 4,
+          "stepDescription": "Confirm that the drawn signature appears correctly within the signature area"
+        },
+        {
+          "stepNumber": 5,
+          "stepDescription": "Click the save or submit button to store the signature"
+        },
+        {
+          "stepNumber": 6,
+          "stepDescription": "Navigate to the invoice section and verify that the saved signature is displayed properly"
+        },
+        {
+          "stepNumber": 7,
+          "stepDescription": "Capture a final screenshot of the invoice displaying the signature to complete the test"
+        }
+      ],
+      "generatedAt": 1760704639831,
+      "stepsSummary": "Test signature drawing functionality. Verify that users can draw signatures using mouse/touch input, the signature appears correctly, and can be saved and displayed in the invoice."
+    }
+  },
+  {
+    "id": "test_1760704661428",
+    "testname": "Signature System - Type Signature",
+    "url": "https://invoify.vercel.app",
+    "description": "Test typed signature functionality. Verify that users can type signatures using different fonts, change font styles, and the typed signature appears correctly in the invoice.",
+    "projectName": "Default",
+    "useSavedLoginState": false,
+    "createdAt": 1760704661428,
+    "generatedSteps": {
+      "steps": [
+        {
+          "stepNumber": 1,
+          "stepDescription": "Open the web browser and navigate to the invoice application's URL: https://invoify.vercel.app."
+        },
+        {
+          "stepNumber": 2,
+          "stepDescription": "Locate the section for adding a typed signature within the invoice interface."
+        },
+        {
+          "stepNumber": 3,
+          "stepDescription": "Type a sample signature into the designated input field for the signature."
+        },
+        {
+          "stepNumber": 4,
+          "stepDescription": "Select a different font from the available font options to see the signature change."
+        },
+        {
+          "stepNumber": 5,
+          "stepDescription": "Change the font style (e.g., italic, bold) using the provided style controls."
+        },
+        {
+          "stepNumber": 6,
+          "stepDescription": "Wait for the invoice preview to update and display the newly styled typed signature."
+        },
+        {
+          "stepNumber": 7,
+          "stepDescription": "Verify that the signature appears correctly in the invoice with the chosen font and style."
+        },
+        {
+          "stepNumber": 8,
+          "stepDescription": "Capture a screenshot of the completed invoice to confirm the correct display of the signature."
+        }
+      ],
+      "generatedAt": 1760704661428,
+      "stepsSummary": "Test typed signature functionality. Verify that users can type signatures using different fonts, change font styles, and the typed signature appears correctly in the invoice."
+    }
+  },
+  {
+    "id": "test_1760704680280",
+    "testname": "Signature System - Upload Signature",
+    "url": "https://invoify.vercel.app",
+    "description": "Test signature upload functionality. Verify that users can upload signature images, the uploaded signature displays correctly, and file validation works properly.",
+    "projectName": "Default",
+    "useSavedLoginState": false,
+    "createdAt": 1760704680280,
+    "generatedSteps": {
+      "steps": [
+        {
+          "stepNumber": 1,
+          "stepDescription": "Open a web browser and navigate to the invoify page at https://invoify.vercel.app"
+        },
+        {
+          "stepNumber": 2,
+          "stepDescription": "Confirm that the homepage loads successfully by checking for key elements on the page"
+        },
+        {
+          "stepNumber": 3,
+          "stepDescription": "Locate the signature upload area on the page, ensuring it is visible for interaction"
+        },
+        {
+          "stepNumber": 4,
+          "stepDescription": "Upload a valid signature image file from your system using the provided upload function"
+        },
+        {
+          "stepNumber": 5,
+          "stepDescription": "Verify that the uploaded signature image is displayed correctly on the page"
+        },
+        {
+          "stepNumber": 6,
+          "stepDescription": "Attempt to upload a file of an unsupported type to test file validation rules"
+        },
+        {
+          "stepNumber": 7,
+          "stepDescription": "Ensure that an appropriate error message is displayed for the invalid file upload"
+        },
+        {
+          "stepNumber": 8,
+          "stepDescription": "Capture a screenshot of the final state to confirm that the signature upload functionality works as expected"
+        }
+      ],
+      "generatedAt": 1760704680280,
+      "stepsSummary": "Test signature upload functionality. Verify that users can upload signature images, the uploaded signature displays correctly, and file validation works properly."
+    }
+  },
+  {
+    "id": "test_1760704696018",
+    "testname": "Financial Calculations - Line Item Totals",
+    "url": "https://invoify.vercel.app",
+    "description": "Test line item calculations. Verify that quantity and unit price calculations work correctly, totals are computed automatically, and subtotals update in real-time.",
+    "projectName": "Default",
+    "useSavedLoginState": false,
+    "createdAt": 1760704696018,
+    "generatedSteps": {
+      "steps": [
+        {
+          "stepNumber": 1,
+          "stepDescription": "Open the browser and go to the URL https://invoify.vercel.app"
+        },
+        {
+          "stepNumber": 2,
+          "stepDescription": "Wait for the invoice application to fully load and display the line items section"
+        },
+        {
+          "stepNumber": 3,
+          "stepDescription": "Enter a specific value in the quantity field for a line item"
+        },
+        {
+          "stepNumber": 4,
+          "stepDescription": "Enter a specific value in the unit price field for the same line item"
+        },
+        {
+          "stepNumber": 5,
+          "stepDescription": "Verify that the total for the line item is computed automatically based on the quantity and unit price"
+        },
+        {
+          "stepNumber": 6,
+          "stepDescription": "Update the quantity value and observe that the subtotal and total fields update in real-time"
+        },
+        {
+          "stepNumber": 7,
+          "stepDescription": "Confirm that all line item calculations reflect the correct multiplication results"
+        },
+        {
+          "stepNumber": 8,
+          "stepDescription": "Take a screenshot of the final invoice with updated calculations to verify the completed task"
+        }
+      ],
+      "generatedAt": 1760704696018,
+      "stepsSummary": "Test line item calculations. Verify that quantity and unit price calculations work correctly, totals are computed automatically, and subtotals update in real-time."
+    }
+  },
+  {
+    "id": "test_1760704737181",
+    "testname": "Financial Calculations - Tax Calculation",
+    "url": "https://invoify.vercel.app",
+    "description": "Test tax calculation functionality. Verify that tax can be applied as percentage or fixed amount, calculations are accurate, and the total updates correctly with tax included.",
+    "projectName": "Default",
+    "useSavedLoginState": false,
+    "createdAt": 1760704737181,
+    "generatedSteps": {
+      "steps": [
+        {
+          "stepNumber": 1,
+          "stepDescription": "Open a web browser and navigate to the invoicing application at https://invoify.vercel.app"
+        },
+        {
+          "stepNumber": 2,
+          "stepDescription": "Verify that the invoice interface and tax calculation section are visible on the page"
+        },
+        {
+          "stepNumber": 3,
+          "stepDescription": "Enter a base invoice amount in the amount field to be used for tax calculations"
+        },
+        {
+          "stepNumber": 4,
+          "stepDescription": "Select the tax type option for percentage from the available tax settings"
+        },
+        {
+          "stepNumber": 5,
+          "stepDescription": "Enter a tax percentage value, for example 10, into the tax input field"
+        },
+        {
+          "stepNumber": 6,
+          "stepDescription": "Verify that the calculated tax amount reflects 10% of the base amount and that the total is updated accordingly"
+        },
+        {
+          "stepNumber": 7,
+          "stepDescription": "Switch the tax setting to a fixed amount option from the available tax settings"
+        },
+        {
+          "stepNumber": 8,
+          "stepDescription": "Enter a fixed tax value, for example 50, into the tax input field"
+        },
+        {
+          "stepNumber": 9,
+          "stepDescription": "Verify that the tax amount is set to the fixed value and that the total invoice amount is updated correctly with the fixed tax included"
+        },
+        {
+          "stepNumber": 10,
+          "stepDescription": "Scroll down if necessary to ensure all updated calculations are visible on the page"
+        },
+        {
+          "stepNumber": 11,
+          "stepDescription": "Take a screenshot of the completed tax calculation results to record the test outcome"
+        }
+      ],
+      "generatedAt": 1760704737181,
+      "stepsSummary": "Test tax calculation functionality. Verify that tax can be applied as percentage or fixed amount, calculations are accurate, and the total updates correctly with tax included."
+    }
+  },
+  {
+    "id": "test_1760704758797",
+    "testname": "Financial Calculations - Discount and Shipping",
+    "url": "https://invoify.vercel.app",
+    "description": "Test discount and shipping calculations. Verify that discounts can be applied as percentage or fixed amount, shipping costs are calculated correctly, and all calculations update the final total properly.",
+    "projectName": "Default",
+    "useSavedLoginState": false,
+    "createdAt": 1760704758797,
+    "generatedSteps": {
+      "steps": [
+        {
+          "stepNumber": 1,
+          "stepDescription": "Open a web browser and navigate to https://invoify.vercel.app"
+        },
+        {
+          "stepNumber": 2,
+          "stepDescription": "Wait for the invoice page to load completely ensuring all calculation fields are visible"
+        },
+        {
+          "stepNumber": 3,
+          "stepDescription": "Enter a percentage discount value in the designated discount input field"
+        },
+        {
+          "stepNumber": 4,
+          "stepDescription": "Click the apply discount button to update the invoice with the percentage discount"
+        },
+        {
+          "stepNumber": 5,
+          "stepDescription": "Verify that the invoice recalculates the discount correctly and updates the total with the applied percentage discount"
+        },
+        {
+          "stepNumber": 6,
+          "stepDescription": "Clear the discount field and enter a fixed discount amount in the discount input field"
+        },
+        {
+          "stepNumber": 7,
+          "stepDescription": "Click the apply discount button so the system recalculates the fixed discount on the invoice"
+        },
+        {
+          "stepNumber": 8,
+          "stepDescription": "Verify that the fixed discount is correctly applied and that the updated total reflects the fixed discount adjustment"
+        },
+        {
+          "stepNumber": 9,
+          "stepDescription": "Enter the shipping cost into the appropriate shipping cost field"
+        },
+        {
+          "stepNumber": 10,
+          "stepDescription": "Review the invoice summary to confirm that the shipping cost has been added correctly to the final total"
+        },
+        {
+          "stepNumber": 11,
+          "stepDescription": "Take a screenshot of the final invoice summary to capture the final state with all calculations updated"
+        }
+      ],
+      "generatedAt": 1760704758797,
+      "stepsSummary": "Test discount and shipping calculations. Verify that discounts can be applied as percentage or fixed amount, shipping costs are calculated correctly, and all calculations update the final total properly."
+    }
+  },
+  {
+    "id": "test_1760704779927",
+    "testname": "Export & Distribution - PDF Generation",
+    "url": "https://invoify.vercel.app",
+    "description": "Test PDF generation and download functionality. Verify that users can generate PDF invoices, download them successfully, and the PDF contains all invoice data correctly formatted.",
+    "projectName": "Default",
+    "useSavedLoginState": false,
+    "createdAt": 1760704779927,
+    "generatedSteps": {
+      "steps": [
+        {
+          "stepNumber": 1,
+          "stepDescription": "Open the web browser and navigate to the URL: https://invoify.vercel.app"
+        },
+        {
+          "stepNumber": 2,
+          "stepDescription": "Ensure that the homepage loads successfully and the invoice generation feature is visible"
+        },
+        {
+          "stepNumber": 3,
+          "stepDescription": "Locate and navigate to the section or module where PDF invoices can be generated"
+        },
+        {
+          "stepNumber": 4,
+          "stepDescription": "Initiate the PDF invoice generation by clicking on the appropriate button or link"
+        },
+        {
+          "stepNumber": 5,
+          "stepDescription": "Wait until the system confirms that the PDF invoice is generated and ready for download"
+        },
+        {
+          "stepNumber": 6,
+          "stepDescription": "Download the generated PDF invoice and verify that the download completes without errors"
+        },
+        {
+          "stepNumber": 7,
+          "stepDescription": "Open the downloaded PDF invoice and review the content to ensure all invoice data is correctly formatted and complete"
+        },
+        {
+          "stepNumber": 8,
+          "stepDescription": "Capture a screenshot of the final page or PDF preview to document the successful completion of the test"
+        }
+      ],
+      "generatedAt": 1760704779927,
+      "stepsSummary": "Test PDF generation and download functionality. Verify that users can generate PDF invoices, download them successfully, and the PDF contains all invoice data correctly formatted."
+    }
+  },
+  {
+    "id": "test_1760704808931",
+    "testname": "Export & Distribution - Email Distribution",
+    "url": "https://invoify.vercel.app",
+    "description": "Test email distribution functionality. Verify that users can send invoices via email, the email contains the PDF attachment, and the email delivery works correctly.",
+    "projectName": "Default",
+    "useSavedLoginState": false,
+    "createdAt": 1760704808931,
+    "generatedSteps": {
+      "steps": [
+        {
+          "stepNumber": 1,
+          "stepDescription": "Open the web browser and navigate to the invoify application URL."
+        },
+        {
+          "stepNumber": 2,
+          "stepDescription": "Wait for the invoify homepage to load completely and confirm that the dashboard is visible."
+        },
+        {
+          "stepNumber": 3,
+          "stepDescription": "Navigate to the invoice email distribution section or locate the option to send an invoice via email."
+        },
+        {
+          "stepNumber": 4,
+          "stepDescription": "Enter the recipient's email address in the designated field for sending the invoice."
+        },
+        {
+          "stepNumber": 5,
+          "stepDescription": "Ensure that the invoice details are populated automatically and that a PDF attachment is attached as part of the invoice."
+        },
+        {
+          "stepNumber": 6,
+          "stepDescription": "Click or tap the button to send the invoice email, initiating the distribution process."
+        },
+        {
+          "stepNumber": 7,
+          "stepDescription": "Verify that a confirmation message appears indicating that the email has been successfully sent, ensuring the PDF attachment is referenced in the confirmation."
+        },
+        {
+          "stepNumber": 8,
+          "stepDescription": "Check the email delivery logs or test email inbox to confirm that the sent email includes the PDF attachment."
+        },
+        {
+          "stepNumber": 9,
+          "stepDescription": "Take a screenshot of the completion screen to capture the successful email distribution with PDF attachment."
+        }
+      ],
+      "generatedAt": 1760704808931,
+      "stepsSummary": "Test email distribution functionality. Verify that users can send invoices via email, the email contains the PDF attachment, and the email delivery works correctly."
+    }
+  },
+  {
+    "id": "test_1760704853488",
+    "testname": "Export & Distribution - Multiple Export Formats",
+    "url": "https://invoify.vercel.app",
+    "description": "Test multiple export formats (JSON, CSV, XML). Verify that users can export invoice data in different formats, the exported files contain correct data, and downloads work properly.",
+    "projectName": "Default",
+    "useSavedLoginState": false,
+    "createdAt": 1760704853488,
+    "generatedSteps": {
+      "steps": [
+        {
+          "stepNumber": 1,
+          "stepDescription": "Open a web browser and navigate to https://invoify.vercel.app to access the invoicing application."
+        },
+        {
+          "stepNumber": 2,
+          "stepDescription": "Confirm that the invoice dashboard is displayed with the invoice data loaded."
+        },
+        {
+          "stepNumber": 3,
+          "stepDescription": "Locate and click on the export invoice feature or button provided on the dashboard."
+        },
+        {
+          "stepNumber": 4,
+          "stepDescription": "Verify that the export options are visible, showing choices for JSON, CSV, and XML formats."
+        },
+        {
+          "stepNumber": 5,
+          "stepDescription": "Select the JSON export format option from the available choices."
+        },
+        {
+          "stepNumber": 6,
+          "stepDescription": "Ensure that the JSON file downloads and contains the correct invoice data in the proper format."
+        },
+        {
+          "stepNumber": 7,
+          "stepDescription": "Repeat the export process by selecting the CSV format option from the export menu."
+        },
+        {
+          "stepNumber": 8,
+          "stepDescription": "Verify that the CSV file successfully downloads and that it correctly represents the invoice data."
+        },
+        {
+          "stepNumber": 9,
+          "stepDescription": "Select the XML export format option to initiate the export of invoice data in XML format."
+        },
+        {
+          "stepNumber": 10,
+          "stepDescription": "Confirm that the XML file is downloaded and that it contains accurate invoice data in the appropriate structure."
+        },
+        {
+          "stepNumber": 11,
+          "stepDescription": "Review the download functionality to ensure each file format exports and downloads properly."
+        },
+        {
+          "stepNumber": 12,
+          "stepDescription": "Take a screenshot of the completed export process to verify the final state of the application."
+        }
+      ],
+      "generatedAt": 1760704853488,
+      "stepsSummary": "Test multiple export formats (JSON, CSV, XML). Verify that users can export invoice data in different formats, the exported files contain correct data, and downloads work properly."
+    }
+  },
+  {
+    "id": "test_1760704885366",
+    "testname": "Internationalization - Language Switching",
+    "url": "https://invoify.vercel.app",
+    "description": "Test language switching functionality. Verify that users can switch between different languages, the interface updates immediately, and all text elements are properly translated.",
+    "projectName": "Default",
+    "useSavedLoginState": false,
+    "createdAt": 1760704885366,
+    "generatedSteps": {
+      "steps": [
+        {
+          "stepNumber": 1,
+          "stepDescription": "Open the browser and navigate to the Invoify website at https://invoify.vercel.app."
+        },
+        {
+          "stepNumber": 2,
+          "stepDescription": "Observe the default language of the interface and ensure the initial text elements are correctly displayed."
+        },
+        {
+          "stepNumber": 3,
+          "stepDescription": "Locate and interact with the language switcher control on the page to display the available language options."
+        },
+        {
+          "stepNumber": 4,
+          "stepDescription": "Select a different language from the available options to trigger the language switch."
+        },
+        {
+          "stepNumber": 5,
+          "stepDescription": "Verify that the interface updates immediately after the language selection, with all text content translating accordingly."
+        },
+        {
+          "stepNumber": 6,
+          "stepDescription": "Check that interactive elements, buttons, labels, and navigation items reflect the translated language properly."
+        },
+        {
+          "stepNumber": 7,
+          "stepDescription": "Capture a screenshot of the updated interface to confirm that the language switching functionality worked as expected."
+        }
+      ],
+      "generatedAt": 1760704885366,
+      "stepsSummary": "Test language switching functionality. Verify that users can switch between different languages, the interface updates immediately, and all text elements are properly translated."
+    }
+  },
+  {
+    "id": "test_1760704904682",
+    "testname": "Internationalization - Currency Support",
+    "url": "https://invoify.vercel.app",
+    "description": "Test currency support functionality. Verify that users can select different currencies, currency symbols display correctly, and currency formatting works properly in calculations.",
+    "projectName": "Default",
+    "useSavedLoginState": false,
+    "createdAt": 1760704904682,
+    "generatedSteps": {
+      "steps": [
+        {
+          "stepNumber": 1,
+          "stepDescription": "Open the invoify application in a web browser using the provided URL."
+        },
+        {
+          "stepNumber": 2,
+          "stepDescription": "Identify the currency selection control on the home or dashboard page."
+        },
+        {
+          "stepNumber": 3,
+          "stepDescription": "Choose a different currency option from the available selections."
+        },
+        {
+          "stepNumber": 4,
+          "stepDescription": "Verify that the display updates to show the correct currency symbol."
+        },
+        {
+          "stepNumber": 5,
+          "stepDescription": "Enter numeric values into an invoice or calculation field to check that currency formatting adjusts accordingly."
+        },
+        {
+          "stepNumber": 6,
+          "stepDescription": "Confirm that invoice totals and related calculations reflect the chosen currency formatting correctly."
+        },
+        {
+          "stepNumber": 7,
+          "stepDescription": "Capture a screenshot of the final currency display and formatting for validation purposes."
+        }
+      ],
+      "generatedAt": 1760704904682,
+      "stepsSummary": "Test currency support functionality. Verify that users can select different currencies, currency symbols display correctly, and currency formatting works properly in calculations."
+    }
+  },
+  {
+    "id": "test_1760704930895",
+    "testname": "Internationalization - Date Formatting",
+    "url": "https://invoify.vercel.app",
+    "description": "Test date formatting for different locales. Verify that date formats change appropriately when switching languages, and dates display correctly in the invoice templates.",
+    "projectName": "Default",
+    "useSavedLoginState": false,
+    "createdAt": 1760704930895,
+    "generatedSteps": {
+      "steps": [
+        {
+          "stepNumber": 1,
+          "stepDescription": "Open the web browser and navigate to https://invoify.vercel.app."
+        },
+        {
+          "stepNumber": 2,
+          "stepDescription": "Confirm that the home page loads successfully and displays the expected content."
+        },
+        {
+          "stepNumber": 3,
+          "stepDescription": "Locate the language selection control on the page."
+        },
+        {
+          "stepNumber": 4,
+          "stepDescription": "Switch the application to a different language locale, for example, French or Spanish."
+        },
+        {
+          "stepNumber": 5,
+          "stepDescription": "Wait for the page to update and verify that all date formats change to match the selected locale."
+        },
+        {
+          "stepNumber": 6,
+          "stepDescription": "Navigate to the invoice template section to review the displayed dates."
+        },
+        {
+          "stepNumber": 7,
+          "stepDescription": "Check that the dates in the invoice template are formatted correctly according to the active locale."
+        },
+        {
+          "stepNumber": 8,
+          "stepDescription": "Capture a screenshot of the invoice template to confirm the correct date formatting."
+        }
+      ],
+      "generatedAt": 1760704930895,
+      "stepsSummary": "Test date formatting for different locales. Verify that date formats change appropriately when switching languages, and dates display correctly in the invoice templates."
+    }
+  },
+  {
+    "id": "test_1760704959601",
+    "testname": "User Interface - Responsive Design",
+    "url": "https://invoify.vercel.app",
+    "description": "Test responsive design functionality. Verify that the application works correctly on different screen sizes, elements adapt properly, and the interface remains usable on mobile devices.",
+    "projectName": "Default",
+    "useSavedLoginState": false,
+    "createdAt": 1760704959601,
+    "generatedSteps": {
+      "steps": [
+        {
+          "stepNumber": 1,
+          "stepDescription": "Open the web browser and navigate to https://invoify.vercel.app on a desktop."
+        },
+        {
+          "stepNumber": 2,
+          "stepDescription": "Verify that the application elements are correctly displayed in the desktop layout."
+        },
+        {
+          "stepNumber": 3,
+          "stepDescription": "Resize the browser window to a tablet resolution and observe if the layout adapts properly."
+        },
+        {
+          "stepNumber": 4,
+          "stepDescription": "Change the screen size to a mobile resolution to ensure that the user interface remains usable and elements adjust appropriately."
+        },
+        {
+          "stepNumber": 5,
+          "stepDescription": "Interact with responsive elements such as the navigation menu or hamburger icon on the mobile view to confirm functionality."
+        },
+        {
+          "stepNumber": 6,
+          "stepDescription": "Scroll through the mobile view to ensure that all content is accessible and displays correctly."
+        },
+        {
+          "stepNumber": 7,
+          "stepDescription": "Take a screenshot of the responsive layout on mobile to document the final visual state."
+        }
+      ],
+      "generatedAt": 1760704959601,
+      "stepsSummary": "Test responsive design functionality. Verify that the application works correctly on different screen sizes, elements adapt properly, and the interface remains usable on mobile devices."
+    }
+  },
+  {
+    "id": "test_1760704979763",
+    "testname": "User Interface - Theme Switching",
+    "url": "https://invoify.vercel.app",
+    "description": "Test theme switching functionality. Verify that users can switch between light and dark themes, the interface updates immediately, and all elements are properly styled in both themes.",
+    "projectName": "Default",
+    "useSavedLoginState": false,
+    "createdAt": 1760704979763,
+    "generatedSteps": {
+      "steps": [
+        {
+          "stepNumber": 1,
+          "stepDescription": "Open a web browser and navigate to the URL https://invoify.vercel.app"
+        },
+        {
+          "stepNumber": 2,
+          "stepDescription": "Wait for the homepage to fully load and ensure the default (light) theme is applied"
+        },
+        {
+          "stepNumber": 3,
+          "stepDescription": "Inspect the initial interface elements to confirm they display with the expected light theme styling"
+        },
+        {
+          "stepNumber": 4,
+          "stepDescription": "Locate the theme toggle control on the interface that allows switching themes"
+        },
+        {
+          "stepNumber": 5,
+          "stepDescription": "Activate the theme toggle to switch the interface from light to dark theme"
+        },
+        {
+          "stepNumber": 6,
+          "stepDescription": "Verify that the interface updates immediately and all elements are styled according to the dark theme"
+        },
+        {
+          "stepNumber": 7,
+          "stepDescription": "Examine key visual components such as text, backgrounds, and buttons to ensure proper dark theme styling is applied"
+        },
+        {
+          "stepNumber": 8,
+          "stepDescription": "Toggle the theme control again to revert from dark theme back to light theme"
+        },
+        {
+          "stepNumber": 9,
+          "stepDescription": "Confirm that the interface immediately reverts to the light theme with all elements reflecting the correct styling"
+        },
+        {
+          "stepNumber": 10,
+          "stepDescription": "Take a screenshot of the final state to document the successful theme switching"
+        }
+      ],
+      "generatedAt": 1760704979763,
+      "stepsSummary": "Test theme switching functionality. Verify that users can switch between light and dark themes, the interface updates immediately, and all elements are properly styled in both themes."
+    }
+  },
+  {
+    "id": "test_1760704999763",
+    "testname": "User Interface - Form Validation",
+    "url": "https://invoify.vercel.app",
+    "description": "Test form validation and error handling. Verify that form validation works correctly, error messages display properly, and users receive appropriate feedback for invalid inputs.",
+    "projectName": "Default",
+    "useSavedLoginState": false,
+    "createdAt": 1760704999763,
+    "generatedSteps": {
+      "steps": [
+        {
+          "stepNumber": 1,
+          "stepDescription": "Launch the web browser and navigate to the URL https://invoify.vercel.app"
+        },
+        {
+          "stepNumber": 2,
+          "stepDescription": "Ensure that the form is visible on the landing page and all necessary fields are present"
+        },
+        {
+          "stepNumber": 3,
+          "stepDescription": "Enter invalid data into the required form fields to trigger validation errors"
+        },
+        {
+          "stepNumber": 4,
+          "stepDescription": "Submit the form with the invalid inputs to check the error handling mechanism"
+        },
+        {
+          "stepNumber": 5,
+          "stepDescription": "Verify that the appropriate error messages are displayed for each invalid input"
+        },
+        {
+          "stepNumber": 6,
+          "stepDescription": "Review the error feedback to ensure that it clearly instructs users on correcting the mistakes"
+        },
+        {
+          "stepNumber": 7,
+          "stepDescription": "Enter valid data into the previously invalid fields to remove error conditions"
+        },
+        {
+          "stepNumber": 8,
+          "stepDescription": "Resubmit the form and confirm that no error messages are shown and validation passes successfully"
+        },
+        {
+          "stepNumber": 9,
+          "stepDescription": "Capture a screenshot of the form's final state to ensure successful completion of the test"
+        }
+      ],
+      "generatedAt": 1760704999763,
+      "stepsSummary": "Test form validation and error handling. Verify that form validation works correctly, error messages display properly, and users receive appropriate feedback for invalid inputs."
+    }
+  }
+]

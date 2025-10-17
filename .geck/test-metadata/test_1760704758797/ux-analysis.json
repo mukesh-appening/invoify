@@ -1,0 +1,152 @@
+{
+  "narrative": {
+    "steps": [
+      {
+        "title": "Landing on invoify.vercel.app",
+        "stepStatus": "pass",
+        "details": [
+          "Every scenario successfully opened the homepage. Good first impression: fast load, logo & primary CTA visible."
+        ]
+      },
+      {
+        "title": "Trying to start Invoice Wizard – Step 1 (Bill From / Bill To)",
+        "stepStatus": "fail",
+        "details": [
+          "Both ‘Bill From :’ and ‘Bill To :’ headers never became visible → tests timed-out.",
+          "User cannot move forward, so all downstream validation, persistence, and navigation checks were skipped."
+        ]
+      },
+      {
+        "title": "Template gallery & logo upload",
+        "stepStatus": "fail",
+        "details": [
+          "Header inside landing page ('BETA English Toggle theme') did not render, so template list wasn’t reached.",
+          "Logo-upload control could not be found."
+        ]
+      },
+      {
+        "title": "Live preview (basic fill works, dynamic update fails)",
+        "stepStatus": "mixed",
+        "details": [
+          "User managed to fill both Bill-From & Bill-To forms and saw data appear in preview (pass).",
+          "Updating values later did NOT refresh preview (fail)."
+        ]
+      },
+      {
+        "title": "Wizard-step synchronisation with preview",
+        "stepStatus": "fail",
+        "details": [
+          "Wizard navigation button ‘1 . From & To’ never responded → preview sync never evaluated."
+        ]
+      },
+      {
+        "title": "Signature features (draw / type / upload)",
+        "stepStatus": "fail",
+        "details": [
+          "Canvas for drawing signature, typed-signature area, and image-upload zone were all missing or hidden."
+        ]
+      },
+      {
+        "title": "Financial calculations (Line Items, Tax, Discount, Shipping)",
+        "stepStatus": "fail",
+        "details": [
+          "‘Line Items’ section, ‘Tax Calculation’ block, and subtotal fields were not found, so no calculations could be tested."
+        ]
+      },
+      {
+        "title": "Global visual QA observations",
+        "stepStatus": "pass-with-issues",
+        "details": [
+          "Automated UI review flagged repeated cosmetic issues: inconsistent padding & margins, mis-aligned labels, varying button styles, weak placeholder copy."
+        ]
+      }
+    ]
+  },
+  "emotional_arc": "Hopeful on first page load → confusion when expected sections never appear → repeated frustration/timeouts → brief relief when live preview initially works → disappointment when dynamic updates break → overall loss of confidence, likely abandonment.",
+  "qualitative_opportunities": [
+    {
+      "area": "Critical content not rendered / discoverability of key sections",
+      "why_it_matters": "Users cannot progress or even see core functionality (Bill From/To, Line Items, Tax, Signatures). Blocks conversion entirely.",
+      "next_actions": [
+        "Audit React/component mounting logic and conditional rendering—ensure sections are inserted into DOM on first load.",
+        "Add loading skeletons or status indicators so users know content is coming.",
+        "Set explicit heights/anchors so off-screen sections can be scrolled to and discovered.",
+        "Add automated smoke test to fail CI when headers are missing."
+      ]
+    },
+    {
+      "area": "Wizard navigation / step state management",
+      "why_it_matters": "Inability to jump between steps or persist data makes multi-step flow feel brittle and forces restart.",
+      "next_actions": [
+        "Keep step buttons always enabled/visible; disable only with clear explanation.",
+        "Store step data in global form state (e.g., context) and restore on return.",
+        "Highlight current step in UI to orient the user."
+      ]
+    },
+    {
+      "area": "Real-time preview & data binding",
+      "why_it_matters": "Live preview is the product’s ‘magic moment’. Lag or failure erodes trust and causes manual re-checks.",
+      "next_actions": [
+        "Debounce input updates but ensure one-way data flow to preview; add unit tests on key fields.",
+        "Provide subtle loading indicator inside preview when update is in progress.",
+        "Log to console when binding fails to aid debugging."
+      ]
+    },
+    {
+      "area": "Signature & logo controls visibility",
+      "why_it_matters": "Branding & sign-off are legally required for invoices; if users can’t find these, they will churn.",
+      "next_actions": [
+        "Surface these actions in dedicated ‘Branding’ section; use universally recognised icons (pen, image upload).",
+        "Add placeholder guidance text like “Drag or click to add your signature”.",
+        "Support JPG/PNG/SVG & give immediate feedback on invalid files."
+      ]
+    },
+    {
+      "area": "Visual consistency (spacing, alignment, button styles)",
+      "why_it_matters": "Small visual polish signals professionalism and reduces cognitive load.",
+      "next_actions": [
+        "Adopt a spacing scale (4-pt or 8-pt) and apply via design tokens.",
+        "Run a CSS linter or style-lint for button component variations.",
+        "Align labels with inputs using flex/grid; test responsive breakpoints."
+      ]
+    },
+    {
+      "area": "Copy & placeholders",
+      "why_it_matters": "Informative placeholders accelerate form filling and reduce errors.",
+      "next_actions": [
+        "Replace lorem/weak copy with concrete examples (‘e.g. Acme Corp’) and formatting hints (‘+1 (555) 123-4567’).",
+        "Proof-read for spelling & case consistency."
+      ]
+    },
+    {
+      "area": "Error & empty-state messaging",
+      "why_it_matters": "Current timeouts feel like the app froze. Human-friendly messages keep users engaged.",
+      "next_actions": [
+        "Display inline errors when a section fails to load (e.g., “Can’t find Line Items, retry?”).",
+        "Offer retry/refresh CTA instead of silent failure."
+      ]
+    }
+  ],
+  "first_tackles": [
+    {
+      "rank": 1,
+      "description": "Ensure ‘Bill From’, ‘Bill To’, ‘Line Items’, ‘Tax’ headers render on initial load (fix conditional rendering & provide fallback)."
+    },
+    {
+      "rank": 2,
+      "description": "Wire real-time preview to always update on field change; add unit test coverage for data-binding."
+    },
+    {
+      "rank": 3,
+      "description": "Introduce a global spacing & button style guide; update CSS variables to eliminate padding/alignment inconsistencies."
+    },
+    {
+      "rank": 4,
+      "description": "Add clear, descriptive placeholders & helper text to all inputs for faster onboarding."
+    },
+    {
+      "rank": 5,
+      "description": "Make signature/logo upload controls always visible with clear icons and drag-and-drop support."
+    }
+  ]
+}

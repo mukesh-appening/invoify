@@ -1,0 +1,166 @@
+{
+  "narrative": {
+    "steps": [
+      {
+        "title": "Landing on Invoify home page",
+        "stepStatus": "pass",
+        "details": [
+          "Every test begins by successfully loading https://invoify.vercel.app in the browser.",
+          "No hard technical errors; page renders, but multiple visual ‘looks-off’ issues are captured (mis-aligned labels, inconsistent padding, placeholder text)."
+        ]
+      },
+      {
+        "title": "Attempt to open Invoice Wizard – Step 1: “Bill From” / “Bill To”",
+        "stepStatus": "fail",
+        "details": [
+          "Tests that look for headings “Bill From :” or “Bill To :” time-out (element not found).",
+          "Result: Users cannot progress beyond the first step of invoice creation."
+        ]
+      },
+      {
+        "title": "Template selection & live preview load",
+        "stepStatus": "fail",
+        "details": [
+          "Locators for header text (“BETA English Toggle theme”) and template radio buttons are not found.",
+          "Live preview panel does appear in some flows, but real-time updates fail once data is edited."
+        ]
+      },
+      {
+        "title": "Logo upload in templates",
+        "stepStatus": "fail",
+        "details": [
+          "The UI element for uploading a logo is missing/hidden; tests abort at this point."
+        ]
+      },
+      {
+        "title": "Wizard step navigation synchronisation",
+        "stepStatus": "fail",
+        "details": [
+          "Button “1 . From & To” is not clickable (timeout).",
+          "Live preview does not sync when users move between wizard steps."
+        ]
+      },
+      {
+        "title": "Signature – draw, type, upload",
+        "stepStatus": "fail",
+        "details": [
+          "Canvas for drawing signature not visible.",
+          "Typed-signature section & upload area not found.",
+          "Users would be blocked from adding a signature."
+        ]
+      },
+      {
+        "title": "Financial calculations – line items, tax, discount, shipping",
+        "stepStatus": "fail",
+        "details": [
+          "Sections “3 . Line Items”, “Tax Calculation”, calculation fields (Subtotal, Total) not visible within timeout.",
+          "Auto-calculation tests cannot run."
+        ]
+      },
+      {
+        "title": "PDF generation & Email distribution",
+        "stepStatus": "fail",
+        "details": [
+          "Primary invoice sections load but key form areas (e.g., “Bill From”) still missing, preventing PDF generation.",
+          "Dashboard header expected text (“Dashboard”) not present, halting email-send flow."
+        ]
+      },
+      {
+        "title": "Multi-format export (JSON/CSV/XML)",
+        "stepStatus": "fail",
+        "details": [
+          "Invoice date renders as “Invalid Date”, causing dashboard validation to fail early.",
+          "Export menu itself never reached."
+        ]
+      }
+    ]
+  },
+  "emotional_arc": "Confidence at page load → mild concern at visual inconsistencies → sharp frustration when core sections (Bill From, Bill To, Line Items, Signature, etc.) never appear → repeated failure to proceed amplifies distrust in the product’s reliability → abandonment.",
+  "qualitative_opportunities": [
+    {
+      "area": "Missing / renamed DOM elements (e.g., “Bill From :”, “Bill To :”)",
+      "why_it_matters": "Automated and manual users rely on clear, predictable headings to orient themselves. If these are absent or renamed, users feel lost and flows break.",
+      "next_actions": [
+        "Audit current UI copy vs. design spec; reinstate or update headings.",
+        "Add data-test-id attributes to critical sections to keep tests & users resilient to copy tweaks.",
+        "Run moderated usability session to verify discoverability of Step 1 sections."
+      ]
+    },
+    {
+      "area": "Visual consistency – alignment, spacing, button styling",
+      "why_it_matters": "Uneven UI erodes professionalism and forces users to spend extra cognitive effort locating fields.",
+      "next_actions": [
+        "Introduce a spacing & typography scale in CSS/Design System.",
+        "Run linting/CI checks for style regressions.",
+        "Standardise button component sizes/variants across pages."
+      ]
+    },
+    {
+      "area": "Live preview not updating after edits",
+      "why_it_matters": "Real-time feedback is a marquee feature; if updates lag or fail, users doubt data integrity.",
+      "next_actions": [
+        "Implement debounced state sync between form and preview.",
+        "Write unit tests for each field → preview mapping.",
+        "Show loading/error states when preview cannot refresh."
+      ]
+    },
+    {
+      "area": "Signature workflows completely inaccessible",
+      "why_it_matters": "Signatures are legally required on many invoices; hiding these controls blocks users from completing tasks.",
+      "next_actions": [
+        "Ensure signature canvas & typed/upload tabs are visible in default viewport.",
+        "Provide fallback text (“Your browser does not support canvas…”) with guidance.",
+        "Validate that uploaded images display in preview and PDFs."
+      ]
+    },
+    {
+      "area": "Error messages & placeholder text",
+      "why_it_matters": "Generic or missing placeholders (“Placeholder text”) don’t guide data entry; absent validation messaging leaves users guessing.",
+      "next_actions": [
+        "Replace lorem placeholders with real examples (e.g., “ACME Corp.”).",
+        "Add inline validation that appears instantly on blur/focus.",
+        "Localise copy consistently (avoid mixed “EnglishToggle theme” strings)."
+      ]
+    },
+    {
+      "area": "Performance/timeout sensitivity",
+      "why_it_matters": "Sections often loaded after 5-s timeouts in tests. Real users on slower networks will face the same blank screens.",
+      "next_actions": [
+        "Lazy-load heavy components only when needed.",
+        "Show skeleton loaders while the wizard initialises.",
+        "Profile and optimise bundle size."
+      ]
+    },
+    {
+      "area": "Export & date formatting errors",
+      "why_it_matters": "Displaying “Invalid Date” kills trust and blocks export workflows.",
+      "next_actions": [
+        "Add date-parsing fallback and locale testing.",
+        "Include automated regression tests for date rendering.",
+        "Give users manual date picker to correct bad defaults."
+      ]
+    }
+  ],
+  "first_tackles": [
+    {
+      "rank": 1,
+      "description": "Restore visibility of core wizard headings (“Bill From”, “Bill To”, “Line Items”) and add stable data-test-ids."
+    },
+    {
+      "rank": 2,
+      "description": "Fix date formatting bug that shows “Invalid Date” and blocks dashboards/export."
+    },
+    {
+      "rank": 3,
+      "description": "Standardise global spacing and button styles to eliminate most ‘looks-off’ UI review flags."
+    },
+    {
+      "rank": 4,
+      "description": "Ensure signature canvas/component mounts by default; add clear fallback text if unsupported."
+    },
+    {
+      "rank": 5,
+      "description": "Set up real-time preview state listener to guarantee immediate reflection of form edits."
+    }
+  ]
+}

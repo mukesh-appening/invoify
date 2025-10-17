@@ -1,0 +1,134 @@
+{
+  "narrative": {
+    "steps": [
+      {
+        "title": "Launch application",
+        "stepStatus": "pass",
+        "details": [
+          "Every test successfully opened https://invoify.vercel.app and reached the landing screen."
+        ]
+      },
+      {
+        "title": "Start invoice-creation wizard – Bill From / Bill To",
+        "stepStatus": "fail",
+        "details": [
+          "Tests expected the wizard to open at Step 1 but could not locate the “Bill From :” or “Bill To :” headers within the default 5 s timeout.",
+          "Result: journey blocked before any data entry could occur."
+        ]
+      },
+      {
+        "title": "Template selection on landing page",
+        "stepStatus": "fail",
+        "details": [
+          "UI header (“BETA English Toggle theme”) never became visible; template buttons therefore unavailable.",
+          "Without a visible interface the user cannot preview or change templates."
+        ]
+      },
+      {
+        "title": "Logo upload inside template area",
+        "stepStatus": "fail",
+        "details": [
+          "Logo-upload control and template section could not be found.",
+          "UI review also flagged the missing logo as a visual issue."
+        ]
+      },
+      {
+        "title": "Populate form fields & observe initial live preview",
+        "stepStatus": "pass",
+        "details": [
+          "One test managed to fill all Bill From & Bill To fields; live preview showed initial values correctly."
+        ]
+      },
+      {
+        "title": "Modify fields for real-time preview update",
+        "stepStatus": "fail",
+        "details": [
+          "Subsequent edits did not propagate to the preview (data like Zip, Address failed to refresh).",
+          "Synchronisation between wizard steps and preview also broke when trying to use the step buttons (button not found)."
+        ]
+      },
+      {
+        "title": "Draw signature (canvas)",
+        "stepStatus": "fail",
+        "details": [
+          "Canvas element expected for free-hand signature never appeared after 20 s wait."
+        ]
+      },
+      {
+        "title": "Type signature (font selector)",
+        "stepStatus": "fail",
+        "details": [
+          "Typed-signature section not discoverable; user has no way to add a signature through typing."
+        ]
+      }
+    ]
+  },
+  "emotional_arc": "Shopper starts confident after quick page load, but immediately hits repeated roadblocks when core sections fail to appear. A brief moment of relief occurs when data first shows in live preview, but frustration returns as updates do not stick and additional features (templates, logo, signatures) are missing or hidden. Overall feeling: high friction and low trust in the product’s reliability.",
+  "qualitative_opportunities": [
+    {
+      "area": "Critical UI elements not rendered / not visible",
+      "why_it_matters": "Users cannot progress through basic tasks (entering sender/receiver info, choosing templates, adding signatures). They will abandon the flow.",
+      "next_actions": [
+        "Audit component mounting logic – ensure Step 1 of wizard renders by default and headings are present in DOM.",
+        "Increase initial wait / add skeleton loader so users know content is coming.",
+        "Add robust test-friendly selectors and ARIA labels for key sections."
+      ]
+    },
+    {
+      "area": "Real-time live preview synchronisation",
+      "why_it_matters": "Immediate feedback is a core value prop; desynchronised data erodes trust and forces manual refresh.",
+      "next_actions": [
+        "Debounce but do not delay field→preview updates; write unit tests for each field.",
+        "Ensure state management correctly propagates across wizard steps.",
+        "Visually highlight the field being edited inside preview so users can see the link."
+      ]
+    },
+    {
+      "area": "Visual consistency (spacing, alignment, button styles)",
+      "why_it_matters": "UI review repeatedly flags misaligned labels, inconsistent padding and button styles, which makes the product feel unpolished.",
+      "next_actions": [
+        "Establish design tokens / spacing scale and apply across components.",
+        "Use a layout linter or automated visual regression tests.",
+        "Standardise button component variants and enforce via CI."
+      ]
+    },
+    {
+      "area": "Unclear placeholder / helper copy",
+      "why_it_matters": "Placeholders “should include real example data” to guide users; vague copy increases form errors.",
+      "next_actions": [
+        "Replace lorem or generic placeholders with concrete examples (e.g., “Acme Inc.”, “123 Main St”).",
+        "Add inline validation hints for required fields."
+      ]
+    },
+    {
+      "area": "Discoverability of template & logo features",
+      "why_it_matters": "These selling points can differentiate the product; if hidden, users assume they don’t exist.",
+      "next_actions": [
+        "Move template and logo controls into immediately visible area or add onboarding cue.",
+        "Provide empty-state illustration prompting users to upload a logo."
+      ]
+    }
+  ],
+  "first_tackles": [
+    {
+      "rank": 1,
+      "description": "Guarantee Step 1 (“Bill From / To”) renders with reliable selectors so users can begin the wizard."
+    },
+    {
+      "rank": 2,
+      "description": "Fix real-time preview binding so any field change instantly reflects in preview."
+    },
+    {
+      "rank": 3,
+      "description": "Apply consistent spacing and label alignment via a shared design system token."
+    },
+    {
+      "rank": 4,
+      "description": "Improve placeholders and inline validation copy for all form fields."
+    },
+    {
+      "rank": 5,
+      "description": "Surface template selection & logo upload controls in the default viewport and add clear labels."
+    }
+  ]
+}

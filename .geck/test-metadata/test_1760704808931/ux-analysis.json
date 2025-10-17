@@ -1,0 +1,175 @@
+{
+  "narrative": {
+    "steps": [
+      {
+        "title": "Launch application",
+        "stepStatus": "pass",
+        "details": [
+          "Every scenario begins by navigating to https://invoify.vercel.app and the page responds (screenshots captured)."
+        ]
+      },
+      {
+        "title": "Open Invoice Wizard – “Bill From / Bill To”",
+        "stepStatus": "fail",
+        "details": [
+          "Tests that expected the wizard to open at Step 1 could not find the headings “Bill From :” or “Bill To :”.",
+          "Multiple 5 s Playwright time-outs indicate the DOM never rendered these nodes or they were rendered after the assertion."
+        ]
+      },
+      {
+        "title": "Template selection screen",
+        "stepStatus": "fail",
+        "details": [
+          "Template header text (“BETA English Toggle theme”) never became visible, so choosing Template 1 or 2 was impossible."
+        ]
+      },
+      {
+        "title": "Logo upload within template",
+        "stepStatus": "fail",
+        "details": [
+          "Script could not locate any logo-upload control; UI review likewise flags missing icon/visual affordance for uploading a logo."
+        ]
+      },
+      {
+        "title": "Enter invoice data & live preview",
+        "stepStatus": "mixed",
+        "details": [
+          "Basic typing into Bill From / Bill To passed.",
+          "However, when values were edited, the live preview did not always refresh (zip code and other fields failed validation).",
+          "Layout issues reported: mis-aligned labels, inconsistent margins."
+        ]
+      },
+      {
+        "title": "Wizard step navigation",
+        "stepStatus": "fail",
+        "details": [
+          "Clicking “1 . From & To” button timed out; navigation between steps could not be verified."
+        ]
+      },
+      {
+        "title": "Draw signature (canvas)",
+        "stepStatus": "fail",
+        "details": [
+          "No <canvas> element became visible within 20 s; user would never see the signature pad."
+        ]
+      },
+      {
+        "title": "Type signature (text input with font picker)",
+        "stepStatus": "fail",
+        "details": [
+          "Section for typed signatures missing; tests could not proceed."
+        ]
+      },
+      {
+        "title": "Upload signature image",
+        "stepStatus": "fail",
+        "details": [
+          "Signature upload drop-zone/button not found; UI review also flags button inconsistency."
+        ]
+      },
+      {
+        "title": "Line-item calculations",
+        "stepStatus": "fail",
+        "details": [
+          "“3 . Line Items” header never appeared, so quantity × price calculations could not be tested."
+        ]
+      },
+      {
+        "title": "Tax calculation module",
+        "stepStatus": "fail",
+        "details": [
+          "“Tax Calculation” section never visible; percentage/fixed logic remains unverified."
+        ]
+      },
+      {
+        "title": "Discount & shipping calculations",
+        "stepStatus": "fail",
+        "details": [
+          "Subtotal/Total fields not rendered (locator not found), blocking discount/shipping scenarios."
+        ]
+      },
+      {
+        "title": "Generate PDF",
+        "stepStatus": "fail",
+        "details": [
+          "General action buttons visible, but locating “Bill From :” still failed, preventing PDF generation flow from continuing."
+        ]
+      },
+      {
+        "title": "Email distribution",
+        "stepStatus": "fail",
+        "details": [
+          "Header expected to contain “Dashboard” but showed “BETAEnglishToggle theme”; therefore email-send flow never started."
+        ]
+      }
+    ]
+  },
+  "emotional_arc": "User starts confident when the site loads, but quickly encounters missing sections. Repeated blank areas, misaligned forms, and unresponsive buttons turn optimism into confusion. As more core tasks (template change, signatures, calculations, export) fail to appear, frustration rises sharply. By the time export and email actions cannot be completed, the user’s trust in the product is severely damaged.",
+  "qualitative_opportunities": [
+    {
+      "area": "Critical sections not rendering / late rendering",
+      "why_it_matters": "When primary wizard steps (Bill From, Bill To, Line Items, Tax, Discount, Signature) don’t appear, users cannot progress and assume the app is broken.",
+      "next_actions": [
+        "Audit component mounting logic—ensure sections are not hidden behind feature flags or incorrect conditional rendering.",
+        "Introduce skeleton loaders or progress indicators so users know content is coming.",
+        "Add robust end-to-end tests with longer waits OR emit explicit ‘data-ready’ events for test hooks."
+      ]
+    },
+    {
+      "area": "DOM selectors & semantics",
+      "why_it_matters": "Automated locators (and assistive technologies) rely on stable text/aria-labels. Missing or concatenated text (“BETAEnglishToggle theme”) breaks both testing and accessibility.",
+      "next_actions": [
+        "Use semantic HTML (h4, aria-labels) for each wizard heading.",
+        "Keep static text stable; avoid dynamic concatenation that removes spaces.",
+        "Provide data-test-id attributes for critical controls to decouple tests from UI copy."
+      ]
+    },
+    {
+      "area": "Layout consistency (alignment, spacing, button styles)",
+      "why_it_matters": "UI review flags misaligned labels, inconsistent padding, and button style drift—this erodes professionalism and may hinder readability.",
+      "next_actions": [
+        "Adopt a design-token or utility-first spacing scale (e.g., Tailwind spacing classes).",
+        "Create shared button component with size/shape tokens.",
+        "Run visual regression tests to catch CSS drift."
+      ]
+    },
+    {
+      "area": "Real-time preview & calc reliability",
+      "why_it_matters": "Live feedback builds confidence; if preview fails to update, users doubt data integrity.",
+      "next_actions": [
+        "Move preview update logic to a debounced central store so every field change triggers recomputation.",
+        "Add unit tests for specific fields (e.g., zip, subtotal) to ensure watchers fire."
+      ]
+    },
+    {
+      "area": "Onboarding & empty-state guidance",
+      "why_it_matters": "With many hidden sections, users need hints about next steps or requirements.",
+      "next_actions": [
+        "Show wizard progress indicators with disabled/enabled states.",
+        "Add placeholder/help text that is meaningful (replace ‘lorem’ placeholders)."
+      ]
+    }
+  ],
+  "first_tackles": [
+    {
+      "rank": 1,
+      "description": "Guarantee initial wizard step (“Bill From / Bill To”) renders immediately—remove erroneous conditionals and give headings unique IDs/text."
+    },
+    {
+      "rank": 2,
+      "description": "Introduce stable data-test-id or aria-label attributes for all major sections to prevent locator failures and improve accessibility."
+    },
+    {
+      "rank": 3,
+      "description": "Standardize CSS spacing and label alignment across form fields (quick global style sheet fix)."
+    },
+    {
+      "rank": 4,
+      "description": "Add loading skeletons or progress spinners for template, signature, and calculation modules to set user expectation while data loads."
+    },
+    {
+      "rank": 5,
+      "description": "Refactor buttons into a single shared component to resolve size/style inconsistencies quickly."
+    }
+  ]
+}

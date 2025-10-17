@@ -1,0 +1,144 @@
+{
+  "narrative": {
+    "steps": [
+      {
+        "title": "1. Launch and Landing",
+        "stepStatus": "pass",
+        "details": [
+          "User opens browser and navigates to https://invoify.vercel.app.",
+          "Landing page loads without error across all tests."
+        ]
+      },
+      {
+        "title": "2. Expect to see first-step content (Bill From / Bill To)",
+        "stepStatus": "fail",
+        "details": [
+          "Multiple tests time-out looking for headings such as “Bill From :”, “Bill To :”, “Line Items”, etc.",
+          "Wizard either does not default to Step 1 or headings differ from what users (and tests) expect.",
+          "Result: user cannot begin data entry."
+        ]
+      },
+      {
+        "title": "3. Discover and use key features (logo upload, template switch, signature canvas, currency selector, language switch, etc.)",
+        "stepStatus": "fail",
+        "details": [
+          "UI elements for these features are not visible or are hard to locate; tests cannot find them.",
+          "Causes include missing visual affordances, unclear labels, or elements hidden behind navigation not surfaced.",
+          "Users likely give up or assume feature is unavailable."
+        ]
+      },
+      {
+        "title": "4. Real-time preview & calculations",
+        "stepStatus": "fail",
+        "details": [
+          "Live preview sometimes displays but does not consistently update with edited data (e.g., ZIP change never reflected).",
+          "Line-item, tax, discount, and shipping sections fail to appear, so calculations cannot be verified.",
+          "Trust in accuracy drops."
+        ]
+      },
+      {
+        "title": "5. Export & distribution flows (PDF, Email, JSON/CSV/XML)",
+        "stepStatus": "fail",
+        "details": [
+          "Buttons are visible but prerequisite data (valid dates, invoice number) not loaded → export steps blocked.",
+          "PDF and email flows cannot be completed; downloads or confirmation messages never reached."
+        ]
+      },
+      {
+        "title": "6. General UI polish checks",
+        "stepStatus": "fail",
+        "details": [
+          "Automated UI review flags repeated issues: inconsistent spacing, mis-aligned labels, button style mismatch, weak placeholder copy."
+        ]
+      }
+    ]
+  },
+  "emotional_arc": "Starts with mild confidence as the site loads, but quickly turns into confusion when expected sections are missing. Repeated failures to locate features lead to frustration and doubt about product reliability. Inconsistent visuals add irritation. Overall feeling dips from curiosity to disappointment, with no recovery because core tasks never complete.",
+  "qualitative_opportunities": [
+    {
+      "area": "Wizard Default State & Navigation",
+      "why_it_matters": "Users must immediately see Step 1 fields (Bill From / Bill To). Hidden or mislabeled steps prevent any progress.",
+      "next_actions": [
+        "Auto-open Step 1 on initial load.",
+        "Use clear, predictable headings without extra spaces (e.g., “Bill From”).",
+        "Add progress bar or breadcrumb so users know where they are."
+      ]
+    },
+    {
+      "area": "Element Visibility & Discoverability",
+      "why_it_matters": "Features like logo upload, signature canvas, language switcher, and currency selector feel absent, lowering perceived feature set.",
+      "next_actions": [
+        "Ensure critical controls are always in DOM and visible (or clearly sign-posted).",
+        "Add icons/labels (e.g., “Upload Logo”) and hover/tool-tip hints.",
+        "Run accessibility/ARIA audit to confirm elements are reachable."
+      ]
+    },
+    {
+      "area": "Real-time Preview & Data Binding",
+      "why_it_matters": "Preview that lags or fails erodes trust; users rely on it to catch mistakes.",
+      "next_actions": [
+        "Debounce updates but guarantee <300 ms reflection of field changes.",
+        "Write unit tests for each bound field to catch regressions.",
+        "Show loading spinner or ‘syncing…’ micro-copy when update in progress."
+      ]
+    },
+    {
+      "area": "Financial Calculation Modules (Tax, Discount, Line Items)",
+      "why_it_matters": "Accurate math is core to invoicing—errors or hidden sections are deal-breakers.",
+      "next_actions": [
+        "Render calculation panels by default or provide clear ‘Add tax/discount’ CTA.",
+        "Validate inputs and surface inline errors, not silent failures.",
+        "Add sample default line item row so users see how to start."
+      ]
+    },
+    {
+      "area": "Visual Consistency (Spacing, Alignment, Button Styles, Typography)",
+      "why_it_matters": "Inconsistent UI looks unprofessional and distracts from task completion.",
+      "next_actions": [
+        "Adopt design system / component library with standard spacing scale.",
+        "Audit buttons for size, color, border-radius consistency.",
+        "Align labels using grid or flex utilities; test at common breakpoints."
+      ]
+    },
+    {
+      "area": "Copy & Placeholder Text",
+      "why_it_matters": "Generic placeholders (“Name”, “Address”) don’t teach format; vague ones feel unfinished.",
+      "next_actions": [
+        "Use realistic examples (e.g., “Acme Corp.”, “123 Main St.”).",
+        "Keep placeholders succinct and complementary to labels.",
+        "Perform content review for spelling and clarity."
+      ]
+    },
+    {
+      "area": "Date Handling & Validation",
+      "why_it_matters": "Displaying “Invalid Date” kills credibility and blocks export.",
+      "next_actions": [
+        "Set sane defaults (today, +30 days).",
+        "Add client-side validation with clear error states before export.",
+        "Unit-test date formatting across locales."
+      ]
+    }
+  ],
+  "first_tackles": [
+    {
+      "rank": 1,
+      "description": "Ensure Step 1 (Bill From/Bill To) renders by default with correct headings—fixes majority of initial hard stops."
+    },
+    {
+      "rank": 2,
+      "description": "Standardize spacing, label alignment, and button styles via a small CSS refactor—immediate visual uplift across the app."
+    },
+    {
+      "rank": 3,
+      "description": "Fix live preview data binding to guarantee instant reflection of field edits—restores user trust."
+    },
+    {
+      "rank": 4,
+      "description": "Provide visible controls (logo upload, signature canvas, currency & language pickers) with descriptive labels to improve discoverability."
+    },
+    {
+      "rank": 5,
+      "description": "Replace placeholder and error copy with informative examples and messages—low effort content change that improves guidance."
+    }
+  ]
+}

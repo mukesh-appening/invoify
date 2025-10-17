@@ -1,0 +1,135 @@
+{
+  "narrative": {
+    "steps": [
+      {
+        "title": "Landing on Invoify",
+        "stepStatus": "pass",
+        "details": [
+          "Every scenario starts by opening https://invoify.vercel.app and loading succeeds."
+        ]
+      },
+      {
+        "title": "Expecting Step-1 (Bill From / Bill To)",
+        "stepStatus": "fail",
+        "details": [
+          "Both dedicated tests time-out looking for headings ‘Bill From :’ and ‘Bill To :’.",
+          "User never sees the first form screen and therefore cannot proceed with invoice creation."
+        ]
+      },
+      {
+        "title": "Template system – page chrome",
+        "stepStatus": "fail",
+        "details": [
+          "Landing-page header “BETA English Toggle theme” is not found, blocking all later template actions (select Template 1, Template 2, logo upload)."
+        ]
+      },
+      {
+        "title": "Logo upload journey",
+        "stepStatus": "fail",
+        "details": [
+          "User cannot locate logo-upload entry point; test aborts immediately after opening the app."
+        ]
+      },
+      {
+        "title": "Live preview – basic entry",
+        "stepStatus": "mixed",
+        "details": [
+          "User is able to fill all ‘Bill From’ and ‘Bill To’ fields and sees data appear in preview (passes).",
+          "When editing data afterward, at least one field (Zip) fails to update in preview – user loses trust (hard fail)."
+        ]
+      },
+      {
+        "title": "Wizard / preview synchronization",
+        "stepStatus": "fail",
+        "details": [
+          "Wizard step button ‘1 . From & To’ is not clickable (timeout); user stuck on step navigation."
+        ]
+      },
+      {
+        "title": "Visual review issues captured automatically",
+        "stepStatus": "mixed",
+        "details": [
+          "Frequent ‘looks off’ flags: inconsistent button styles, mis-aligned labels, uneven padding, placeholder copy not informative, missing logo option visibility."
+        ]
+      }
+    ]
+  },
+  "emotional_arc": "Hopeful on first load → Confused when the expected first form (Bill From / Bill To) never appears → Growing frustration as multiple key UI elements (header, template selector, logo upload) cannot be located → Brief relief when live preview shows initial data → Trust shaken when edits do not propagate → Overall sense of unreliability and polish issues by the end of the session.",
+  "qualitative_opportunities": [
+    {
+      "area": "Initial wizard screen visibility (Bill From / Bill To)",
+      "why_it_matters": "Users abandon quickly if they can’t find the first required fields; core task blocked.",
+      "next_actions": [
+        "Ensure Step 1 renders immediately on page load.",
+        "Add loading skeleton or progress indicator until the wizard mounts.",
+        "Audit heading text—remove trailing spaces/colons that break locators and may impair accessibility."
+      ]
+    },
+    {
+      "area": "Header / global navigation load",
+      "why_it_matters": "Missing header prevents access to language switch, theme toggle, and signals that page failed partially.",
+      "next_actions": [
+        "Defer non-critical scripts so core UI paints first.",
+        "Use robust CSS that doesn’t collapse header in low-width viewports.",
+        "Log front-end errors and surface fallback UI if header fails to mount."
+      ]
+    },
+    {
+      "area": "Template & logo controls discoverability",
+      "why_it_matters": "Customization is a selling point; users must immediately see where to change template or upload logo.",
+      "next_actions": [
+        "Place template selector and logo upload in consistently sized, labeled card near preview.",
+        "Add ‘Upload logo’ button with universal icon and help tooltip.",
+        "Persist selections in local storage to reinforce success."
+      ]
+    },
+    {
+      "area": "Live preview reliability",
+      "why_it_matters": "Real-time feedback builds trust; any lag or miss undermines perceived quality.",
+      "next_actions": [
+        "Debounce form-to-preview binding less aggressively or diff-test every field.",
+        "Write unit tests for each field → preview mapping (e.g., Zip).",
+        "Show small spinner in preview while data is syncing."
+      ]
+    },
+    {
+      "area": "Layout & visual consistency",
+      "why_it_matters": "Uneven spacing and misaligned labels make product feel unfinished and hamper readability.",
+      "next_actions": [
+        "Adopt design tokens for spacing (8-pt grid).",
+        "Run CSS linter / visual regression tests on every commit.",
+        "Standardize button component variants (primary, secondary) and enforce in Storybook."
+      ]
+    },
+    {
+      "area": "Copy & placeholder text",
+      "why_it_matters": "Generic placeholders (‘Placeholder text is not informative’) do not instruct users, hurting form completion rates.",
+      "next_actions": [
+        "Replace placeholders with examples (e.g., ‘Acme Corp.’, ‘123 Main St.’).",
+        "Keep placeholder text lighter color but accessible contrast."
+      ]
+    }
+  ],
+  "first_tackles": [
+    {
+      "rank": 1,
+      "description": "Guarantee Step 1 (‘Bill From’ & ‘Bill To’ sections) is visible instantly on load; add fallback message if data fails to render."
+    },
+    {
+      "rank": 2,
+      "description": "Fix two-way binding bugs so every edited field updates live preview in <200 ms."
+    },
+    {
+      "rank": 3,
+      "description": "Standardize spacing, label alignment, and button styles via a single design-system stylesheet."
+    },
+    {
+      "rank": 4,
+      "description": "Add explicit ‘Template’ selector and ‘Upload logo’ button next to live preview to improve discoverability."
+    },
+    {
+      "rank": 5,
+      "description": "Replace generic placeholder copy with concrete, helpful examples to speed form completion."
+    }
+  ]
+}

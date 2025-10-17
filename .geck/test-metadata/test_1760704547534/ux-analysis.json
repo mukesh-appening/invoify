@@ -1,0 +1,110 @@
+{
+  "narrative": {
+    "steps": [
+      {
+        "title": "Launch Invoify app",
+        "stepStatus": "pass",
+        "details": [
+          "All three test flows successfully loaded https://invoify.vercel.app in a new browser tab."
+        ]
+      },
+      {
+        "title": "Invoice Wizard – Bill From section should appear (Step 1)",
+        "stepStatus": "fail",
+        "details": [
+          "The UI never exposed an element that matched the text selector “Bill From :”.",
+          "Automation timed-out after 5 s, so the remaining Bill From interactions (field entry, validation, persistence) never executed."
+        ]
+      },
+      {
+        "title": "Invoice Wizard – Bill To section should appear (Step 1)",
+        "stepStatus": "fail",
+        "details": [
+          "Similar to Bill From, the expected heading “Bill To :” was not rendered/detected within 5 s, stopping the rest of the Bill To test path."
+        ]
+      },
+      {
+        "title": "Landing page main interface / header visibility",
+        "stepStatus": "fail",
+        "details": [
+          "Template-selection flow expected a header reading “BETA English Toggle theme”. No such element became visible within 5 s."
+        ]
+      },
+      {
+        "title": "UI micro-copy & visual audit (automatic)",
+        "stepStatus": "pass-with-notes",
+        "details": [
+          "Spell-checking & content-placement: Placeholder text flagged as not informative.",
+          "Visual consistency: Button sizes & styles vary across templates."
+        ]
+      }
+    ]
+  },
+  "emotional_arc": "The user starts confident when the site loads, but quickly hits a wall—core wizard sections do not appear, creating confusion (“Is something broken or am I in the wrong place?”). Repeated 5-second stalls lead to frustration and abandonment. Minor visual/copy issues further erode trust, but the dominant feeling is blockage rather than polish.",
+  "qualitative_opportunities": [
+    {
+      "area": "Wizard entry point (Bill From / Bill To visibility)",
+      "why_it_matters": "If first-step headings aren’t rendered or are hidden off-screen, users cannot start an invoice—this is a hard stop that drives abandonment.",
+      "next_actions": [
+        "Ensure the wizard automatically opens on Step 1 when the page loads.",
+        "Use persistent, semantic headings (<h4 Bill From>) so both humans and assistive tech can locate sections.",
+        "Add skeleton loaders or progress indicators if data is still loading."
+      ]
+    },
+    {
+      "area": "Timing & performance of first render",
+      "why_it_matters": "5-second blank states feel broken; users will refresh or leave.",
+      "next_actions": [
+        "Audit network requests & lazy-loading strategy for the wizard component.",
+        "Defer non-critical scripts to prioritise first meaningful paint.",
+        "Set a generous server-side timeout fallback that shows helpful messaging (“Still loading…”) rather than nothing."
+      ]
+    },
+    {
+      "area": "Micro-copy: placeholder & instruction text",
+      "why_it_matters": "Uninformative placeholders reduce form-fill accuracy and perceived professionalism.",
+      "next_actions": [
+        "Replace lorem/blank placeholders with concrete examples (e.g., “ACME Corp, 123 Main St”).",
+        "Run a content style-guide check for each input."
+      ]
+    },
+    {
+      "area": "Visual consistency – buttons & UI controls",
+      "why_it_matters": "Inconsistent button sizing colours makes the product look unpolished and damages trust.",
+      "next_actions": [
+        "Adopt a design-tokens system or component library to standardise button variants.",
+        "Audit existing templates for rogue CSS overrides."
+      ]
+    },
+    {
+      "area": "Selector stability for automation & accessibility",
+      "why_it_matters": "Fragile selectors break E2E tests and can hint at equally fragile accessibility semantics.",
+      "next_actions": [
+        "Add data-testids or aria-labels to critical elements (wizard headings, navigation buttons).",
+        "Run an a11y audit (e.g., axe) to ensure correct landmark and heading structure."
+      ]
+    }
+  ],
+  "first_tackles": [
+    {
+      "rank": 1,
+      "description": "Guarantee the wizard opens on Step 1 with visible, semantically tagged Bill From and Bill To headings."
+    },
+    {
+      "rank": 2,
+      "description": "Add clear loading state or increase initial render performance to avoid 5-second blank screen."
+    },
+    {
+      "rank": 3,
+      "description": "Introduce stable data-testids/aria-labels for key elements to unblock automation and improve accessibility."
+    },
+    {
+      "rank": 4,
+      "description": "Replace generic placeholder text with real-world examples for all form fields."
+    },
+    {
+      "rank": 5,
+      "description": "Apply a unified button component across templates to fix visual inconsistency quickly."
+    }
+  ]
+}
