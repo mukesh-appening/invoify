@@ -1,0 +1,119 @@
+{
+  "narrative": {
+    "steps": [
+      {
+        "title": "Homepage & Header Validation",
+        "stepStatus": "pass",
+        "details": [
+          "User lands on https://invoify.vercel.app/en.",
+          "Dashboard renders and Invoify logo is confirmed in header."
+        ]
+      },
+      {
+        "title": "Bill From – Basic Fields",
+        "stepStatus": "pass",
+        "details": [
+          "User focuses the Name field, enters “zeeshan”.",
+          "Live-preview eventually reflects the name (1 validation retry).",
+          "User focuses Address field, enters “street 123”.",
+          "Live-preview eventually reflects the address (1 validation retry, ~40 s wait)."
+        ]
+      },
+      {
+        "title": "Bill From – Add Custom Field",
+        "stepStatus": "fail",
+        "details": [
+          "User clicks “Add Custom Input”, names it “Gender”, sets value “Male”.",
+          "Preview does NOT show “Male” → Step fails (hard failure)."
+        ]
+      },
+      {
+        "title": "Bill From – Delete Custom Field",
+        "stepStatus": "pass",
+        "details": [
+          "User adds a fresh custom field, then deletes it.",
+          "Field disappears as expected."
+        ]
+      },
+      {
+        "title": "Tab Navigation – From & To → Invoice Details",
+        "stepStatus": "pass",
+        "details": [
+          "User clicks Next; active tab switches and 'Invoice Details' title is visible."
+        ]
+      },
+      {
+        "title": "Default Tab Styling (From & To)",
+        "stepStatus": "fail",
+        "details": [
+          "On initial load, test expected From & To tab to have black background.",
+          "Element not found / style not applied → Hard failure."
+        ]
+      }
+    ]
+  },
+  "emotional_arc": "Starts with confidence (logo visible, fields respond). Small friction as preview lags but still succeeds, so user remains cautiously optimistic. Excitement to customise invoice turns to frustration when custom field value never appears. Another dip when default tab style looks broken, raising doubts about polish. Confidence partially restored after successful deletion of field and smooth Next-tab navigation, but overall trust is shaken by earlier inconsistencies.",
+  "qualitative_opportunities": [
+    {
+      "area": "Custom field preview not updating",
+      "why_it_matters": "Users add custom fields to personalise invoices; if changes don’t appear immediately, they assume feature is broken and may abandon.",
+      "next_actions": [
+        "Ensure custom field syncs to preview in real-time (same mechanism as core fields).",
+        "Add visual loading / success indicator near the Add button so user knows the field was registered.",
+        "Include the new field in a predictable place in preview (top or grouped section)."
+      ]
+    },
+    {
+      "area": "Default selected tab styling (From & To)",
+      "why_it_matters": "Without a clear visual cue, first-time users may not realise which step they’re on, causing orientation issues.",
+      "next_actions": [
+        "Set an explicit selected state on initial render, not only after interaction.",
+        "Use both colour and underline/ icon so colour-blind users perceive status.",
+        "Add aria-selected attributes for accessibility."
+      ]
+    },
+    {
+      "area": "Preview latency / race conditions",
+      "why_it_matters": "Validation often needed a retry or 40 s wait; real users expect instant reflection. Delay lowers perceived performance.",
+      "next_actions": [
+        "Debounce input but render preview within <300 ms.",
+        "Investigate heavy re-rendering or network calls causing 30-40 s delays.",
+        "Add skeleton shimmer or spinner if unavoidable."
+      ]
+    },
+    {
+      "area": "Long interaction times for some actions (318 s to type ‘Gender’)",
+      "why_it_matters": "Even if test artefact, it hints UI lag or form focus issues that slow power users.",
+      "next_actions": [
+        "Profile custom-input component; optimise unnecessary state updates.",
+        "Make sure autofocus jumps to first empty field after clicking 'Add'."
+      ]
+    },
+    {
+      "area": "Feedback after deletion",
+      "why_it_matters": "Deletion worked but gave no contextual confirmation; accidental deletion could go unnoticed until later.",
+      "next_actions": [
+        "Show toast ‘Custom field removed – Undo’ for 5 s.",
+        "Allow Ctrl-Z or an inline undo badge."
+      ]
+    }
+  ],
+  "first_tackles": [
+    {
+      "rank": 1,
+      "description": "Fix real-time binding of custom fields to the preview and add immediate visual feedback."
+    },
+    {
+      "rank": 2,
+      "description": "Ensure default selected tab state (From & To) renders correctly on page load with accessible styling."
+    },
+    {
+      "rank": 3,
+      "description": "Reduce preview latency for all inputs to sub-second by optimising renders or showing progress indicators."
+    },
+    {
+      "rank": 4,
+      "description": "Add non-intrusive confirmation/undo for delete actions to prevent accidental data loss."
+    }
+  ]
+}

@@ -1,38 +1,556 @@
 [
   {
-    "id": "test_1760704506784",
-    "status": "failed",
-    "progress": 10,
+    "id": "test_1761298465167",
+    "status": "passed",
+    "progress": 100,
     "stepResults": [
       {
         "stepNumber": 1,
         "stepStatus": "pass",
-        "stepDescription": "Open the browser and navigate to https://invoify.vercel.app.",
-        "stepStatusReason": "Open the browser and navigate to https://invoify.vercel.app.",
+        "stepDescription": "Open a web browser and navigate to the URL https://invoify.vercel.app/en",
+        "stepStatusReason": "Open a web browser and navigate to the URL https://invoify.vercel.app/en",
         "isScreenShotcaptured": true,
-        "uiReviewResults": {
-          "total-checks-performed": 9,
-          "checks-passed": 9,
-          "checks-failed": 0,
-          "checks-results": []
-        },
-        "runTime": 15312
+        "runTime": 10851
+      },
+      {
+        "stepNumber": 2,
+        "stepStatus": "pass",
+        "stepDescription": "Wait for the page to fully load and ensure the user is redirected to the dashboard view",
+        "stepStatusReason": "Verify that the dashboard view is displayed by checking for the presence of the \"Actions\" heading.",
+        "isScreenShotcaptured": true,
+        "summaryText": [
+          "Processing: Verify that the dashboard view is displayed by checking for the presence of the \"Actions\" heading.",
+          "Completed: Verify that the dashboard view is displayed by checking for the presence of the \"Actions\" heading."
+        ],
+        "runTime": 9248
+      },
+      {
+        "stepNumber": 3,
+        "stepStatus": "pass",
+        "stepDescription": "Inspect the header section to confirm the Invoify Logo is visible",
+        "stepStatusReason": "Verify that the Invoify Logo is visible in the header section.",
+        "isScreenShotcaptured": true,
+        "summaryText": [
+          "Processing: Verify that the Invoify Logo is visible in the header section.",
+          "Completed: Verify that the Invoify Logo is visible in the header section."
+        ],
+        "runTime": 9916
+      },
+      {
+        "stepNumber": 4,
+        "stepStatus": "pass",
+        "stepDescription": "Capture a screenshot of the dashboard displaying the Invoify Logo for verification",
+        "stepStatusReason": "Capture a screenshot of the dashboard displaying the Invoify Logo for verification",
+        "isScreenShotcaptured": true,
+        "runTime": 2501,
+        "summaryText": []
+      }
+    ],
+    "startedAt": 1761298478612,
+    "screenshotDir": "d:\\Appening\\geck\\invoify geck test\\.geck\\test-metadata\\test_1761298465167\\screenshots",
+    "isMarkDownReport": true,
+    "stepsSummary": "To verify user redirect to dashboard which contain Invoify Logo in header. Navigate to website and check header showing Invoify Logo. User able to navigate and see logo in header.",
+    "url": "https://invoify.vercel.app/en",
+    "testname": "Invoify Logo Header Verification",
+    "finishedAt": 1761298511145,
+    "totalTimeElapsed": 32533,
+    "promptTokens": 1264,
+    "completionTokens": 938,
+    "totalTokens": 2202,
+    "costEstimate": 0.0007524000000000001,
+    "isGeneratingReport": false
+  },
+  {
+    "id": "test_1761298576196",
+    "status": "passed",
+    "progress": 100,
+    "stepResults": [
+      {
+        "stepNumber": 1,
+        "stepStatus": "pass",
+        "stepDescription": "Open a web browser and navigate to the URL https://invoify.vercel.app/en",
+        "stepStatusReason": "Open a web browser and navigate to the URL https://invoify.vercel.app/en",
+        "isScreenShotcaptured": true,
+        "runTime": 7659
+      },
+      {
+        "stepNumber": 2,
+        "stepStatus": "pass",
+        "stepDescription": "Locate the Bill From section on the page",
+        "stepStatusReason": "Locate the Bill From section on the page",
+        "isScreenShotcaptured": true,
+        "runTime": 2750,
+        "summaryText": []
+      },
+      {
+        "stepNumber": 3,
+        "stepStatus": "pass",
+        "stepDescription": "Click or focus on the Name field within the Bill From section",
+        "stepStatusReason": "Click on the input field labeled \"Name:\" within the \"Bill From\" section.",
+        "isScreenShotcaptured": true,
+        "summaryText": [
+          "Processing: Click on the input field labeled \"Name:\" within the \"Bill From\" section.",
+          "Completed: Click on the input field labeled \"Name:\" within the \"Bill From\" section."
+        ],
+        "runTime": 10861
+      },
+      {
+        "stepNumber": 4,
+        "stepStatus": "pass",
+        "stepDescription": "Enter the name \"zeeshan\" into the Bill From Name field",
+        "stepStatusReason": "Fill the input field with the name \"zeeshan\" in the \"Bill From\" section.",
+        "isScreenShotcaptured": true,
+        "summaryText": [
+          "Processing: Fill the input field with the name \"zeeshan\" in the \"Bill From\" section.",
+          "Completed: Fill the input field with the name \"zeeshan\" in the \"Bill From\" section."
+        ],
+        "runTime": 12633
+      },
+      {
+        "stepNumber": 5,
+        "stepStatus": "pass",
+        "stepDescription": "Check the Live Preview section to confirm that the entered name appears under the sender name",
+        "stepStatusReason": "Verify that the text \"zeeshan\" appears under the sender name in the Live Preview section.",
+        "isScreenShotcaptured": true,
+        "summaryText": [
+          "Processing: Verify that the text \"zeeshan\" appears under the sender name in the Live Preview section.",
+          "Validation failed: Verify that the text \"zeeshan\" appears under the sender name in the Live Preview section. - will retry in 2 * 100ms",
+          "Completed: Verify that the text \"zeeshan\" appears under the sender name in the Live Preview section."
+        ],
+        "runTime": 14076
+      },
+      {
+        "stepNumber": 6,
+        "stepStatus": "pass",
+        "stepDescription": "Take a screenshot of the completed task to verify the successful display of the name in the preview",
+        "stepStatusReason": "Take a screenshot of the completed task to verify the successful display of the name in the preview",
+        "isScreenShotcaptured": true,
+        "runTime": 2611,
+        "summaryText": []
+      }
+    ],
+    "startedAt": 1761298696081,
+    "screenshotDir": "d:\\Appening\\geck\\invoify geck test\\.geck\\test-metadata\\test_1761298576196\\screenshots",
+    "isMarkDownReport": true,
+    "stepsSummary": "To verify Bill From Name field accepts input and shows in preview. Navigate to website, locate Bill From section, click on Name field, enter name \"zeeshan\", check Live Preview section, verify name appears in preview. Name field accepts input and displays in preview under sender name.",
+    "url": "https://invoify.vercel.app/en",
+    "testname": "Bill From Name Field Input Verification",
+    "finishedAt": 1761298746701,
+    "totalTimeElapsed": 50620,
+    "promptTokens": 2253,
+    "completionTokens": 1396,
+    "totalTokens": 3649,
+    "costEstimate": 0.00117555,
+    "isGeneratingReport": false
+  },
+  {
+    "id": "test_1761298821413",
+    "status": "passed",
+    "progress": 100,
+    "stepResults": [
+      {
+        "stepNumber": 1,
+        "stepStatus": "pass",
+        "stepDescription": "Open a web browser and navigate to the URL https://invoify.vercel.app/en",
+        "stepStatusReason": "Open a web browser and navigate to the URL https://invoify.vercel.app/en",
+        "isScreenShotcaptured": true,
+        "runTime": 6994
+      },
+      {
+        "stepNumber": 2,
+        "stepStatus": "pass",
+        "stepDescription": "Locate the Bill From section on the page",
+        "stepStatusReason": "Locate the Bill From section on the page",
+        "isScreenShotcaptured": true,
+        "runTime": 2586,
+        "summaryText": []
+      },
+      {
+        "stepNumber": 3,
+        "stepStatus": "pass",
+        "stepDescription": "Click on the Address field within the Bill From section to focus the input",
+        "stepStatusReason": "Click on the input field with the placeholder \"Your address\" within the Bill From section.",
+        "isScreenShotcaptured": true,
+        "summaryText": [
+          "Processing: Click on the input field with the placeholder \"Your address\" within the Bill From section.",
+          "Completed: Click on the input field with the placeholder \"Your address\" within the Bill From section."
+        ],
+        "runTime": 8664
+      },
+      {
+        "stepNumber": 4,
+        "stepStatus": "pass",
+        "stepDescription": "Enter the text 'street 123' into the Address field",
+        "stepStatusReason": "Fill the input field with the placeholder \"Your address\" with the text 'street 123'.",
+        "isScreenShotcaptured": true,
+        "summaryText": [
+          "Processing: Fill the input field with the placeholder \"Your address\" with the text 'street 123'.",
+          "Completed: Fill the input field with the placeholder \"Your address\" with the text 'street 123'."
+        ],
+        "runTime": 9317
+      },
+      {
+        "stepNumber": 5,
+        "stepStatus": "pass",
+        "stepDescription": "Check the Live Preview section to verify that the address appears below the Invoice # Title",
+        "stepStatusReason": "Verify that the address \"street 123\" appears below the \"Invoice #\" title in the Live Preview section.",
+        "isScreenShotcaptured": true,
+        "summaryText": [
+          "Processing: Verify that the address \"street 123\" appears below the \"Invoice #\" title in the Live Preview section.",
+          "Validation failed: Verify that the address \"street 123\" appears below the \"Invoice #\" title in the Live Preview section. - will retry in 1 * 100ms",
+          "Completed: Verify that the address \"street 123\" appears below the \"Invoice #\" title in the Live Preview section."
+        ],
+        "runTime": 39704
+      },
+      {
+        "stepNumber": 6,
+        "stepStatus": "pass",
+        "stepDescription": "Take a screenshot of the completed task to confirm the address input is reflected in the preview",
+        "stepStatusReason": "Take a screenshot of the completed task to confirm the address input is reflected in the preview",
+        "isScreenShotcaptured": true,
+        "runTime": 2814,
+        "summaryText": []
+      }
+    ],
+    "startedAt": 1761299040991,
+    "screenshotDir": "d:\\Appening\\geck\\invoify geck test\\.geck\\test-metadata\\test_1761298821413\\screenshots",
+    "isMarkDownReport": true,
+    "stepsSummary": "To verify Bill From Address field accepts input and shows in preview. Navigate to website, locate Bill From section, click on Address field, enter address \"street 123\", check Live Preview section, verify address appears in preview. Address accepts input and displays in preview Below Invoice # Title.",
+    "url": "https://invoify.vercel.app/en",
+    "testname": "Bill From Address Field Input Verification",
+    "finishedAt": 1761299111102,
+    "totalTimeElapsed": 70111,
+    "promptTokens": 3244,
+    "completionTokens": 1045,
+    "totalTokens": 4289,
+    "costEstimate": 0.0011136,
+    "isGeneratingReport": false
+  },
+  {
+    "id": "test_1761299169971",
+    "status": "failed",
+    "progress": 33,
+    "stepResults": [
+      {
+        "stepNumber": 1,
+        "stepStatus": "pass",
+        "stepDescription": "Open the web browser and navigate to the URL https://invoify.vercel.app/en",
+        "stepStatusReason": "Open the web browser and navigate to the URL https://invoify.vercel.app/en",
+        "isScreenShotcaptured": true,
+        "runTime": 8083
       },
       {
         "stepNumber": 2,
         "stepStatus": "fail",
-        "stepDescription": "Ensure the invoice creation wizard opens at Step 1 with the Bill From section clearly visible.",
-        "stepStatusReason": "Timed out 5000ms waiting for expect(locator).toBeVisible()\n\nLocator: locator('h4').filter({ hasText: 'Bill From  :' })\nExpected: visible\nReceived: <element(s) not found>\nCall log:\n  - Expect \"to.be.visible\" with timeout 5000ms\n  - waiting for locator('h4').filter({ hasText: 'Bill From  :' })\n (1 sub-steps failed, 0 executed, 0 skipped)",
+        "stepDescription": "Verify that the From&To tab has a black background color indicating it is selected",
+        "stepStatusReason": "\u001b[31mTimed out 5000ms waiting for \u001b[39mexpect(locator).toHaveCSS(expected)\n\nLocator: getByRole('button', { name: /^1  \\.  From & To$/ })\nExpected string: \"rgb(0, 0, 0)\"\nReceived: <element(s) not found>\nCall log:\n\u001b[2m  - Expect \"to.have.css\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByRole('button', { name: /^1  \\.  From & To$/ })\u001b[22m\n (1 sub-steps failed, 0 executed, 0 skipped)",
         "isScreenShotcaptured": false,
         "summaryText": [
-          "Processing: Verify that the \"Bill From\" section is visible on the page."
+          "Processing: Verify that the \"From & To\" button has a black background color."
         ],
-        "runTime": 48185
+        "runTime": 47843
       },
       {
         "stepNumber": 3,
         "stepStatus": "pending",
-        "stepDescription": "Fill in all the required fields in the Bill From section with valid data.",
+        "stepDescription": "Capture a screenshot of the page to document the default state and styling of the From&To tab",
+        "stepStatusReason": "awaiting status reason rationale",
+        "isScreenShotcaptured": false,
+        "summaryText": []
+      }
+    ],
+    "startedAt": 1761299570360,
+    "screenshotDir": "d:\\Appening\\geck\\invoify geck test\\.geck\\test-metadata\\test_1761299169971\\screenshots",
+    "isMarkDownReport": true,
+    "stepsSummary": "Verify default From&To tab with black background",
+    "url": "https://invoify.vercel.app/en",
+    "testname": "From&To Tab Default Selection Verification",
+    "finishedAt": 1761299626302,
+    "totalTimeElapsed": 55942,
+    "promptTokens": 3876,
+    "completionTokens": 1158,
+    "totalTokens": 5034,
+    "costEstimate": 0.0012762,
+    "isGeneratingReport": false
+  },
+  {
+    "id": "test_1761299865235",
+    "status": "failed",
+    "progress": 71,
+    "stepResults": [
+      {
+        "stepNumber": 1,
+        "stepStatus": "pass",
+        "stepDescription": "Open a web browser and navigate to the URL https://invoify.vercel.app/en.",
+        "stepStatusReason": "Open a web browser and navigate to the URL https://invoify.vercel.app/en.",
+        "isScreenShotcaptured": true,
+        "runTime": 7179
+      },
+      {
+        "stepNumber": 2,
+        "stepStatus": "pass",
+        "stepDescription": "Scroll to locate the Bill From form on the webpage.",
+        "stepStatusReason": "Scroll to the \"Bill From\" section on the webpage.",
+        "isScreenShotcaptured": true,
+        "summaryText": [
+          "Processing: Scroll to the \"Bill From\" section on the webpage.",
+          "Completed: Scroll to the \"Bill From\" section on the webpage."
+        ],
+        "runTime": 7101
+      },
+      {
+        "stepNumber": 3,
+        "stepStatus": "pass",
+        "stepDescription": "Click the add custom input button within the Bill From form.",
+        "stepStatusReason": "Click the \"Add Custom Input\" button within the \"Bill From\" section.",
+        "isScreenShotcaptured": true,
+        "summaryText": [
+          "Processing: Click the \"Add Custom Input\" button within the \"Bill From\" section.",
+          "Completed: Click the \"Add Custom Input\" button within the \"Bill From\" section."
+        ],
+        "runTime": 14067
+      },
+      {
+        "stepNumber": 4,
+        "stepStatus": "pass",
+        "stepDescription": "Enter 'Gender' as the name for the custom input field.",
+        "stepStatusReason": "Fill the custom input field with the placeholder \"Name\" with the text 'Gender'.",
+        "isScreenShotcaptured": true,
+        "summaryText": [
+          "Processing: Fill the custom input field with the placeholder \"Name\" with the text 'Gender'.",
+          "Completed: Fill the custom input field with the placeholder \"Name\" with the text 'Gender'."
+        ],
+        "runTime": 318623
+      },
+      {
+        "stepNumber": 5,
+        "stepStatus": "pass",
+        "stepDescription": "Fill in 'Male' in the custom field value input.",
+        "stepStatusReason": "Fill the custom input field with the placeholder \"Value\" with the text 'Male'.",
+        "isScreenShotcaptured": true,
+        "summaryText": [
+          "Processing: Fill the custom input field with the placeholder \"Value\" with the text 'Male'.",
+          "Completed: Fill the custom input field with the placeholder \"Value\" with the text 'Male'."
+        ],
+        "runTime": 12983
+      },
+      {
+        "stepNumber": 6,
+        "stepStatus": "fail",
+        "stepDescription": "Verify that the preview section displays 'Male' to confirm the input was added.",
+        "stepStatusReason": "\u001b[31mTimed out 5000ms waiting for \u001b[39mexpect(locator).toContainText(expected)\n\nLocator: locator('section:has(h4:text(\"Bill To  :\"))')\nExpected string: \"Male\"\nReceived: <element(s) not found>\nCall log:\n\u001b[2m  - Expect \"to.have.text\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator('section:has(h4:text(\"Bill To  :\"))')\u001b[22m\n (1 sub-steps failed, 0 executed, 0 skipped)",
+        "isScreenShotcaptured": false,
+        "summaryText": [
+          "Processing: Verify that the text 'Male' is visible in the preview section."
+        ],
+        "runTime": 49754
+      },
+      {
+        "stepNumber": 7,
+        "stepStatus": "pending",
+        "stepDescription": "Take a screenshot of the completed view for verification.",
+        "stepStatusReason": "awaiting status reason rationale",
+        "isScreenShotcaptured": false,
+        "summaryText": []
+      }
+    ],
+    "startedAt": 1761300575651,
+    "screenshotDir": "d:\\Appening\\geck\\invoify geck test\\.geck\\test-metadata\\test_1761299865235\\screenshots",
+    "isMarkDownReport": true,
+    "stepsSummary": "Add and verify custom input field",
+    "url": "https://invoify.vercel.app/en",
+    "testname": "Custom Input Field Addition Verification",
+    "finishedAt": 1761300985386,
+    "totalTimeElapsed": 409735,
+    "promptTokens": 4998,
+    "completionTokens": 1447,
+    "totalTokens": 6445,
+    "costEstimate": 0.0016178999999999998,
+    "isGeneratingReport": false
+  },
+  {
+    "id": "test_1761301048830",
+    "status": "passed",
+    "progress": 100,
+    "stepResults": [
+      {
+        "stepNumber": 1,
+        "stepStatus": "pass",
+        "stepDescription": "Open a web browser and navigate to the URL https://invoify.vercel.app/en",
+        "stepStatusReason": "Open a web browser and navigate to the URL https://invoify.vercel.app/en",
+        "isScreenShotcaptured": true,
+        "runTime": 6735
+      },
+      {
+        "stepNumber": 2,
+        "stepStatus": "pass",
+        "stepDescription": "Within the Bill From form, locate and click on the Add Custom Input option",
+        "stepStatusReason": "Click on the \"Add Custom Input\" button within the \"Bill From\" section.",
+        "isScreenShotcaptured": true,
+        "summaryText": [
+          "Processing: Click on the \"Add Custom Input\" button within the \"Bill From\" section.",
+          "Completed: Click on the \"Add Custom Input\" button within the \"Bill From\" section."
+        ],
+        "runTime": 14128
+      },
+      {
+        "stepNumber": 3,
+        "stepStatus": "pass",
+        "stepDescription": "Within the custom field, click on the Delete Button to remove the field",
+        "stepStatusReason": "Click on the delete button within the custom field to remove it.",
+        "isScreenShotcaptured": true,
+        "summaryText": [
+          "Processing: Click on the delete button within the custom field to remove it.",
+          "Completed: Click on the delete button within the custom field to remove it."
+        ],
+        "runTime": 20791
+      },
+      {
+        "stepNumber": 4,
+        "stepStatus": "pass",
+        "stepDescription": "Verify that the Gender input field is no longer visible on the form",
+        "stepStatusReason": "Verify that the Gender input field is not present in the DOM.",
+        "isScreenShotcaptured": true,
+        "summaryText": [
+          "Processing: Verify that the Gender input field is not present in the DOM.",
+          "Completed: Verify that the Gender input field is not present in the DOM."
+        ],
+        "runTime": 7199
+      },
+      {
+        "stepNumber": 5,
+        "stepStatus": "pass",
+        "stepDescription": "Take a screenshot of the completed task to confirm the custom field deletion",
+        "stepStatusReason": "Take a screenshot of the completed task to confirm the custom field deletion",
+        "isScreenShotcaptured": true,
+        "runTime": 2374,
+        "summaryText": []
+      }
+    ],
+    "startedAt": 1761301750823,
+    "screenshotDir": "d:\\Appening\\geck\\invoify geck test\\.geck\\test-metadata\\test_1761301048830\\screenshots",
+    "isMarkDownReport": true,
+    "stepsSummary": "To verify user able to delete new custom field. Navigate to website, in Bill From form click on add custom input, click on Delete Button, check Gender input field get disappear.",
+    "url": "https://invoify.vercel.app/en",
+    "testname": "Custom Input Field Deletion Verification",
+    "finishedAt": 1761301802072,
+    "totalTimeElapsed": 51249,
+    "promptTokens": 5791,
+    "completionTokens": 1547,
+    "totalTokens": 7338,
+    "costEstimate": 0.00179685,
+    "isGeneratingReport": false
+  },
+  {
+    "id": "test_1761301893013",
+    "status": "passed",
+    "progress": 100,
+    "stepResults": [
+      {
+        "stepNumber": 1,
+        "stepStatus": "pass",
+        "stepDescription": "Open a web browser and navigate to https://invoify.vercel.app/en",
+        "stepStatusReason": "Open a web browser and navigate to https://invoify.vercel.app/en",
+        "isScreenShotcaptured": true,
+        "runTime": 7001
+      },
+      {
+        "stepNumber": 2,
+        "stepStatus": "pass",
+        "stepDescription": "Locate the Bill From section on the page",
+        "stepStatusReason": "Locate the Bill From section on the page",
+        "isScreenShotcaptured": true,
+        "runTime": 2659,
+        "summaryText": []
+      },
+      {
+        "stepNumber": 3,
+        "stepStatus": "pass",
+        "stepDescription": "Click the next button located within the from&to section.",
+        "stepStatusReason": "Click the \"Next\" button located within the \"From & To\" section.",
+        "isScreenShotcaptured": true,
+        "summaryText": [
+          "Processing: Click the \"Next\" button located within the \"From & To\" section.",
+          "Completed: Click the \"Next\" button located within the \"From & To\" section."
+        ],
+        "runTime": 6701
+      },
+      {
+        "stepNumber": 4,
+        "stepStatus": "pass",
+        "stepDescription": "Verify that the active tab switches to the invoice detail tab.",
+        "stepStatusReason": "Verify that the \"Invoice Details\" tab is active by checking if the button with text \"2. Invoice Details\" has the class \"bg-primary text-primary-foreground\".",
+        "isScreenShotcaptured": true,
+        "summaryText": [
+          "Processing: Verify that the \"Invoice Details\" tab is active by checking if the button with text \"2. Invoice Details\" has the class \"bg-primary text-primary-foreground\".",
+          "Completed: Verify that the \"Invoice Details\" tab is active by checking if the button with text \"2. Invoice Details\" has the class \"bg-primary text-primary-foreground\"."
+        ],
+        "runTime": 7863
+      },
+      {
+        "stepNumber": 5,
+        "stepStatus": "pass",
+        "stepDescription": "Confirm that the invoice detail title is clearly visible on the form.",
+        "stepStatusReason": "Verify that the \"Invoice Details:\" heading is visible on the form.",
+        "isScreenShotcaptured": true,
+        "summaryText": [
+          "Processing: Verify that the \"Invoice Details:\" heading is visible on the form.",
+          "Completed: Verify that the \"Invoice Details:\" heading is visible on the form."
+        ],
+        "runTime": 7185
+      },
+      {
+        "stepNumber": 6,
+        "stepStatus": "pass",
+        "stepDescription": "Take a screenshot to capture the final state of the invoice detail tab.",
+        "stepStatusReason": "Take a screenshot to capture the final state of the invoice detail tab.",
+        "isScreenShotcaptured": true,
+        "runTime": 2444,
+        "summaryText": []
+      }
+    ],
+    "startedAt": 1761302057493,
+    "screenshotDir": "d:\\Appening\\geck\\invoify geck test\\.geck\\test-metadata\\test_1761301893013\\screenshots",
+    "isMarkDownReport": true,
+    "stepsSummary": "To verify clicking on next button inside from&to section move the user to invoice detail tab. Navigate to the website, click on next button inside from&to form, check the tab change to invoice detail and invoice detail title is visible on form.",
+    "url": "https://invoify.vercel.app/en",
+    "testname": "Next Button Navigation to Invoice Details Tab",
+    "finishedAt": 1761302091377,
+    "totalTimeElapsed": 33884,
+    "promptTokens": 6729,
+    "completionTokens": 1599,
+    "totalTokens": 8328,
+    "costEstimate": 0.00196875,
+    "isGeneratingReport": false
+  },
+  {
+    "id": "test_1761302468741",
+    "status": "failed",
+    "progress": 13,
+    "stepResults": [
+      {
+        "stepNumber": 1,
+        "stepStatus": "pass",
+        "stepDescription": "Open a web browser and navigate to the URL https://invoify.vercel.app/en",
+        "stepStatusReason": "Open a web browser and navigate to the URL https://invoify.vercel.app/en",
+        "isScreenShotcaptured": true,
+        "runTime": 6823
+      },
+      {
+        "stepNumber": 2,
+        "stepStatus": "fail",
+        "stepDescription": "Click on the '2.Invoice Details' tab to access the invoice details section",
+        "stepStatusReason": "locator.click: Timeout 5000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByRole('button', { name: '2  .  Invoice Details' })\u001b[22m\n (1 sub-steps failed, 0 executed, 0 skipped)",
+        "isScreenShotcaptured": false,
+        "summaryText": [
+          "Processing: Click on the button labeled \"2  .  Invoice Details\" to access the invoice details section."
+        ],
+        "runTime": 43392
+      },
+      {
+        "stepNumber": 3,
+        "stepStatus": "pending",
+        "stepDescription": "Verify that the 'Invoice Logo:' section is displayed on the page",
         "stepStatusReason": "awaiting status reason rationale",
         "isScreenShotcaptured": false,
         "summaryText": []
@@ -40,7 +558,7 @@
       {
         "stepNumber": 4,
         "stepStatus": "pending",
-        "stepDescription": "Clear one required field intentionally and attempt to proceed to trigger the validation message.",
+        "stepDescription": "Locate the image upload control within the Invoice Logo section",
         "stepStatusReason": "awaiting status reason rationale",
         "isScreenShotcaptured": false,
         "summaryText": []
@@ -48,7 +566,7 @@
       {
         "stepNumber": 5,
         "stepStatus": "pending",
-        "stepDescription": "Verify that the proper validation error message appears for the empty required field.",
+        "stepDescription": "Upload the invoice logo image using the file located at D:\\Appening\\geck\\invoify geck test\\fackbook.png",
         "stepStatusReason": "awaiting status reason rationale",
         "isScreenShotcaptured": false,
         "summaryText": []
@@ -56,7 +574,7 @@
       {
         "stepNumber": 6,
         "stepStatus": "pending",
-        "stepDescription": "Re-enter valid data into the field that previously failed validation.",
+        "stepDescription": "Verify that the image upload was successful by checking for an indication that the file has been uploaded",
         "stepStatusReason": "awaiting status reason rationale",
         "isScreenShotcaptured": false,
         "summaryText": []
@@ -64,7 +582,7 @@
       {
         "stepNumber": 7,
         "stepStatus": "pending",
-        "stepDescription": "Click the Continue button to navigate to the next step of the invoice creation wizard.",
+        "stepDescription": "Check the Live Preview section to ensure the uploaded logo appears correctly in the invoice preview",
         "stepStatusReason": "awaiting status reason rationale",
         "isScreenShotcaptured": false,
         "summaryText": []
@@ -72,7 +590,100 @@
       {
         "stepNumber": 8,
         "stepStatus": "pending",
-        "stepDescription": "Navigate back to Step 1 to verify that the data entered in the Bill From section persists.",
+        "stepDescription": "Take a screenshot of the completed invoice preview to confirm the test was successful",
+        "stepStatusReason": "awaiting status reason rationale",
+        "isScreenShotcaptured": false,
+        "summaryText": []
+      }
+    ],
+    "startedAt": 1761303154527,
+    "screenshotDir": "d:\\Appening\\geck\\invoify geck test\\.geck\\test-metadata\\test_1761302468741\\screenshots",
+    "isMarkDownReport": true,
+    "stepsSummary": "Upload and verify invoice logo image",
+    "url": "https://invoify.vercel.app/en",
+    "testname": "Invoice Logo Image Upload Verification",
+    "finishedAt": 1761303204761,
+    "totalTimeElapsed": 50234,
+    "promptTokens": 7630,
+    "completionTokens": 1445,
+    "totalTokens": 9075,
+    "costEstimate": 0.0020115,
+    "isGeneratingReport": false
+  },
+  {
+    "id": "test_1761303435576",
+    "status": "failed",
+    "progress": 22,
+    "stepResults": [
+      {
+        "stepNumber": 1,
+        "stepStatus": "pass",
+        "stepDescription": "Open a web browser and navigate to the target URL 'https://invoify.vercel.app/en'.",
+        "stepStatusReason": "Open a web browser and navigate to the target URL 'https://invoify.vercel.app/en'.",
+        "isScreenShotcaptured": true,
+        "runTime": 7199
+      },
+      {
+        "stepNumber": 2,
+        "stepStatus": "pass",
+        "stepDescription": "Click on the Next button located inside the From&To section to proceed to the Invoice Details tab.",
+        "stepStatusReason": "Click the \"Next\" button located inside the \"From & To\" section.",
+        "isScreenShotcaptured": true,
+        "summaryText": [
+          "Processing: Click the \"Next\" button located inside the \"From & To\" section.",
+          "Completed: Click the \"Next\" button located inside the \"From & To\" section."
+        ],
+        "runTime": 9204
+      },
+      {
+        "stepNumber": 3,
+        "stepStatus": "fail",
+        "stepDescription": "Upload the invoice logo image from the specified directory 'D:\\Appening\\geck\\invoify geck test\\fackbook.png'.",
+        "stepStatusReason": "429 You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors. (1 sub-steps failed, 1 executed, 0 skipped)",
+        "isScreenShotcaptured": false,
+        "summaryText": [
+          "Processing: Click the \"Click to upload image\" label to open the file upload dialog.",
+          "Completed: Click the \"Click to upload image\" label to open the file upload dialog.",
+          "Processing: Upload the file 'D:\\Appening\\geck\\invoify geck test\\fackbook.png' using the file input with id 'details.invoiceLogo'."
+        ],
+        "runTime": 45763
+      },
+      {
+        "stepNumber": 4,
+        "stepStatus": "pending",
+        "stepDescription": "Identify the 'Remove logo' button positioned below the uploaded logo on the form.",
+        "stepStatusReason": "awaiting status reason rationale",
+        "isScreenShotcaptured": false,
+        "summaryText": []
+      },
+      {
+        "stepNumber": 5,
+        "stepStatus": "pending",
+        "stepDescription": "Click on the 'Remove logo' button to eliminate the uploaded invoice logo.",
+        "stepStatusReason": "awaiting status reason rationale",
+        "isScreenShotcaptured": false,
+        "summaryText": []
+      },
+      {
+        "stepNumber": 6,
+        "stepStatus": "pending",
+        "stepDescription": "Verify that the uploaded logo is removed from the Invoice Details form.",
+        "stepStatusReason": "awaiting status reason rationale",
+        "isScreenShotcaptured": false,
+        "summaryText": []
+      },
+      {
+        "stepNumber": 7,
+        "stepStatus": "pending",
+        "stepDescription": "Navigate to the Live Preview section to inspect the current invoice display.",
+        "stepStatusReason": "awaiting status reason rationale",
+        "isScreenShotcaptured": false,
+        "summaryText": []
+      },
+      {
+        "stepNumber": 8,
+        "stepStatus": "pending",
+        "stepDescription": "Confirm that the invoice preview no longer displays the logo and that the 'Click to upload image' area is visible again.",
         "stepStatusReason": "awaiting status reason rationale",
         "isScreenShotcaptured": false,
         "summaryText": []
@@ -80,7 +691,226 @@
       {
         "stepNumber": 9,
         "stepStatus": "pending",
-        "stepDescription": "Confirm that all previously entered data is still visible and correct in the Bill From fields.",
+        "stepDescription": "Capture a screenshot of the final interface to verify the completed task.",
+        "stepStatusReason": "awaiting status reason rationale",
+        "isScreenShotcaptured": false,
+        "summaryText": []
+      }
+    ],
+    "startedAt": 1761303600847,
+    "screenshotDir": "d:\\Appening\\geck\\invoify geck test\\.geck\\test-metadata\\test_1761303435576\\screenshots",
+    "isMarkDownReport": true,
+    "stepsSummary": "Remove invoice logo and verify removal",
+    "url": "https://invoify.vercel.app/en",
+    "testname": "Invoice Logo Removal Verification",
+    "finishedAt": 1761303663037,
+    "totalTimeElapsed": 62190,
+    "promptTokens": 68161,
+    "completionTokens": 163,
+    "totalTokens": 68324,
+    "costEstimate": 0,
+    "isGeneratingReport": false
+  },
+  {
+    "id": "test_1761303748407",
+    "status": "failed",
+    "progress": 75,
+    "stepResults": [
+      {
+        "stepNumber": 1,
+        "stepStatus": "pass",
+        "stepDescription": "Open the browser and navigate to https://invoify.vercel.app/en",
+        "stepStatusReason": "Open the browser and navigate to https://invoify.vercel.app/en",
+        "isScreenShotcaptured": true,
+        "runTime": 22428
+      },
+      {
+        "stepNumber": 2,
+        "stepStatus": "pass",
+        "stepDescription": "Click the Next button within the from and to form to proceed",
+        "stepStatusReason": "Click the \"Next\" button within the form to proceed.",
+        "isScreenShotcaptured": true,
+        "summaryText": [
+          "Processing: Click the \"Next\" button within the form to proceed.",
+          "Completed: Click the \"Next\" button within the form to proceed."
+        ],
+        "runTime": 7290
+      },
+      {
+        "stepNumber": 3,
+        "stepStatus": "pass",
+        "stepDescription": "Locate the Issue Date field on the page",
+        "stepStatusReason": "Locate the \"Issue Date\" field by clicking the \"Pick a date\" button next to it.",
+        "isScreenShotcaptured": true,
+        "summaryText": [
+          "Processing: Locate the \"Issue Date\" field by clicking the \"Pick a date\" button next to it.",
+          "Completed: Locate the \"Issue Date\" field by clicking the \"Pick a date\" button next to it."
+        ],
+        "runTime": 16193
+      },
+      {
+        "stepNumber": 4,
+        "stepStatus": "pass",
+        "stepDescription": "Click the date picker icon or field associated with Issue Date",
+        "stepStatusReason": "Click the date picker icon or field associated with Issue Date",
+        "isScreenShotcaptured": true,
+        "runTime": 3006,
+        "summaryText": []
+      },
+      {
+        "stepNumber": 5,
+        "stepStatus": "pass",
+        "stepDescription": "Select the date 'October 1, 2025' from the displayed calendar",
+        "stepStatusReason": "Click on the date 'October 1, 2025' in the calendar.",
+        "isScreenShotcaptured": true,
+        "summaryText": [
+          "Processing: Click on the date 'October 1, 2025' in the calendar.",
+          "Completed: Click on the date 'October 1, 2025' in the calendar."
+        ],
+        "runTime": 18427
+      },
+      {
+        "stepNumber": 6,
+        "stepStatus": "pass",
+        "stepDescription": "Verify that the Issue Date field shows the selected date 'October 1, 2025'",
+        "stepStatusReason": "Verify that the text \"October 1, 2025\" is visible in the Issue Date field.",
+        "isScreenShotcaptured": true,
+        "summaryText": [
+          "Processing: Verify that the text \"October 1, 2025\" is visible in the Issue Date field.",
+          "Completed: Verify that the text \"October 1, 2025\" is visible in the Issue Date field."
+        ],
+        "runTime": 11187
+      },
+      {
+        "stepNumber": 7,
+        "stepStatus": "fail",
+        "stepDescription": "verify 'Invoice date: October 1, 2025'. appear in preview",
+        "stepStatusReason": "\u001b[31mTimed out 5000ms waiting for \u001b[39mexpect(locator).toBeVisible()\n\nLocator: locator('div.grid').filter({ hasText: 'Invoice date: October 1, 2025' })\nExpected: visible\nReceived: <element(s) not found>\nCall log:\n\u001b[2m  - Expect \"to.be.visible\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator('div.grid').filter({ hasText: 'Invoice date: October 1, 2025' })\u001b[22m\n (1 sub-steps failed, 0 executed, 0 skipped)",
+        "isScreenShotcaptured": false,
+        "summaryText": [
+          "Processing: Verify that the text \"Invoice date: October 1, 2025\" is visible in the preview section."
+        ],
+        "runTime": 45697
+      },
+      {
+        "stepNumber": 8,
+        "stepStatus": "pending",
+        "stepDescription": "Take a screenshot of the completed page to ensure all elements display correctly",
+        "stepStatusReason": "awaiting status reason rationale",
+        "isScreenShotcaptured": false,
+        "summaryText": []
+      }
+    ],
+    "startedAt": 1761307765404,
+    "screenshotDir": "d:\\Appening\\geck\\invoify geck test\\.geck\\test-metadata\\test_1761303748407\\screenshots",
+    "isMarkDownReport": true,
+    "stepsSummary": "Verify Issue Date selection and preview display",
+    "url": "https://invoify.vercel.app/en",
+    "testname": "Issue Date Field Date Selection Verification",
+    "finishedAt": 1761307889659,
+    "totalTimeElapsed": 124255,
+    "promptTokens": 9965,
+    "completionTokens": 2014,
+    "totalTokens": 11979,
+    "costEstimate": 0.0027031499999999997,
+    "isGeneratingReport": false
+  },
+  {
+    "id": "test_1761308108417",
+    "status": "failed",
+    "progress": 42,
+    "stepResults": [
+      {
+        "stepNumber": 1,
+        "stepStatus": "pass",
+        "stepDescription": "Open the browser and navigate to https://invoify.vercel.app/en",
+        "stepStatusReason": "Open the browser and navigate to https://invoify.vercel.app/en",
+        "isScreenShotcaptured": true,
+        "runTime": 7626
+      },
+      {
+        "stepNumber": 2,
+        "stepStatus": "pass",
+        "stepDescription": "Locate and click the Next button within the from and to form to proceed.",
+        "stepStatusReason": "Click the \"Next\" button within the from and to form to proceed.",
+        "isScreenShotcaptured": true,
+        "summaryText": [
+          "Processing: Click the \"Next\" button within the from and to form to proceed.",
+          "Completed: Click the \"Next\" button within the from and to form to proceed."
+        ],
+        "runTime": 7749
+      },
+      {
+        "stepNumber": 3,
+        "stepStatus": "pass",
+        "stepDescription": "Scroll down the page until you see the 'Choose Invoice Template:' section.",
+        "stepStatusReason": "Scroll down the page until the 'Choose Invoice Template:' section is visible.",
+        "isScreenShotcaptured": true,
+        "summaryText": [
+          "Processing: Scroll down the page until the 'Choose Invoice Template:' section is visible.",
+          "Completed: Scroll down the page until the 'Choose Invoice Template:' section is visible."
+        ],
+        "runTime": 14920
+      },
+      {
+        "stepNumber": 4,
+        "stepStatus": "pass",
+        "stepDescription": "Verify that both 'Template 1' and 'Template 2' options are visible.",
+        "stepStatusReason": "Verify that the 'Template 1' option is visible., Verify that the 'Template 2' option is visible.",
+        "isScreenShotcaptured": true,
+        "summaryText": [
+          "Processing: Verify that the 'Template 1' option is visible.",
+          "Completed: Verify that the 'Template 1' option is visible.",
+          "Processing: Verify that the 'Template 2' option is visible.",
+          "Completed: Verify that the 'Template 2' option is visible."
+        ],
+        "runTime": 11465
+      },
+      {
+        "stepNumber": 5,
+        "stepStatus": "pass",
+        "stepDescription": "Check the Live Preview on the right side to note that Template 1 shows the \"invoice #\" text on the right.",
+        "stepStatusReason": "Verify that the \"Invoice #\" text is visible on the right side in the Live Preview section.",
+        "isScreenShotcaptured": true,
+        "summaryText": [
+          "Processing: Verify that the \"Invoice #\" text is visible on the right side in the Live Preview section.",
+          "Completed: Verify that the \"Invoice #\" text is visible on the right side in the Live Preview section."
+        ],
+        "runTime": 8955
+      },
+      {
+        "stepNumber": 6,
+        "stepStatus": "fail",
+        "stepDescription": "Select the 'Template 2' option and ensure that it displays a checkmark indicating it is chosen.",
+        "stepStatusReason": "\u001b[31mTimed out 5000ms waiting for \u001b[39mexpect(locator).toHaveClass(expected)\n\nLocator: locator('div.flex.flex-col.flex-shrink-0:has-text(\"Template 2 Select\") button.bg-primary.text-primary-foreground')\nExpected pattern: /selected/\nReceived: <element(s) not found>\nCall log:\n\u001b[2m  - Expect \"to.have.class\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator('div.flex.flex-col.flex-shrink-0:has-text(\"Template 2 Select\") button.bg-primary.text-primary-foreground')\u001b[22m\n (1 sub-steps failed, 1 executed, 0 skipped)",
+        "isScreenShotcaptured": false,
+        "summaryText": [
+          "Processing: Click the \"Select\" button next to the 'Template 2' option.",
+          "Completed: Click the \"Select\" button next to the 'Template 2' option.",
+          "Processing: Verify that a checkmark is displayed next to the 'Template 2' option indicating it is chosen."
+        ],
+        "runTime": 50846
+      },
+      {
+        "stepNumber": 7,
+        "stepStatus": "pending",
+        "stepDescription": "Click the Select button located below the Template 2 option.",
+        "stepStatusReason": "awaiting status reason rationale",
+        "isScreenShotcaptured": false,
+        "summaryText": []
+      },
+      {
+        "stepNumber": 8,
+        "stepStatus": "pending",
+        "stepDescription": "Verify in the Live Preview section that the invoice preview now displays the invoice number text on the left side.",
+        "stepStatusReason": "awaiting status reason rationale",
+        "isScreenShotcaptured": false,
+        "summaryText": []
+      },
+      {
+        "stepNumber": 9,
+        "stepStatus": "pending",
+        "stepDescription": "Confirm that all existing invoice data remains intact after applying the new template design.",
         "stepStatusReason": "awaiting status reason rationale",
         "isScreenShotcaptured": false,
         "summaryText": []
@@ -88,1202 +918,7 @@
       {
         "stepNumber": 10,
         "stepStatus": "pending",
-        "stepDescription": "Take a screenshot of the completed Bill From step to document the test results.",
-        "stepStatusReason": "awaiting status reason rationale",
-        "isScreenShotcaptured": false,
-        "summaryText": []
-      }
-    ],
-    "startedAt": 1760705237037,
-    "screenshotDir": "/Users/apple/Desktop/Office/demo-projects/invoify/.geck/test-metadata/test_1760704506784/screenshots",
-    "isMarkDownReport": true,
-    "stepsSummary": "Test the Bill From section in Step 1 of invoice creation wizard. Verify all required fields can be filled, validation works correctly, and data persists when navigating between steps.",
-    "url": "https://invoify.vercel.app",
-    "testname": "Invoice Creation - Step 1 Bill From Section",
-    "finishedAt": 1760705301162,
-    "totalTimeElapsed": 64125,
-    "promptTokens": 1708,
-    "completionTokens": 1349,
-    "totalTokens": 3057,
-    "costEstimate": 0.0010655999999999999,
-    "isGeneratingReport": false
-  },
-  {
-    "id": "test_1760704526323",
-    "status": "failed",
-    "progress": 11,
-    "stepResults": [
-      {
-        "stepNumber": 1,
-        "stepStatus": "pass",
-        "stepDescription": "Open the browser and navigate to the invoify application URL.",
-        "stepStatusReason": "Open the browser and navigate to the invoify application URL.",
-        "isScreenShotcaptured": true,
-        "uiReviewResults": {
-          "total-checks-performed": 9,
-          "checks-passed": 8,
-          "checks-failed": 1,
-          "checks-results": [
-            {
-              "item": "Check for correct spelling and accurate content placement",
-              "status": "looks off",
-              "comment": "Placeholder text is not informative; should include real example data."
-            }
-          ]
-        },
-        "runTime": 14397
-      },
-      {
-        "stepNumber": 2,
-        "stepStatus": "fail",
-        "stepDescription": "Wait for the invoice creation wizard to load and display the Bill To section in Step 1.",
-        "stepStatusReason": "Timed out 5000ms waiting for expect(locator).toBeVisible()\n\nLocator: locator('h4').filter({ hasText: 'Bill To  :' })\nExpected: visible\nReceived: <element(s) not found>\nCall log:\n  - Expect \"to.be.visible\" with timeout 5000ms\n  - waiting for locator('h4').filter({ hasText: 'Bill To  :' })\n (1 sub-steps failed, 0 executed, 0 skipped)",
-        "isScreenShotcaptured": false,
-        "summaryText": [
-          "Processing: Verify that the \"Bill To\" section is visible in Step 1 of the invoice creation wizard."
-        ],
-        "runTime": 44785
-      },
-      {
-        "stepNumber": 3,
-        "stepStatus": "pending",
-        "stepDescription": "Enter receiver details in the Bill To section, filling all required fields with valid information.",
-        "stepStatusReason": "awaiting status reason rationale",
-        "isScreenShotcaptured": false,
-        "summaryText": []
-      },
-      {
-        "stepNumber": 4,
-        "stepStatus": "pending",
-        "stepDescription": "Trigger form validation by attempting to proceed with incomplete or incorrect receiver information to check for error messages.",
-        "stepStatusReason": "awaiting status reason rationale",
-        "isScreenShotcaptured": false,
-        "summaryText": []
-      },
-      {
-        "stepNumber": 5,
-        "stepStatus": "pending",
-        "stepDescription": "Correct any validation errors by updating the receiver information with proper data in the Bill To fields.",
-        "stepStatusReason": "awaiting status reason rationale",
-        "isScreenShotcaptured": false,
-        "summaryText": []
-      },
-      {
-        "stepNumber": 6,
-        "stepStatus": "pending",
-        "stepDescription": "Proceed to the next step of the invoice creation wizard to test navigation.",
-        "stepStatusReason": "awaiting status reason rationale",
-        "isScreenShotcaptured": false,
-        "summaryText": []
-      },
-      {
-        "stepNumber": 7,
-        "stepStatus": "pending",
-        "stepDescription": "Navigate back to Step 1 of the wizard to verify that the previously entered Bill To data persists.",
-        "stepStatusReason": "awaiting status reason rationale",
-        "isScreenShotcaptured": false,
-        "summaryText": []
-      },
-      {
-        "stepNumber": 8,
-        "stepStatus": "pending",
-        "stepDescription": "Confirm that the receiver information entered in the Bill To section remains unchanged and correctly displayed.",
-        "stepStatusReason": "awaiting status reason rationale",
-        "isScreenShotcaptured": false,
-        "summaryText": []
-      },
-      {
-        "stepNumber": 9,
-        "stepStatus": "pending",
-        "stepDescription": "Capture a screenshot of the final state of Step 1 with the Bill To details to document the successful test outcome.",
-        "stepStatusReason": "awaiting status reason rationale",
-        "isScreenShotcaptured": false,
-        "summaryText": []
-      }
-    ],
-    "startedAt": 1760705329327,
-    "screenshotDir": "/Users/apple/Desktop/Office/demo-projects/invoify/.geck/test-metadata/test_1760704526323/screenshots",
-    "isMarkDownReport": true,
-    "stepsSummary": "Test the Bill To section in Step 1 of invoice creation wizard. Verify receiver information can be filled, validation works, and data persists when navigating between steps.",
-    "url": "https://invoify.vercel.app",
-    "testname": "Invoice Creation - Step 1 Bill To Section",
-    "finishedAt": 1760705388630,
-    "totalTimeElapsed": 59303,
-    "promptTokens": 2834,
-    "completionTokens": 1209,
-    "totalTokens": 4043,
-    "costEstimate": 0.0011505,
-    "isGeneratingReport": false
-  },
-  {
-    "id": "test_1760704547534",
-    "status": "failed",
-    "progress": 14,
-    "stepResults": [
-      {
-        "stepNumber": 1,
-        "stepStatus": "pass",
-        "stepDescription": "Open the web browser and navigate to the URL https://invoify.vercel.app",
-        "stepStatusReason": "Open the web browser and navigate to the URL https://invoify.vercel.app",
-        "isScreenShotcaptured": true,
-        "uiReviewResults": {
-          "total-checks-performed": 9,
-          "checks-passed": 8,
-          "checks-failed": 1,
-          "checks-results": [
-            {
-              "item": "Review button size, shape, and style consistency",
-              "status": "looks off",
-              "comment": "Buttons vary in style and size across templates."
-            }
-          ]
-        },
-        "runTime": 17956
-      },
-      {
-        "stepNumber": 2,
-        "stepStatus": "fail",
-        "stepDescription": "Wait for the landing page to load and verify that the main interface is visible",
-        "stepStatusReason": "Timed out 5000ms waiting for expect(locator).toBeVisible()\n\nLocator: getByText('BETA English Toggle theme')\nExpected: visible\nReceived: <element(s) not found>\nCall log:\n  - Expect \"to.be.visible\" with timeout 5000ms\n  - waiting for getByText('BETA English Toggle theme')\n (1 sub-steps failed, 0 executed, 0 skipped)",
-        "isScreenShotcaptured": false,
-        "summaryText": [
-          "Processing: Verify that the header with the text \"BETA English Toggle theme\" is visible."
-        ],
-        "runTime": 65574
-      },
-      {
-        "stepNumber": 3,
-        "stepStatus": "pending",
-        "stepDescription": "Locate and select Template 1 from the available template options",
-        "stepStatusReason": "awaiting status reason rationale",
-        "isScreenShotcaptured": false,
-        "summaryText": []
-      },
-      {
-        "stepNumber": 4,
-        "stepStatus": "pending",
-        "stepDescription": "Confirm that the live preview updates immediately to reflect Template 1 changes",
-        "stepStatusReason": "awaiting status reason rationale",
-        "isScreenShotcaptured": false,
-        "summaryText": []
-      },
-      {
-        "stepNumber": 5,
-        "stepStatus": "pending",
-        "stepDescription": "Locate and select Template 2 from the available template options",
-        "stepStatusReason": "awaiting status reason rationale",
-        "isScreenShotcaptured": false,
-        "summaryText": []
-      },
-      {
-        "stepNumber": 6,
-        "stepStatus": "pending",
-        "stepDescription": "Confirm that the live preview updates immediately to reflect Template 2 changes",
-        "stepStatusReason": "awaiting status reason rationale",
-        "isScreenShotcaptured": false,
-        "summaryText": []
-      },
-      {
-        "stepNumber": 7,
-        "stepStatus": "pending",
-        "stepDescription": "Take a screenshot of the updated template preview for verification",
-        "stepStatusReason": "awaiting status reason rationale",
-        "isScreenShotcaptured": false,
-        "summaryText": []
-      }
-    ],
-    "startedAt": 1760705425491,
-    "screenshotDir": "/Users/apple/Desktop/Office/demo-projects/invoify/.geck/test-metadata/test_1760704547534/screenshots",
-    "isMarkDownReport": true,
-    "stepsSummary": "Test template selection functionality. Verify that users can switch between Template 1 and Template 2, and that the live preview updates immediately when template is changed.",
-    "url": "https://invoify.vercel.app",
-    "testname": "Template System - Template Selection",
-    "finishedAt": 1760705509090,
-    "totalTimeElapsed": 83599,
-    "promptTokens": 3766,
-    "completionTokens": 1469,
-    "totalTokens": 5235,
-    "costEstimate": 0.0014463,
-    "isGeneratingReport": false
-  },
-  {
-    "id": "test_1760704569914",
-    "status": "failed",
-    "progress": 13,
-    "stepResults": [
-      {
-        "stepNumber": 1,
-        "stepStatus": "pass",
-        "stepDescription": "Launch the web browser and navigate to the invoify application URL 'https://invoify.vercel.app'.",
-        "stepStatusReason": "Launch the web browser and navigate to the invoify application URL 'https://invoify.vercel.app'.",
-        "isScreenShotcaptured": true,
-        "uiReviewResults": {
-          "total-checks-performed": 9,
-          "checks-passed": 8,
-          "checks-failed": 1,
-          "checks-results": [
-            {
-              "item": "Verify presence and clarity of images and icons",
-              "status": "looks off",
-              "comment": "Logo upload option is not visible in this view."
-            }
-          ]
-        },
-        "runTime": 14431
-      },
-      {
-        "stepNumber": 2,
-        "stepStatus": "fail",
-        "stepDescription": "Locate the invoice templates section where logo editing is available.",
-        "stepStatusReason": "Cannot find the invoice templates section where logo editing is available.",
-        "isScreenShotcaptured": false,
-        "uiReviewResults": {
-          "total-checks-performed": 9,
-          "checks-passed": 8,
-          "checks-failed": 1,
-          "checks-results": [
-            {
-              "item": "Verify presence and clarity of images and icons",
-              "status": "looks off",
-              "comment": "Missing logo upload option visibility."
-            }
-          ]
-        },
-        "summaryText": [
-          "Step failed: Cannot find the invoice templates section where logo editing is available."
-        ],
-        "runTime": 12181
-      },
-      {
-        "stepNumber": 3,
-        "stepStatus": "pending",
-        "stepDescription": "Identify the option to upload a logo image in the template interface.",
-        "stepStatusReason": "awaiting status reason rationale",
-        "isScreenShotcaptured": false,
-        "summaryText": []
-      },
-      {
-        "stepNumber": 4,
-        "stepStatus": "pending",
-        "stepDescription": "Select a valid logo image file to upload using the upload functionality provided.",
-        "stepStatusReason": "awaiting status reason rationale",
-        "isScreenShotcaptured": false,
-        "summaryText": []
-      },
-      {
-        "stepNumber": 5,
-        "stepStatus": "pending",
-        "stepDescription": "Verify that the uploaded logo appears correctly in the current invoice template preview.",
-        "stepStatusReason": "awaiting status reason rationale",
-        "isScreenShotcaptured": false,
-        "summaryText": []
-      },
-      {
-        "stepNumber": 6,
-        "stepStatus": "pending",
-        "stepDescription": "Switch to a different invoice template within the application.",
-        "stepStatusReason": "awaiting status reason rationale",
-        "isScreenShotcaptured": false,
-        "summaryText": []
-      },
-      {
-        "stepNumber": 7,
-        "stepStatus": "pending",
-        "stepDescription": "Confirm that the previously uploaded logo persists and is displayed correctly in the new template.",
-        "stepStatusReason": "awaiting status reason rationale",
-        "isScreenShotcaptured": false,
-        "summaryText": []
-      },
-      {
-        "stepNumber": 8,
-        "stepStatus": "pending",
-        "stepDescription": "Take a final screenshot to capture the state of the invoice templates displaying the logo.",
-        "stepStatusReason": "awaiting status reason rationale",
-        "isScreenShotcaptured": false,
-        "summaryText": []
-      }
-    ],
-    "startedAt": 1760705540459,
-    "screenshotDir": "/Users/apple/Desktop/Office/demo-projects/invoify/.geck/test-metadata/test_1760704569914/screenshots",
-    "isMarkDownReport": true,
-    "stepsSummary": "Test logo upload functionality in invoice templates. Verify that users can upload a logo image, it displays correctly in both templates, and the logo persists when switching between templates.",
-    "url": "https://invoify.vercel.app",
-    "testname": "Template System - Logo Upload",
-    "finishedAt": 1760705567123,
-    "totalTimeElapsed": 26664,
-    "promptTokens": 4774,
-    "completionTokens": 1494,
-    "totalTokens": 6268,
-    "costEstimate": 0.0016125,
-    "isGeneratingReport": false
-  },
-  {
-    "id": "test_1760704592136",
-    "status": "failed",
-    "progress": 63,
-    "stepResults": [
-      {
-        "stepNumber": 1,
-        "stepStatus": "pass",
-        "stepDescription": "Open a web browser and navigate to the invoify live preview URL (https://invoify.vercel.app).",
-        "stepStatusReason": "Open a web browser and navigate to the invoify live preview URL (https://invoify.vercel.app).",
-        "isScreenShotcaptured": true,
-        "uiReviewResults": {
-          "total-checks-performed": 9,
-          "checks-passed": 7,
-          "checks-failed": 2,
-          "checks-results": [
-            {
-              "item": "Check visibility and alignment of form inputs and labels",
-              "status": "looks off",
-              "comment": "Spacing between form fields is inconsistent."
-            },
-            {
-              "item": "Ensure consistent padding and margins throughout",
-              "status": "looks off",
-              "comment": "Padding between sections needs adjustment."
-            }
-          ]
-        },
-        "runTime": 18222
-      },
-      {
-        "stepNumber": 2,
-        "stepStatus": "pass",
-        "stepDescription": "Wait for the page to fully load and ensure the live preview panel is visible.",
-        "stepStatusReason": "Verify the live preview panel is visible by checking for the presence of the \"Live Preview:\" heading.",
-        "isScreenShotcaptured": true,
-        "summaryText": [
-          "Processing: Verify the live preview panel is visible by checking for the presence of the \"Live Preview:\" heading.",
-          "Completed: Verify the live preview panel is visible by checking for the presence of the \"Live Preview:\" heading."
-        ],
-        "uiReviewResults": {
-          "total-checks-performed": 9,
-          "checks-passed": 8,
-          "checks-failed": 1,
-          "checks-results": [
-            {
-              "item": "Ensure consistent padding and margins throughout",
-              "status": "looks off",
-              "comment": "Inconsistent spacing between form fields."
-            }
-          ]
-        },
-        "runTime": 23364
-      },
-      {
-        "stepNumber": 3,
-        "stepStatus": "pass",
-        "stepDescription": "Identify the form fields on the page that correspond to invoice details.",
-        "stepStatusReason": "Identify the form fields on the page that correspond to invoice details.",
-        "isScreenShotcaptured": true,
-        "uiReviewResults": {
-          "total-checks-performed": 9,
-          "checks-passed": 7,
-          "checks-failed": 2,
-          "checks-results": [
-            {
-              "item": "Check visibility and alignment of form inputs and labels",
-              "status": "looks off",
-              "comment": "Labels and inputs are misaligned in some sections."
-            },
-            {
-              "item": "Ensure consistent padding and margins throughout",
-              "status": "looks off",
-              "comment": "Inconsistent padding between fields and sections."
-            }
-          ]
-        },
-        "runTime": 9431,
-        "summaryText": []
-      },
-      {
-        "stepNumber": 4,
-        "stepStatus": "pass",
-        "stepDescription": "Enter sample data into the invoice form fields to simulate a user typing.",
-        "stepStatusReason": "Fill the \"Name\" field under \"Bill From\" with sample data., Fill the \"Address\" field under \"Bill From\" with sample data., Fill the \"Zip\" field under \"Bill From\" with sample data., Fill the \"City\" field under \"Bill From\" with sample data., Fill the \"Country\" field under \"Bill From\" with sample data., Fill the \"Email\" field under \"Bill From\" with sample data., Fill the \"Phone\" field under \"Bill From\" with sample data., Fill the \"Name\" field under \"Bill To\" with sample data., Fill the \"Address\" field under \"Bill To\" with sample data., Fill the \"Zip\" field under \"Bill To\" with sample data., Fill the \"City\" field under \"Bill To\" with sample data., Fill the \"Country\" field under \"Bill To\" with sample data., Fill the \"Email\" field under \"Bill To\" with sample data., Fill the \"Phone\" field under \"Bill To\" with sample data.",
-        "isScreenShotcaptured": true,
-        "summaryText": [
-          "Processing: Fill the \"Name\" field under \"Bill From\" with sample data.",
-          "Completed: Fill the \"Name\" field under \"Bill From\" with sample data.",
-          "Processing: Fill the \"Address\" field under \"Bill From\" with sample data.",
-          "Completed: Fill the \"Address\" field under \"Bill From\" with sample data.",
-          "Processing: Fill the \"Zip\" field under \"Bill From\" with sample data.",
-          "Completed: Fill the \"Zip\" field under \"Bill From\" with sample data.",
-          "Processing: Fill the \"City\" field under \"Bill From\" with sample data.",
-          "Completed: Fill the \"City\" field under \"Bill From\" with sample data.",
-          "Processing: Fill the \"Country\" field under \"Bill From\" with sample data.",
-          "Completed: Fill the \"Country\" field under \"Bill From\" with sample data.",
-          "Processing: Fill the \"Email\" field under \"Bill From\" with sample data.",
-          "Completed: Fill the \"Email\" field under \"Bill From\" with sample data.",
-          "Processing: Fill the \"Phone\" field under \"Bill From\" with sample data.",
-          "Completed: Fill the \"Phone\" field under \"Bill From\" with sample data.",
-          "Processing: Fill the \"Name\" field under \"Bill To\" with sample data.",
-          "Completed: Fill the \"Name\" field under \"Bill To\" with sample data.",
-          "Processing: Fill the \"Address\" field under \"Bill To\" with sample data.",
-          "Completed: Fill the \"Address\" field under \"Bill To\" with sample data.",
-          "Processing: Fill the \"Zip\" field under \"Bill To\" with sample data.",
-          "Completed: Fill the \"Zip\" field under \"Bill To\" with sample data.",
-          "Processing: Fill the \"City\" field under \"Bill To\" with sample data.",
-          "Completed: Fill the \"City\" field under \"Bill To\" with sample data.",
-          "Processing: Fill the \"Country\" field under \"Bill To\" with sample data.",
-          "Completed: Fill the \"Country\" field under \"Bill To\" with sample data.",
-          "Processing: Fill the \"Email\" field under \"Bill To\" with sample data.",
-          "Completed: Fill the \"Email\" field under \"Bill To\" with sample data.",
-          "Processing: Fill the \"Phone\" field under \"Bill To\" with sample data.",
-          "Completed: Fill the \"Phone\" field under \"Bill To\" with sample data."
-        ],
-        "uiReviewResults": {
-          "total-checks-performed": 9,
-          "checks-passed": 8,
-          "checks-failed": 1,
-          "checks-results": [
-            {
-              "item": "Check visibility and alignment of form inputs and labels",
-              "status": "looks off",
-              "comment": "Labels are slightly misaligned with their corresponding fields."
-            }
-          ]
-        },
-        "runTime": 288261
-      },
-      {
-        "stepNumber": 5,
-        "stepStatus": "pass",
-        "stepDescription": "Observe the live preview panel to confirm that the entered data is immediately reflected.",
-        "stepStatusReason": "Verify that the \"Live Preview:\" heading is visible to confirm the live preview panel is displayed.",
-        "isScreenShotcaptured": true,
-        "summaryText": [
-          "Processing: Verify that the \"Live Preview:\" heading is visible to confirm the live preview panel is displayed.",
-          "Completed: Verify that the \"Live Preview:\" heading is visible to confirm the live preview panel is displayed."
-        ],
-        "uiReviewResults": {
-          "total-checks-performed": 9,
-          "checks-passed": 9,
-          "checks-failed": 0,
-          "checks-results": []
-        },
-        "runTime": 27552
-      },
-      {
-        "stepNumber": 6,
-        "stepStatus": "fail",
-        "stepDescription": "Modify the data in the form fields and verify that the live preview updates dynamically as changes are made.",
-        "stepStatusReason": "Sub-step execution validation failed - the action did not produce the expected outcome (1 sub-steps failed, 2 executed, 0 skipped)",
-        "isScreenShotcaptured": false,
-        "summaryText": [
-          "Processing: Verify that the live preview panel displays the updated \"Name\" from the \"Bill From\" section.",
-          "Validation failed: Verify that the live preview panel displays the updated \"Name\" from the \"Bill From\" section. - will retry in 2 * 100ms",
-          "Completed: Verify that the live preview panel displays the updated \"Name\" from the \"Bill From\" section.",
-          "Processing: Verify that the live preview panel displays the updated \"Address\" from the \"Bill From\" section.",
-          "Validation failed: Verify that the live preview panel displays the updated \"Address\" from the \"Bill From\" section. - will retry in 2 * 100ms",
-          "Completed: Verify that the live preview panel displays the updated \"Address\" from the \"Bill From\" section.",
-          "Processing: Verify that the live preview panel displays the updated \"Zip\" from the \"Bill From\" section.",
-          "Validation failed: Verify that the live preview panel displays the updated \"Zip\" from the \"Bill From\" section. - will retry in 2 * 100ms",
-          "Validation failed: Verify that the live preview panel displays the updated \"Zip\" from the \"Bill From\" section. - will retry in 3 * 100ms",
-          "Validation failed: Verify that the live preview panel displays the updated \"Zip\" from the \"Bill From\" section. - will retry in 4 * 100ms",
-          "Validation failed: Verify that the live preview panel displays the updated \"Zip\" from the \"Bill From\" section. - will retry in 5 * 100ms",
-          "Validation failed: Verify that the live preview panel displays the updated \"Zip\" from the \"Bill From\" section. - will retry in 6 * 100ms"
-        ],
-        "uiReviewResults": {
-          "total-checks-performed": 9,
-          "checks-passed": 8,
-          "checks-failed": 1,
-          "checks-results": [
-            {
-              "item": "Ensure consistent padding and margins throughout",
-              "status": "looks off",
-              "comment": "Inconsistent margins between form fields."
-            }
-          ]
-        },
-        "runTime": 96395
-      },
-      {
-        "stepNumber": 7,
-        "stepStatus": "pending",
-        "stepDescription": "Confirm that all changes are accurately shown in the preview without needing a manual refresh.",
-        "stepStatusReason": "awaiting status reason rationale",
-        "isScreenShotcaptured": false,
-        "summaryText": []
-      },
-      {
-        "stepNumber": 8,
-        "stepStatus": "pending",
-        "stepDescription": "Take a screenshot of the live preview panel to document the final state after all modifications.",
-        "stepStatusReason": "awaiting status reason rationale",
-        "isScreenShotcaptured": false,
-        "summaryText": []
-      }
-    ],
-    "startedAt": 1760705592438,
-    "screenshotDir": "/Users/apple/Desktop/Office/demo-projects/invoify/.geck/test-metadata/test_1760704592136/screenshots",
-    "isMarkDownReport": true,
-    "stepsSummary": "Test live preview functionality. Verify that changes made in the form fields are immediately reflected in the live preview panel, and that the preview updates in real-time as users type or modify data.",
-    "url": "https://invoify.vercel.app",
-    "testname": "Live Preview System - Real-time Updates",
-    "finishedAt": 1760706055675,
-    "totalTimeElapsed": 463237,
-    "promptTokens": 7460,
-    "completionTokens": 2296,
-    "totalTokens": 9756,
-    "costEstimate": 0.0024966,
-    "isGeneratingReport": false
-  },
-  {
-    "id": "test_1760704615157",
-    "status": "failed",
-    "progress": 25,
-    "stepResults": [
-      {
-        "stepNumber": 1,
-        "stepStatus": "pass",
-        "stepDescription": "Open the web browser and navigate to the URL 'https://invoify.vercel.app'.",
-        "stepStatusReason": "Open the web browser and navigate to the URL 'https://invoify.vercel.app'.",
-        "isScreenShotcaptured": true,
-        "uiReviewResults": {
-          "total-checks-performed": 9,
-          "checks-passed": 9,
-          "checks-failed": 0,
-          "checks-results": []
-        },
-        "runTime": 14743
-      },
-      {
-        "stepNumber": 2,
-        "stepStatus": "pass",
-        "stepDescription": "Wait until the homepage loads and the invoice creation wizard is visible.",
-        "stepStatusReason": "Verify that the invoice creation wizard is visible by checking for the presence of the \"Invoice\" heading.",
-        "isScreenShotcaptured": true,
-        "summaryText": [
-          "Processing: Verify that the invoice creation wizard is visible by checking for the presence of the \"Invoice\" heading.",
-          "Completed: Verify that the invoice creation wizard is visible by checking for the presence of the \"Invoice\" heading."
-        ],
-        "uiReviewResults": {
-          "total-checks-performed": 9,
-          "checks-passed": 7,
-          "checks-failed": 2,
-          "checks-results": [
-            {
-              "item": "Review button size, shape, and style consistency",
-              "status": "looks off",
-              "comment": "Button styles should be more consistent for clarity."
-            },
-            {
-              "item": "Ensure consistent padding and margins throughout",
-              "status": "looks off",
-              "comment": "Padding between sections should be uniform."
-            }
-          ]
-        },
-        "runTime": 32509
-      },
-      {
-        "stepNumber": 3,
-        "stepStatus": "fail",
-        "stepDescription": "Identify and select the initial step of the invoice creation wizard, confirming that the live preview displays the default invoice details.",
-        "stepStatusReason": "locator.click: Timeout 5000ms exceeded.\nCall log:\n  - waiting for getByRole('button', { name: /1\\s+\\.\\s+From\\s+&\\s+To/i })\n (1 sub-steps failed, 0 executed, 0 skipped)",
-        "isScreenShotcaptured": false,
-        "summaryText": [
-          "Processing: Click the button labeled \"1 . From & To\" to select the initial step of the invoice creation wizard."
-        ],
-        "runTime": 49628
-      },
-      {
-        "stepNumber": 4,
-        "stepStatus": "pending",
-        "stepDescription": "Navigate to the next wizard step and observe that the live preview updates to reflect the new invoice details.",
-        "stepStatusReason": "awaiting status reason rationale",
-        "isScreenShotcaptured": false,
-        "summaryText": []
-      },
-      {
-        "stepNumber": 5,
-        "stepStatus": "pending",
-        "stepDescription": "Proceed to another step in the wizard and verify that the live preview synchronizes with the updated information.",
-        "stepStatusReason": "awaiting status reason rationale",
-        "isScreenShotcaptured": false,
-        "summaryText": []
-      },
-      {
-        "stepNumber": 6,
-        "stepStatus": "pending",
-        "stepDescription": "Scroll if necessary through the wizard to ensure all live preview changes are visible and accurate.",
-        "stepStatusReason": "awaiting status reason rationale",
-        "isScreenShotcaptured": false,
-        "summaryText": []
-      },
-      {
-        "stepNumber": 7,
-        "stepStatus": "pending",
-        "stepDescription": "Navigate back to a previous wizard step and confirm that the live preview reverts to display the corresponding data.",
-        "stepStatusReason": "awaiting status reason rationale",
-        "isScreenShotcaptured": false,
-        "summaryText": []
-      },
-      {
-        "stepNumber": 8,
-        "stepStatus": "pending",
-        "stepDescription": "Capture a final screenshot of the wizard steps and the updated live preview to verify successful synchronization.",
-        "stepStatusReason": "awaiting status reason rationale",
-        "isScreenShotcaptured": false,
-        "summaryText": []
-      }
-    ],
-    "startedAt": 1760706105431,
-    "screenshotDir": "/Users/apple/Desktop/Office/demo-projects/invoify/.geck/test-metadata/test_1760704615157/screenshots",
-    "isMarkDownReport": true,
-    "stepsSummary": "Test live preview synchronization with wizard steps. Verify that the preview updates correctly when navigating between different steps of the invoice creation wizard.",
-    "url": "https://invoify.vercel.app",
-    "testname": "Live Preview System - Wizard Step Synchronization",
-    "finishedAt": 1760706202322,
-    "totalTimeElapsed": 96891,
-    "promptTokens": 8622,
-    "completionTokens": 1354,
-    "totalTokens": 9976,
-    "costEstimate": 0.0021057000000000003,
-    "isGeneratingReport": false
-  },
-  {
-    "id": "test_1760704639831",
-    "status": "failed",
-    "progress": 14,
-    "stepResults": [
-      {
-        "stepNumber": 1,
-        "stepStatus": "pass",
-        "stepDescription": "Launch the web browser and navigate to https://invoify.vercel.app",
-        "stepStatusReason": "Launch the web browser and navigate to https://invoify.vercel.app",
-        "isScreenShotcaptured": true,
-        "uiReviewResults": {
-          "total-checks-performed": 9,
-          "checks-passed": 8,
-          "checks-failed": 1,
-          "checks-results": [
-            {
-              "item": "Check visibility and alignment of form inputs and labels",
-              "status": "looks off",
-              "comment": "Input fields misaligned with labels in some sections."
-            }
-          ]
-        },
-        "runTime": 19665
-      },
-      {
-        "stepNumber": 2,
-        "stepStatus": "fail",
-        "stepDescription": "Wait for the page to load fully and ensure the signature drawing canvas is visible",
-        "stepStatusReason": "Timed out 20000ms waiting for expect(locator).toBeVisible()\n\nLocator: locator('canvas')\nExpected: visible\nReceived: <element(s) not found>\nCall log:\n  - Expect \"to.be.visible\" with timeout 20000ms\n  - waiting for locator('canvas')\n (1 sub-steps failed, 0 executed, 0 skipped)",
-        "isScreenShotcaptured": false,
-        "summaryText": [
-          "Processing: Verify that the signature drawing canvas is visible on the page."
-        ],
-        "runTime": 94205
-      },
-      {
-        "stepNumber": 3,
-        "stepStatus": "pending",
-        "stepDescription": "Use the mouse or touch input to draw a signature on the designated canvas",
-        "stepStatusReason": "awaiting status reason rationale",
-        "isScreenShotcaptured": false,
-        "summaryText": []
-      },
-      {
-        "stepNumber": 4,
-        "stepStatus": "pending",
-        "stepDescription": "Confirm that the drawn signature appears correctly within the signature area",
-        "stepStatusReason": "awaiting status reason rationale",
-        "isScreenShotcaptured": false,
-        "summaryText": []
-      },
-      {
-        "stepNumber": 5,
-        "stepStatus": "pending",
-        "stepDescription": "Click the save or submit button to store the signature",
-        "stepStatusReason": "awaiting status reason rationale",
-        "isScreenShotcaptured": false,
-        "summaryText": []
-      },
-      {
-        "stepNumber": 6,
-        "stepStatus": "pending",
-        "stepDescription": "Navigate to the invoice section and verify that the saved signature is displayed properly",
-        "stepStatusReason": "awaiting status reason rationale",
-        "isScreenShotcaptured": false,
-        "summaryText": []
-      },
-      {
-        "stepNumber": 7,
-        "stepStatus": "pending",
-        "stepDescription": "Capture a final screenshot of the invoice displaying the signature to complete the test",
-        "stepStatusReason": "awaiting status reason rationale",
-        "isScreenShotcaptured": false,
-        "summaryText": []
-      }
-    ],
-    "startedAt": 1760706234591,
-    "screenshotDir": "/Users/apple/Desktop/Office/demo-projects/invoify/.geck/test-metadata/test_1760704639831/screenshots",
-    "isMarkDownReport": true,
-    "stepsSummary": "Test signature drawing functionality. Verify that users can draw signatures using mouse/touch input, the signature appears correctly, and can be saved and displayed in the invoice.",
-    "url": "https://invoify.vercel.app",
-    "testname": "Signature System - Draw Signature",
-    "finishedAt": 1760706348471,
-    "totalTimeElapsed": 113880,
-    "promptTokens": 9546,
-    "completionTokens": 1869,
-    "totalTokens": 11415,
-    "costEstimate": 0.0025532999999999997,
-    "isGeneratingReport": false
-  },
-  {
-    "id": "test_1760704661428",
-    "status": "failed",
-    "progress": 13,
-    "stepResults": [
-      {
-        "stepNumber": 1,
-        "stepStatus": "pass",
-        "stepDescription": "Open the web browser and navigate to the invoice application's URL: https://invoify.vercel.app.",
-        "stepStatusReason": "Open the web browser and navigate to the invoice application's URL: https://invoify.vercel.app.",
-        "isScreenShotcaptured": true,
-        "uiReviewResults": {
-          "total-checks-performed": 9,
-          "checks-passed": 8,
-          "checks-failed": 1,
-          "checks-results": [
-            {
-              "item": "Check visibility and alignment of form inputs and labels",
-              "status": "looks off",
-              "comment": "Labels and inputs are not visually aligned."
-            }
-          ]
-        },
-        "runTime": 15182
-      },
-      {
-        "stepNumber": 2,
-        "stepStatus": "fail",
-        "stepDescription": "Locate the section for adding a typed signature within the invoice interface.",
-        "stepStatusReason": "Cannot find the section for adding a typed signature within the invoice interface.",
-        "isScreenShotcaptured": false,
-        "uiReviewResults": {
-          "total-checks-performed": 9,
-          "checks-passed": 7,
-          "checks-failed": 2,
-          "checks-results": [
-            {
-              "item": "Ensure consistent and appropriate typography",
-              "status": "looks off",
-              "comment": "Inconsistent font styles noted in various sections."
-            },
-            {
-              "item": "Ensure consistent padding and margins throughout",
-              "status": "looks off",
-              "comment": "Uneven padding observed in input fields."
-            }
-          ]
-        },
-        "summaryText": [
-          "Step failed: Cannot find the section for adding a typed signature within the invoice interface."
-        ],
-        "runTime": 9265
-      },
-      {
-        "stepNumber": 3,
-        "stepStatus": "pending",
-        "stepDescription": "Type a sample signature into the designated input field for the signature.",
-        "stepStatusReason": "awaiting status reason rationale",
-        "isScreenShotcaptured": false,
-        "summaryText": []
-      },
-      {
-        "stepNumber": 4,
-        "stepStatus": "pending",
-        "stepDescription": "Select a different font from the available font options to see the signature change.",
-        "stepStatusReason": "awaiting status reason rationale",
-        "isScreenShotcaptured": false,
-        "summaryText": []
-      },
-      {
-        "stepNumber": 5,
-        "stepStatus": "pending",
-        "stepDescription": "Change the font style (e.g., italic, bold) using the provided style controls.",
-        "stepStatusReason": "awaiting status reason rationale",
-        "isScreenShotcaptured": false,
-        "summaryText": []
-      },
-      {
-        "stepNumber": 6,
-        "stepStatus": "pending",
-        "stepDescription": "Wait for the invoice preview to update and display the newly styled typed signature.",
-        "stepStatusReason": "awaiting status reason rationale",
-        "isScreenShotcaptured": false,
-        "summaryText": []
-      },
-      {
-        "stepNumber": 7,
-        "stepStatus": "pending",
-        "stepDescription": "Verify that the signature appears correctly in the invoice with the chosen font and style.",
-        "stepStatusReason": "awaiting status reason rationale",
-        "isScreenShotcaptured": false,
-        "summaryText": []
-      },
-      {
-        "stepNumber": 8,
-        "stepStatus": "pending",
-        "stepDescription": "Capture a screenshot of the completed invoice to confirm the correct display of the signature.",
-        "stepStatusReason": "awaiting status reason rationale",
-        "isScreenShotcaptured": false,
-        "summaryText": []
-      }
-    ],
-    "startedAt": 1760706374321,
-    "screenshotDir": "/Users/apple/Desktop/Office/demo-projects/invoify/.geck/test-metadata/test_1760704661428/screenshots",
-    "isMarkDownReport": true,
-    "stepsSummary": "Test typed signature functionality. Verify that users can type signatures using different fonts, change font styles, and the typed signature appears correctly in the invoice.",
-    "url": "https://invoify.vercel.app",
-    "testname": "Signature System - Type Signature",
-    "finishedAt": 1760706398775,
-    "totalTimeElapsed": 24454,
-    "promptTokens": 10600,
-    "completionTokens": 1756,
-    "totalTokens": 12356,
-    "costEstimate": 0.0026436,
-    "isGeneratingReport": false
-  },
-  {
-    "id": "test_1760704680280",
-    "status": "failed",
-    "progress": 25,
-    "stepResults": [
-      {
-        "stepNumber": 1,
-        "stepStatus": "pass",
-        "stepDescription": "Open a web browser and navigate to the invoify page at https://invoify.vercel.app",
-        "stepStatusReason": "Open a web browser and navigate to the invoify page at https://invoify.vercel.app",
-        "isScreenShotcaptured": true,
-        "uiReviewResults": {
-          "total-checks-performed": 9,
-          "checks-passed": 9,
-          "checks-failed": 0,
-          "checks-results": []
-        },
-        "runTime": 13511
-      },
-      {
-        "stepNumber": 2,
-        "stepStatus": "pass",
-        "stepDescription": "Confirm that the homepage loads successfully by checking for key elements on the page",
-        "stepStatusReason": "Verify that the \"Invoify Logo\" is visible on the homepage., Verify that the \"Toggle theme\" button is visible on the homepage., Verify that the \"Next\" button is visible on the homepage.",
-        "isScreenShotcaptured": true,
-        "summaryText": [
-          "Processing: Verify that the \"Invoify Logo\" is visible on the homepage.",
-          "Completed: Verify that the \"Invoify Logo\" is visible on the homepage.",
-          "Processing: Verify that the \"Toggle theme\" button is visible on the homepage.",
-          "Completed: Verify that the \"Toggle theme\" button is visible on the homepage.",
-          "Processing: Verify that the \"Next\" button is visible on the homepage.",
-          "Completed: Verify that the \"Next\" button is visible on the homepage."
-        ],
-        "uiReviewResults": {
-          "total-checks-performed": 9,
-          "checks-passed": 8,
-          "checks-failed": 1,
-          "checks-results": [
-            {
-              "item": "Ensure consistent padding and margins throughout",
-              "status": "looks off",
-              "comment": "Uneven spacing between input fields."
-            }
-          ]
-        },
-        "runTime": 50768
-      },
-      {
-        "stepNumber": 3,
-        "stepStatus": "fail",
-        "stepDescription": "Locate the signature upload area on the page, ensuring it is visible for interaction",
-        "stepStatusReason": "Cannot find the signature upload area on the page.",
-        "isScreenShotcaptured": false,
-        "uiReviewResults": {
-          "total-checks-performed": 9,
-          "checks-passed": 7,
-          "checks-failed": 2,
-          "checks-results": [
-            {
-              "item": "Review button size, shape, and style consistency",
-              "status": "looks off",
-              "comment": "Buttons lack uniformity in size and shape."
-            },
-            {
-              "item": "Ensure consistent padding and margins throughout",
-              "status": "looks off",
-              "comment": "Padding between sections appears inconsistent."
-            }
-          ]
-        },
-        "summaryText": [
-          "Step failed: Cannot find the signature upload area on the page."
-        ],
-        "runTime": 8983
-      },
-      {
-        "stepNumber": 4,
-        "stepStatus": "pending",
-        "stepDescription": "Upload a valid signature image file from your system using the provided upload function",
-        "stepStatusReason": "awaiting status reason rationale",
-        "isScreenShotcaptured": false,
-        "summaryText": []
-      },
-      {
-        "stepNumber": 5,
-        "stepStatus": "pending",
-        "stepDescription": "Verify that the uploaded signature image is displayed correctly on the page",
-        "stepStatusReason": "awaiting status reason rationale",
-        "isScreenShotcaptured": false,
-        "summaryText": []
-      },
-      {
-        "stepNumber": 6,
-        "stepStatus": "pending",
-        "stepDescription": "Attempt to upload a file of an unsupported type to test file validation rules",
-        "stepStatusReason": "awaiting status reason rationale",
-        "isScreenShotcaptured": false,
-        "summaryText": []
-      },
-      {
-        "stepNumber": 7,
-        "stepStatus": "pending",
-        "stepDescription": "Ensure that an appropriate error message is displayed for the invalid file upload",
-        "stepStatusReason": "awaiting status reason rationale",
-        "isScreenShotcaptured": false,
-        "summaryText": []
-      },
-      {
-        "stepNumber": 8,
-        "stepStatus": "pending",
-        "stepDescription": "Capture a screenshot of the final state to confirm that the signature upload functionality works as expected",
-        "stepStatusReason": "awaiting status reason rationale",
-        "isScreenShotcaptured": false,
-        "summaryText": []
-      }
-    ],
-    "startedAt": 1760706433082,
-    "screenshotDir": "/Users/apple/Desktop/Office/demo-projects/invoify/.geck/test-metadata/test_1760704680280/screenshots",
-    "isMarkDownReport": true,
-    "stepsSummary": "Test signature upload functionality. Verify that users can upload signature images, the uploaded signature displays correctly, and file validation works properly.",
-    "url": "https://invoify.vercel.app",
-    "testname": "Signature System - Upload Signature",
-    "finishedAt": 1760706506353,
-    "totalTimeElapsed": 73271,
-    "promptTokens": 11839,
-    "completionTokens": 1430,
-    "totalTokens": 13269,
-    "costEstimate": 0.0026338499999999996,
-    "isGeneratingReport": false
-  },
-  {
-    "id": "test_1760704696018",
-    "status": "failed",
-    "progress": 13,
-    "stepResults": [
-      {
-        "stepNumber": 1,
-        "stepStatus": "pass",
-        "stepDescription": "Open the browser and go to the URL https://invoify.vercel.app",
-        "stepStatusReason": "Open the browser and go to the URL https://invoify.vercel.app",
-        "isScreenShotcaptured": true,
-        "uiReviewResults": {
-          "total-checks-performed": 9,
-          "checks-passed": 8,
-          "checks-failed": 1,
-          "checks-results": [
-            {
-              "item": "Check visibility and alignment of form inputs and labels",
-              "status": "looks off",
-              "comment": "Some labels are misaligned with their corresponding inputs."
-            }
-          ]
-        },
-        "runTime": 16794
-      },
-      {
-        "stepNumber": 2,
-        "stepStatus": "fail",
-        "stepDescription": "Wait for the invoice application to fully load and display the line items section",
-        "stepStatusReason": "Timed out 5000ms waiting for expect(locator).toBeVisible()\n\nLocator: getByText('3 . Line Items')\nExpected: visible\nReceived: <element(s) not found>\nCall log:\n  - Expect \"to.be.visible\" with timeout 5000ms\n  - waiting for getByText('3 . Line Items')\n (1 sub-steps failed, 0 executed, 0 skipped)",
-        "isScreenShotcaptured": false,
-        "summaryText": [
-          "Processing: Verify that the \"Line Items\" section is visible on the page."
-        ],
-        "runTime": 48659
-      },
-      {
-        "stepNumber": 3,
-        "stepStatus": "pending",
-        "stepDescription": "Enter a specific value in the quantity field for a line item",
-        "stepStatusReason": "awaiting status reason rationale",
-        "isScreenShotcaptured": false,
-        "summaryText": []
-      },
-      {
-        "stepNumber": 4,
-        "stepStatus": "pending",
-        "stepDescription": "Enter a specific value in the unit price field for the same line item",
-        "stepStatusReason": "awaiting status reason rationale",
-        "isScreenShotcaptured": false,
-        "summaryText": []
-      },
-      {
-        "stepNumber": 5,
-        "stepStatus": "pending",
-        "stepDescription": "Verify that the total for the line item is computed automatically based on the quantity and unit price",
-        "stepStatusReason": "awaiting status reason rationale",
-        "isScreenShotcaptured": false,
-        "summaryText": []
-      },
-      {
-        "stepNumber": 6,
-        "stepStatus": "pending",
-        "stepDescription": "Update the quantity value and observe that the subtotal and total fields update in real-time",
-        "stepStatusReason": "awaiting status reason rationale",
-        "isScreenShotcaptured": false,
-        "summaryText": []
-      },
-      {
-        "stepNumber": 7,
-        "stepStatus": "pending",
-        "stepDescription": "Confirm that all line item calculations reflect the correct multiplication results",
-        "stepStatusReason": "awaiting status reason rationale",
-        "isScreenShotcaptured": false,
-        "summaryText": []
-      },
-      {
-        "stepNumber": 8,
-        "stepStatus": "pending",
-        "stepDescription": "Take a screenshot of the final invoice with updated calculations to verify the completed task",
-        "stepStatusReason": "awaiting status reason rationale",
-        "isScreenShotcaptured": false,
-        "summaryText": []
-      }
-    ],
-    "startedAt": 1760706592663,
-    "screenshotDir": "/Users/apple/Desktop/Office/demo-projects/invoify/.geck/test-metadata/test_1760704696018/screenshots",
-    "isMarkDownReport": true,
-    "stepsSummary": "Test line item calculations. Verify that quantity and unit price calculations work correctly, totals are computed automatically, and subtotals update in real-time.",
-    "url": "https://invoify.vercel.app",
-    "testname": "Financial Calculations - Line Item Totals",
-    "finishedAt": 1760706658123,
-    "totalTimeElapsed": 65460,
-    "promptTokens": 12855,
-    "completionTokens": 1600,
-    "totalTokens": 14455,
-    "costEstimate": 0.0028882499999999998,
-    "isGeneratingReport": false
-  },
-  {
-    "id": "test_1760704737181",
-    "status": "failed",
-    "progress": 9,
-    "stepResults": [
-      {
-        "stepNumber": 1,
-        "stepStatus": "pass",
-        "stepDescription": "Open a web browser and navigate to the invoicing application at https://invoify.vercel.app",
-        "stepStatusReason": "Open a web browser and navigate to the invoicing application at https://invoify.vercel.app",
-        "isScreenShotcaptured": true,
-        "uiReviewResults": {
-          "total-checks-performed": 9,
-          "checks-passed": 8,
-          "checks-failed": 1,
-          "checks-results": [
-            {
-              "item": "Ensure consistent padding and margins throughout",
-              "status": "looks off",
-              "comment": "Inconsistent padding between input fields in 'Bill From' and 'Bill To' sections."
-            }
-          ]
-        },
-        "runTime": 13493
-      },
-      {
-        "stepNumber": 2,
-        "stepStatus": "fail",
-        "stepDescription": "Verify that the invoice interface and tax calculation section are visible on the page",
-        "stepStatusReason": "Timed out 5000ms waiting for expect(locator).toBeVisible()\n\nLocator: locator('div:has-text(\"Tax Calculation\")')\nExpected: visible\nReceived: <element(s) not found>\nCall log:\n  - Expect \"to.be.visible\" with timeout 5000ms\n  - waiting for locator('div:has-text(\"Tax Calculation\")')\n (1 sub-steps failed, 1 executed, 0 skipped)",
-        "isScreenShotcaptured": false,
-        "summaryText": [
-          "Processing: Verify that the \"Invoice\" heading is visible on the page.",
-          "Completed: Verify that the \"Invoice\" heading is visible on the page.",
-          "Processing: Verify that the \"Tax Calculation\" section is visible on the page."
-        ],
-        "uiReviewResults": {
-          "total-checks-performed": 9,
-          "checks-passed": 9,
-          "checks-failed": 0,
-          "checks-results": []
-        },
-        "runTime": 63072
-      },
-      {
-        "stepNumber": 3,
-        "stepStatus": "pending",
-        "stepDescription": "Enter a base invoice amount in the amount field to be used for tax calculations",
-        "stepStatusReason": "awaiting status reason rationale",
-        "isScreenShotcaptured": false,
-        "summaryText": []
-      },
-      {
-        "stepNumber": 4,
-        "stepStatus": "pending",
-        "stepDescription": "Select the tax type option for percentage from the available tax settings",
-        "stepStatusReason": "awaiting status reason rationale",
-        "isScreenShotcaptured": false,
-        "summaryText": []
-      },
-      {
-        "stepNumber": 5,
-        "stepStatus": "pending",
-        "stepDescription": "Enter a tax percentage value, for example 10, into the tax input field",
-        "stepStatusReason": "awaiting status reason rationale",
-        "isScreenShotcaptured": false,
-        "summaryText": []
-      },
-      {
-        "stepNumber": 6,
-        "stepStatus": "pending",
-        "stepDescription": "Verify that the calculated tax amount reflects 10% of the base amount and that the total is updated accordingly",
-        "stepStatusReason": "awaiting status reason rationale",
-        "isScreenShotcaptured": false,
-        "summaryText": []
-      },
-      {
-        "stepNumber": 7,
-        "stepStatus": "pending",
-        "stepDescription": "Switch the tax setting to a fixed amount option from the available tax settings",
-        "stepStatusReason": "awaiting status reason rationale",
-        "isScreenShotcaptured": false,
-        "summaryText": []
-      },
-      {
-        "stepNumber": 8,
-        "stepStatus": "pending",
-        "stepDescription": "Enter a fixed tax value, for example 50, into the tax input field",
-        "stepStatusReason": "awaiting status reason rationale",
-        "isScreenShotcaptured": false,
-        "summaryText": []
-      },
-      {
-        "stepNumber": 9,
-        "stepStatus": "pending",
-        "stepDescription": "Verify that the tax amount is set to the fixed value and that the total invoice amount is updated correctly with the fixed tax included",
-        "stepStatusReason": "awaiting status reason rationale",
-        "isScreenShotcaptured": false,
-        "summaryText": []
-      },
-      {
-        "stepNumber": 10,
-        "stepStatus": "pending",
-        "stepDescription": "Scroll down if necessary to ensure all updated calculations are visible on the page",
+        "stepDescription": "Review the changes and ensure that the template selection and preview update are correctly displayed.",
         "stepStatusReason": "awaiting status reason rationale",
         "isScreenShotcaptured": false,
         "summaryText": []
@@ -1291,539 +926,7 @@
       {
         "stepNumber": 11,
         "stepStatus": "pending",
-        "stepDescription": "Take a screenshot of the completed tax calculation results to record the test outcome",
-        "stepStatusReason": "awaiting status reason rationale",
-        "isScreenShotcaptured": false,
-        "summaryText": []
-      }
-    ],
-    "startedAt": 1760706681081,
-    "screenshotDir": "/Users/apple/Desktop/Office/demo-projects/invoify/.geck/test-metadata/test_1760704737181/screenshots",
-    "isMarkDownReport": true,
-    "stepsSummary": "Test tax calculation functionality. Verify that tax can be applied as percentage or fixed amount, calculations are accurate, and the total updates correctly with tax included.",
-    "url": "https://invoify.vercel.app",
-    "testname": "Financial Calculations - Tax Calculation",
-    "finishedAt": 1760706757653,
-    "totalTimeElapsed": 76572,
-    "promptTokens": 14187,
-    "completionTokens": 1335,
-    "totalTokens": 15522,
-    "costEstimate": 0.00292905,
-    "isGeneratingReport": false
-  },
-  {
-    "id": "test_1760704758797",
-    "status": "failed",
-    "progress": 9,
-    "stepResults": [
-      {
-        "stepNumber": 1,
-        "stepStatus": "pass",
-        "stepDescription": "Open a web browser and navigate to https://invoify.vercel.app",
-        "stepStatusReason": "Open a web browser and navigate to https://invoify.vercel.app",
-        "isScreenShotcaptured": true,
-        "uiReviewResults": {
-          "total-checks-performed": 9,
-          "checks-passed": 8,
-          "checks-failed": 1,
-          "checks-results": [
-            {
-              "item": "Check for correct spelling and accurate content placement",
-              "status": "looks off",
-              "comment": "Placeholder text should be more descriptive."
-            }
-          ]
-        },
-        "runTime": 20648
-      },
-      {
-        "stepNumber": 2,
-        "stepStatus": "fail",
-        "stepDescription": "Wait for the invoice page to load completely ensuring all calculation fields are visible",
-        "stepStatusReason": "Timed out 5000ms waiting for expect(locator).toBeVisible()\n\nLocator: locator('div:has-text(\"Subtotal: 0.00 USD\")')\nExpected: visible\nReceived: <element(s) not found>\nCall log:\n  - Expect \"to.be.visible\" with timeout 5000ms\n  - waiting for locator('div:has-text(\"Subtotal: 0.00 USD\")')\n (1 sub-steps failed, 0 executed, 0 skipped)",
-        "isScreenShotcaptured": false,
-        "summaryText": [
-          "Processing: Verify that all calculation fields such as \"Subtotal\", \"Total\", and \"Total in words\" are visible on the invoice page."
-        ],
-        "runTime": 45962
-      },
-      {
-        "stepNumber": 3,
-        "stepStatus": "pending",
-        "stepDescription": "Enter a percentage discount value in the designated discount input field",
-        "stepStatusReason": "awaiting status reason rationale",
-        "isScreenShotcaptured": false,
-        "summaryText": []
-      },
-      {
-        "stepNumber": 4,
-        "stepStatus": "pending",
-        "stepDescription": "Click the apply discount button to update the invoice with the percentage discount",
-        "stepStatusReason": "awaiting status reason rationale",
-        "isScreenShotcaptured": false,
-        "summaryText": []
-      },
-      {
-        "stepNumber": 5,
-        "stepStatus": "pending",
-        "stepDescription": "Verify that the invoice recalculates the discount correctly and updates the total with the applied percentage discount",
-        "stepStatusReason": "awaiting status reason rationale",
-        "isScreenShotcaptured": false,
-        "summaryText": []
-      },
-      {
-        "stepNumber": 6,
-        "stepStatus": "pending",
-        "stepDescription": "Clear the discount field and enter a fixed discount amount in the discount input field",
-        "stepStatusReason": "awaiting status reason rationale",
-        "isScreenShotcaptured": false,
-        "summaryText": []
-      },
-      {
-        "stepNumber": 7,
-        "stepStatus": "pending",
-        "stepDescription": "Click the apply discount button so the system recalculates the fixed discount on the invoice",
-        "stepStatusReason": "awaiting status reason rationale",
-        "isScreenShotcaptured": false,
-        "summaryText": []
-      },
-      {
-        "stepNumber": 8,
-        "stepStatus": "pending",
-        "stepDescription": "Verify that the fixed discount is correctly applied and that the updated total reflects the fixed discount adjustment",
-        "stepStatusReason": "awaiting status reason rationale",
-        "isScreenShotcaptured": false,
-        "summaryText": []
-      },
-      {
-        "stepNumber": 9,
-        "stepStatus": "pending",
-        "stepDescription": "Enter the shipping cost into the appropriate shipping cost field",
-        "stepStatusReason": "awaiting status reason rationale",
-        "isScreenShotcaptured": false,
-        "summaryText": []
-      },
-      {
-        "stepNumber": 10,
-        "stepStatus": "pending",
-        "stepDescription": "Review the invoice summary to confirm that the shipping cost has been added correctly to the final total",
-        "stepStatusReason": "awaiting status reason rationale",
-        "isScreenShotcaptured": false,
-        "summaryText": []
-      },
-      {
-        "stepNumber": 11,
-        "stepStatus": "pending",
-        "stepDescription": "Take a screenshot of the final invoice summary to capture the final state with all calculations updated",
-        "stepStatusReason": "awaiting status reason rationale",
-        "isScreenShotcaptured": false,
-        "summaryText": []
-      }
-    ],
-    "startedAt": 1760706783420,
-    "screenshotDir": "/Users/apple/Desktop/Office/demo-projects/invoify/.geck/test-metadata/test_1760704758797/screenshots",
-    "isMarkDownReport": true,
-    "stepsSummary": "Test discount and shipping calculations. Verify that discounts can be applied as percentage or fixed amount, shipping costs are calculated correctly, and all calculations update the final total properly.",
-    "url": "https://invoify.vercel.app",
-    "testname": "Financial Calculations - Discount and Shipping",
-    "finishedAt": 1760706850042,
-    "totalTimeElapsed": 66622,
-    "promptTokens": 15439,
-    "completionTokens": 1715,
-    "totalTokens": 17154,
-    "costEstimate": 0.00334485,
-    "isGeneratingReport": false
-  },
-  {
-    "id": "test_1760704779927",
-    "status": "failed",
-    "progress": 13,
-    "stepResults": [
-      {
-        "stepNumber": 1,
-        "stepStatus": "pass",
-        "stepDescription": "Open the web browser and navigate to the URL: https://invoify.vercel.app",
-        "stepStatusReason": "Open the web browser and navigate to the URL: https://invoify.vercel.app",
-        "isScreenShotcaptured": true,
-        "uiReviewResults": {
-          "total-checks-performed": 9,
-          "checks-passed": 8,
-          "checks-failed": 1,
-          "checks-results": [
-            {
-              "item": "Ensure consistent padding and margins throughout",
-              "status": "looks off",
-              "comment": "Inconsistent spacing between form sections."
-            }
-          ]
-        },
-        "runTime": 22142
-      },
-      {
-        "stepNumber": 2,
-        "stepStatus": "fail",
-        "stepDescription": "Ensure that the homepage loads successfully and the invoice generation feature is visible",
-        "stepStatusReason": "Timed out 5000ms waiting for expect(locator).toBeVisible()\n\nLocator: getByText('Bill From  :')\nExpected: visible\nReceived: <element(s) not found>\nCall log:\n  - Expect \"to.be.visible\" with timeout 5000ms\n  - waiting for getByText('Bill From  :')\n (1 sub-steps failed, 8 executed, 0 skipped)",
-        "isScreenShotcaptured": false,
-        "summaryText": [
-          "Processing: Verify that the \"Generate PDF\" button is visible on the page.",
-          "Completed: Verify that the \"Generate PDF\" button is visible on the page.",
-          "Processing: Verify that the \"New Invoice\" button is visible on the page.",
-          "Completed: Verify that the \"New Invoice\" button is visible on the page.",
-          "Processing: Verify that the \"Reset Form\" button is visible on the page.",
-          "Completed: Verify that the \"Reset Form\" button is visible on the page.",
-          "Processing: Verify that the \"Load Invoice\" button is visible on the page.",
-          "Completed: Verify that the \"Load Invoice\" button is visible on the page.",
-          "Processing: Verify that the \"Export Invoice\" button is visible on the page.",
-          "Completed: Verify that the \"Export Invoice\" button is visible on the page.",
-          "Processing: Verify that the \"Next\" button is visible on the page.",
-          "Completed: Verify that the \"Next\" button is visible on the page.",
-          "Processing: Verify that the \"Invoice\" heading is visible on the page.",
-          "Completed: Verify that the \"Invoice\" heading is visible on the page.",
-          "Processing: Verify that the \"Live Preview\" section is visible on the page.",
-          "Completed: Verify that the \"Live Preview\" section is visible on the page.",
-          "Processing: Verify that the \"Bill From\" section is visible on the page."
-        ],
-        "uiReviewResults": {
-          "total-checks-performed": 9,
-          "checks-passed": 7,
-          "checks-failed": 2,
-          "checks-results": [
-            {
-              "item": "Review button size, shape, and style consistency",
-              "status": "looks off",
-              "comment": "Buttons' size and style are inconsistent between sections."
-            },
-            {
-              "item": "Ensure consistent padding and margins throughout",
-              "status": "looks off",
-              "comment": "Some sections have uneven padding, affecting layout."
-            }
-          ]
-        },
-        "runTime": 162228
-      },
-      {
-        "stepNumber": 3,
-        "stepStatus": "pending",
-        "stepDescription": "Locate and navigate to the section or module where PDF invoices can be generated",
-        "stepStatusReason": "awaiting status reason rationale",
-        "isScreenShotcaptured": false,
-        "summaryText": []
-      },
-      {
-        "stepNumber": 4,
-        "stepStatus": "pending",
-        "stepDescription": "Initiate the PDF invoice generation by clicking on the appropriate button or link",
-        "stepStatusReason": "awaiting status reason rationale",
-        "isScreenShotcaptured": false,
-        "summaryText": []
-      },
-      {
-        "stepNumber": 5,
-        "stepStatus": "pending",
-        "stepDescription": "Wait until the system confirms that the PDF invoice is generated and ready for download",
-        "stepStatusReason": "awaiting status reason rationale",
-        "isScreenShotcaptured": false,
-        "summaryText": []
-      },
-      {
-        "stepNumber": 6,
-        "stepStatus": "pending",
-        "stepDescription": "Download the generated PDF invoice and verify that the download completes without errors",
-        "stepStatusReason": "awaiting status reason rationale",
-        "isScreenShotcaptured": false,
-        "summaryText": []
-      },
-      {
-        "stepNumber": 7,
-        "stepStatus": "pending",
-        "stepDescription": "Open the downloaded PDF invoice and review the content to ensure all invoice data is correctly formatted and complete",
-        "stepStatusReason": "awaiting status reason rationale",
-        "isScreenShotcaptured": false,
-        "summaryText": []
-      },
-      {
-        "stepNumber": 8,
-        "stepStatus": "pending",
-        "stepDescription": "Capture a screenshot of the final page or PDF preview to document the successful completion of the test",
-        "stepStatusReason": "awaiting status reason rationale",
-        "isScreenShotcaptured": false,
-        "summaryText": []
-      }
-    ],
-    "startedAt": 1760706892286,
-    "screenshotDir": "/Users/apple/Desktop/Office/demo-projects/invoify/.geck/test-metadata/test_1760704779927/screenshots",
-    "isMarkDownReport": true,
-    "stepsSummary": "Test PDF generation and download functionality. Verify that users can generate PDF invoices, download them successfully, and the PDF contains all invoice data correctly formatted.",
-    "url": "https://invoify.vercel.app",
-    "testname": "Export & Distribution - PDF Generation",
-    "finishedAt": 1760707076666,
-    "totalTimeElapsed": 184380,
-    "promptTokens": 16864,
-    "completionTokens": 1749,
-    "totalTokens": 18613,
-    "costEstimate": 0.0035789999999999997,
-    "isGeneratingReport": false
-  },
-  {
-    "id": "test_1760704808931",
-    "status": "failed",
-    "progress": 11,
-    "stepResults": [
-      {
-        "stepNumber": 1,
-        "stepStatus": "pass",
-        "stepDescription": "Open the web browser and navigate to the invoify application URL.",
-        "stepStatusReason": "Open the web browser and navigate to the invoify application URL.",
-        "isScreenShotcaptured": true,
-        "uiReviewResults": {
-          "total-checks-performed": 9,
-          "checks-passed": 8,
-          "checks-failed": 1,
-          "checks-results": [
-            {
-              "item": "Check visibility and alignment of form inputs and labels",
-              "status": "looks off",
-              "comment": "Some form input labels may not be aligned properly."
-            }
-          ]
-        },
-        "runTime": 16933
-      },
-      {
-        "stepNumber": 2,
-        "stepStatus": "fail",
-        "stepDescription": "Wait for the invoify homepage to load completely and confirm that the dashboard is visible.",
-        "stepStatusReason": "Timed out 5000ms waiting for expect(locator).toContainText(expected)\n\nLocator: locator('header')\nExpected string: \"Dashboard\"\nReceived string: \"BETAEnglishToggle theme\"\nCall log:\n  - Expect \"to.have.text\" with timeout 5000ms\n  - waiting for locator('header')\n    9 × locator resolved to <header class=\"lg:container z-[99]\">…</header>\n      - unexpected value \"BETAEnglishToggle theme\"\n (1 sub-steps failed, 3 executed, 0 skipped)",
-        "isScreenShotcaptured": false,
-        "summaryText": [
-          "Processing: Verify that the text \"Invoice\" is visible on the page.",
-          "Completed: Verify that the text \"Invoice\" is visible on the page.",
-          "Processing: Verify that the text \"Actions\" is visible on the page.",
-          "Completed: Verify that the text \"Actions\" is visible on the page.",
-          "Processing: Verify that the text \"Live Preview:\" is visible on the page.",
-          "Completed: Verify that the text \"Live Preview:\" is visible on the page.",
-          "Processing: Verify that the text \"Dashboard\" is visible on the page."
-        ],
-        "uiReviewResults": {
-          "total-checks-performed": 9,
-          "checks-passed": 7,
-          "checks-failed": 2,
-          "checks-results": [
-            {
-              "item": "Ensure consistent and appropriate typography",
-              "status": "looks off",
-              "comment": "Font sizes for titles and body text are inconsistent."
-            },
-            {
-              "item": "Ensure consistent padding and margins throughout",
-              "status": "looks off",
-              "comment": "Uneven padding around form fields in the invoice section."
-            }
-          ]
-        },
-        "runTime": 97198
-      },
-      {
-        "stepNumber": 3,
-        "stepStatus": "pending",
-        "stepDescription": "Navigate to the invoice email distribution section or locate the option to send an invoice via email.",
-        "stepStatusReason": "awaiting status reason rationale",
-        "isScreenShotcaptured": false,
-        "summaryText": []
-      },
-      {
-        "stepNumber": 4,
-        "stepStatus": "pending",
-        "stepDescription": "Enter the recipient's email address in the designated field for sending the invoice.",
-        "stepStatusReason": "awaiting status reason rationale",
-        "isScreenShotcaptured": false,
-        "summaryText": []
-      },
-      {
-        "stepNumber": 5,
-        "stepStatus": "pending",
-        "stepDescription": "Ensure that the invoice details are populated automatically and that a PDF attachment is attached as part of the invoice.",
-        "stepStatusReason": "awaiting status reason rationale",
-        "isScreenShotcaptured": false,
-        "summaryText": []
-      },
-      {
-        "stepNumber": 6,
-        "stepStatus": "pending",
-        "stepDescription": "Click or tap the button to send the invoice email, initiating the distribution process.",
-        "stepStatusReason": "awaiting status reason rationale",
-        "isScreenShotcaptured": false,
-        "summaryText": []
-      },
-      {
-        "stepNumber": 7,
-        "stepStatus": "pending",
-        "stepDescription": "Verify that a confirmation message appears indicating that the email has been successfully sent, ensuring the PDF attachment is referenced in the confirmation.",
-        "stepStatusReason": "awaiting status reason rationale",
-        "isScreenShotcaptured": false,
-        "summaryText": []
-      },
-      {
-        "stepNumber": 8,
-        "stepStatus": "pending",
-        "stepDescription": "Check the email delivery logs or test email inbox to confirm that the sent email includes the PDF attachment.",
-        "stepStatusReason": "awaiting status reason rationale",
-        "isScreenShotcaptured": false,
-        "summaryText": []
-      },
-      {
-        "stepNumber": 9,
-        "stepStatus": "pending",
-        "stepDescription": "Take a screenshot of the completion screen to capture the successful email distribution with PDF attachment.",
-        "stepStatusReason": "awaiting status reason rationale",
-        "isScreenShotcaptured": false,
-        "summaryText": []
-      }
-    ],
-    "startedAt": 1760707098495,
-    "screenshotDir": "/Users/apple/Desktop/Office/demo-projects/invoify/.geck/test-metadata/test_1760704808931/screenshots",
-    "isMarkDownReport": true,
-    "stepsSummary": "Test email distribution functionality. Verify that users can send invoices via email, the email contains the PDF attachment, and the email delivery works correctly.",
-    "url": "https://invoify.vercel.app",
-    "testname": "Export & Distribution - Email Distribution",
-    "finishedAt": 1760707212634,
-    "totalTimeElapsed": 114139,
-    "promptTokens": 18218,
-    "completionTokens": 2109,
-    "totalTokens": 20327,
-    "costEstimate": 0.003998099999999999,
-    "isGeneratingReport": false
-  },
-  {
-    "id": "test_1760704853488",
-    "status": "failed",
-    "progress": 8,
-    "stepResults": [
-      {
-        "stepNumber": 1,
-        "stepStatus": "pass",
-        "stepDescription": "Open a web browser and navigate to https://invoify.vercel.app to access the invoicing application.",
-        "stepStatusReason": "Open a web browser and navigate to https://invoify.vercel.app to access the invoicing application.",
-        "isScreenShotcaptured": true,
-        "uiReviewResults": {
-          "total-checks-performed": 9,
-          "checks-passed": 7,
-          "checks-failed": 2,
-          "checks-results": [
-            {
-              "item": "Check visibility and alignment of form inputs and labels",
-              "status": "looks off",
-              "comment": "Form inputs are not well aligned with labels."
-            },
-            {
-              "item": "Ensure consistent padding and margins throughout",
-              "status": "looks off",
-              "comment": "Padding between sections is inconsistent."
-            }
-          ]
-        },
-        "runTime": 15794
-      },
-      {
-        "stepNumber": 2,
-        "stepStatus": "fail",
-        "stepDescription": "Confirm that the invoice dashboard is displayed with the invoice data loaded.",
-        "stepStatusReason": "Timed out 5000ms waiting for expect(locator).toContainText(expected)\n\nLocator: locator('dl').filter({ hasText: 'Invoice date:' })\nExpected pattern: /\\d{2}\\/\\d{2}\\/\\d{4}/\nReceived string:  \"Invoice date:Invalid Date\"\nCall log:\n  - Expect \"to.have.text\" with timeout 5000ms\n  - waiting for locator('dl').filter({ hasText: 'Invoice date:' })\n    9 × locator resolved to <dl class=\"grid sm:grid-cols-6 gap-x-3\">…</dl>\n      - unexpected value \"Invoice date:Invalid Date\"\n (1 sub-steps failed, 1 executed, 0 skipped)",
-        "isScreenShotcaptured": false,
-        "summaryText": [
-          "Processing: Verify that the \"Invoice #\" heading is visible on the page.",
-          "Completed: Verify that the \"Invoice #\" heading is visible on the page.",
-          "Processing: Verify that the \"Invoice date\" and \"Due date\" are displayed with valid dates on the invoice dashboard."
-        ],
-        "uiReviewResults": {
-          "total-checks-performed": 9,
-          "checks-passed": 7,
-          "checks-failed": 2,
-          "checks-results": [
-            {
-              "item": "Review button size, shape, and style consistency",
-              "status": "looks off",
-              "comment": "Export button style doesn't match primary button design."
-            },
-            {
-              "item": "Ensure consistent padding and margins throughout",
-              "status": "looks off",
-              "comment": "Inconsistent margins between input fields on the left and right."
-            }
-          ]
-        },
-        "runTime": 64417
-      },
-      {
-        "stepNumber": 3,
-        "stepStatus": "pending",
-        "stepDescription": "Locate and click on the export invoice feature or button provided on the dashboard.",
-        "stepStatusReason": "awaiting status reason rationale",
-        "isScreenShotcaptured": false,
-        "summaryText": []
-      },
-      {
-        "stepNumber": 4,
-        "stepStatus": "pending",
-        "stepDescription": "Verify that the export options are visible, showing choices for JSON, CSV, and XML formats.",
-        "stepStatusReason": "awaiting status reason rationale",
-        "isScreenShotcaptured": false,
-        "summaryText": []
-      },
-      {
-        "stepNumber": 5,
-        "stepStatus": "pending",
-        "stepDescription": "Select the JSON export format option from the available choices.",
-        "stepStatusReason": "awaiting status reason rationale",
-        "isScreenShotcaptured": false,
-        "summaryText": []
-      },
-      {
-        "stepNumber": 6,
-        "stepStatus": "pending",
-        "stepDescription": "Ensure that the JSON file downloads and contains the correct invoice data in the proper format.",
-        "stepStatusReason": "awaiting status reason rationale",
-        "isScreenShotcaptured": false,
-        "summaryText": []
-      },
-      {
-        "stepNumber": 7,
-        "stepStatus": "pending",
-        "stepDescription": "Repeat the export process by selecting the CSV format option from the export menu.",
-        "stepStatusReason": "awaiting status reason rationale",
-        "isScreenShotcaptured": false,
-        "summaryText": []
-      },
-      {
-        "stepNumber": 8,
-        "stepStatus": "pending",
-        "stepDescription": "Verify that the CSV file successfully downloads and that it correctly represents the invoice data.",
-        "stepStatusReason": "awaiting status reason rationale",
-        "isScreenShotcaptured": false,
-        "summaryText": []
-      },
-      {
-        "stepNumber": 9,
-        "stepStatus": "pending",
-        "stepDescription": "Select the XML export format option to initiate the export of invoice data in XML format.",
-        "stepStatusReason": "awaiting status reason rationale",
-        "isScreenShotcaptured": false,
-        "summaryText": []
-      },
-      {
-        "stepNumber": 10,
-        "stepStatus": "pending",
-        "stepDescription": "Confirm that the XML file is downloaded and that it contains accurate invoice data in the appropriate structure.",
-        "stepStatusReason": "awaiting status reason rationale",
-        "isScreenShotcaptured": false,
-        "summaryText": []
-      },
-      {
-        "stepNumber": 11,
-        "stepStatus": "pending",
-        "stepDescription": "Review the download functionality to ensure each file format exports and downloads properly.",
+        "stepDescription": "Wait for any asynchronous loading to complete before final verification.",
         "stepStatusReason": "awaiting status reason rationale",
         "isScreenShotcaptured": false,
         "summaryText": []
@@ -1831,60 +934,83 @@
       {
         "stepNumber": 12,
         "stepStatus": "pending",
-        "stepDescription": "Take a screenshot of the completed export process to verify the final state of the application.",
+        "stepDescription": "Take a screenshot of the completed Live Preview with the applied Template 2 to confirm the test was successful.",
         "stepStatusReason": "awaiting status reason rationale",
         "isScreenShotcaptured": false,
         "summaryText": []
       }
     ],
-    "startedAt": 1760707252065,
-    "screenshotDir": "/Users/apple/Desktop/Office/demo-projects/invoify/.geck/test-metadata/test_1760704853488/screenshots",
+    "startedAt": 1761309549849,
+    "screenshotDir": "d:\\Appening\\geck\\invoify geck test\\.geck\\test-metadata\\test_1761308108417\\screenshots",
     "isMarkDownReport": true,
-    "stepsSummary": "Test multiple export formats (JSON, CSV, XML). Verify that users can export invoice data in different formats, the exported files contain correct data, and downloads work properly.",
-    "url": "https://invoify.vercel.app",
-    "testname": "Export & Distribution - Multiple Export Formats",
-    "finishedAt": 1760707332291,
-    "totalTimeElapsed": 80226,
-    "promptTokens": 19806,
-    "completionTokens": 1602,
-    "totalTokens": 21408,
-    "costEstimate": 0.0039321,
+    "stepsSummary": "Select invoice template and verify live preview update",
+    "url": "https://invoify.vercel.app/en",
+    "testname": "Invoice Template Selection and Preview Update Verification",
+    "finishedAt": 1761309651442,
+    "totalTimeElapsed": 101593,
+    "promptTokens": 11593,
+    "completionTokens": 1822,
+    "totalTokens": 13415,
+    "costEstimate": 0.00283215,
     "isGeneratingReport": false
   },
   {
-    "id": "test_1760704885366",
+    "id": "test_1761310055321",
     "status": "failed",
-    "progress": 14,
+    "progress": 6,
     "stepResults": [
       {
         "stepNumber": 1,
         "stepStatus": "pass",
-        "stepDescription": "Open the browser and navigate to the Invoify website at https://invoify.vercel.app.",
-        "stepStatusReason": "Open the browser and navigate to the Invoify website at https://invoify.vercel.app.",
+        "stepDescription": "Navigate to the website at https://invoify.vercel.app/en",
+        "stepStatusReason": "Navigate to the website at https://invoify.vercel.app/en",
         "isScreenShotcaptured": true,
-        "uiReviewResults": {
-          "total-checks-performed": 9,
-          "checks-passed": 9,
-          "checks-failed": 0,
-          "checks-results": []
-        },
-        "runTime": 15013
+        "runTime": 8824
       },
       {
         "stepNumber": 2,
         "stepStatus": "fail",
-        "stepDescription": "Observe the default language of the interface and ensure the initial text elements are correctly displayed.",
-        "stepStatusReason": "Timed out 5000ms waiting for expect(locator).toBeVisible()\n\nLocator: getByRole('button', { name: 'BETA English' })\nExpected: visible\nReceived: <element(s) not found>\nCall log:\n  - Expect \"to.be.visible\" with timeout 5000ms\n  - waiting for getByRole('button', { name: 'BETA English' })\n (1 sub-steps failed, 0 executed, 0 skipped)",
+        "stepDescription": "Complete the \"1. From & To\" tab with sender and receiver details and click the next button",
+        "stepStatusReason": "Maximum sub-steps limit (15) exceeded - possible infinite loop or complex step",
         "isScreenShotcaptured": false,
         "summaryText": [
-          "Processing: Verify that the text \"BETA English\" is visible on the page."
+          "Processing: Fill the \"Name\" field under \"Bill From\" with the sender's name.",
+          "Completed: Fill the \"Name\" field under \"Bill From\" with the sender's name.",
+          "Processing: Fill the \"Address\" field under \"Bill From\" with the sender's address.",
+          "Completed: Fill the \"Address\" field under \"Bill From\" with the sender's address.",
+          "Processing: Fill the \"Zip\" field under \"Bill From\" with the sender's zip code.",
+          "Completed: Fill the \"Zip\" field under \"Bill From\" with the sender's zip code.",
+          "Processing: Fill the \"City\" field under \"Bill From\" with the sender's city.",
+          "Completed: Fill the \"City\" field under \"Bill From\" with the sender's city.",
+          "Processing: Fill the \"Country\" field under \"Bill From\" with the sender's country.",
+          "Completed: Fill the \"Country\" field under \"Bill From\" with the sender's country.",
+          "Processing: Fill the \"Email\" field under \"Bill From\" with the sender's email.",
+          "Completed: Fill the \"Email\" field under \"Bill From\" with the sender's email.",
+          "Processing: Fill the \"Phone\" field under \"Bill From\" with the sender's phone number.",
+          "Completed: Fill the \"Phone\" field under \"Bill From\" with the sender's phone number.",
+          "Processing: Fill the \"Name\" field under \"Bill To\" with the receiver's name.",
+          "Completed: Fill the \"Name\" field under \"Bill To\" with the receiver's name.",
+          "Processing: Fill the \"Address\" field under \"Bill To\" with the receiver's address.",
+          "Completed: Fill the \"Address\" field under \"Bill To\" with the receiver's address.",
+          "Processing: Fill the \"Zip\" field under \"Bill To\" with the receiver's zip code.",
+          "Completed: Fill the \"Zip\" field under \"Bill To\" with the receiver's zip code.",
+          "Processing: Fill the \"City\" field under \"Bill To\" with the receiver's city.",
+          "Completed: Fill the \"City\" field under \"Bill To\" with the receiver's city.",
+          "Processing: Fill the \"Country\" field under \"Bill To\" with the receiver's country.",
+          "Completed: Fill the \"Country\" field under \"Bill To\" with the receiver's country.",
+          "Processing: Fill the \"Email\" field under \"Bill To\" with the receiver's email.",
+          "Completed: Fill the \"Email\" field under \"Bill To\" with the receiver's email.",
+          "Processing: Fill the \"Phone\" field under \"Bill To\" with the receiver's phone number.",
+          "Completed: Fill the \"Phone\" field under \"Bill To\" with the receiver's phone number.",
+          "Processing: Click the \"Next\" button to proceed from the \"1. From & To\" tab.",
+          "Completed: Click the \"Next\" button to proceed from the \"1. From & To\" tab."
         ],
-        "runTime": 47697
+        "runTime": 123461
       },
       {
         "stepNumber": 3,
         "stepStatus": "pending",
-        "stepDescription": "Locate and interact with the language switcher control on the page to display the available language options.",
+        "stepDescription": "Complete the \"2. Invoice Details\" tab with logo, invoice number, dates, and template, then click the next button",
         "stepStatusReason": "awaiting status reason rationale",
         "isScreenShotcaptured": false,
         "summaryText": []
@@ -1892,7 +1018,7 @@
       {
         "stepNumber": 4,
         "stepStatus": "pending",
-        "stepDescription": "Select a different language from the available options to trigger the language switch.",
+        "stepDescription": "Complete the \"3. Line Items\" tab with at least one item and click the next button",
         "stepStatusReason": "awaiting status reason rationale",
         "isScreenShotcaptured": false,
         "summaryText": []
@@ -1900,7 +1026,7 @@
       {
         "stepNumber": 5,
         "stepStatus": "pending",
-        "stepDescription": "Verify that the interface updates immediately after the language selection, with all text content translating accordingly.",
+        "stepDescription": "Complete the \"4. Payment Info\" tab and click the next button",
         "stepStatusReason": "awaiting status reason rationale",
         "isScreenShotcaptured": false,
         "summaryText": []
@@ -1908,7 +1034,7 @@
       {
         "stepNumber": 6,
         "stepStatus": "pending",
-        "stepDescription": "Check that interactive elements, buttons, labels, and navigation items reflect the translated language properly.",
+        "stepDescription": "Complete the \"5. Summary\" tab with signature and additional notes and click the next button",
         "stepStatusReason": "awaiting status reason rationale",
         "isScreenShotcaptured": false,
         "summaryText": []
@@ -1916,231 +1042,7 @@
       {
         "stepNumber": 7,
         "stepStatus": "pending",
-        "stepDescription": "Capture a screenshot of the updated interface to confirm that the language switching functionality worked as expected.",
-        "stepStatusReason": "awaiting status reason rationale",
-        "isScreenShotcaptured": false,
-        "summaryText": []
-      }
-    ],
-    "startedAt": 1760707369227,
-    "screenshotDir": "/Users/apple/Desktop/Office/demo-projects/invoify/.geck/test-metadata/test_1760704885366/screenshots",
-    "isMarkDownReport": true,
-    "stepsSummary": "Test language switching functionality. Verify that users can switch between different languages, the interface updates immediately, and all text elements are properly translated.",
-    "url": "https://invoify.vercel.app",
-    "testname": "Internationalization - Language Switching",
-    "finishedAt": 1760707432229,
-    "totalTimeElapsed": 63002,
-    "promptTokens": 20733,
-    "completionTokens": 1320,
-    "totalTokens": 22053,
-    "costEstimate": 0.0039019499999999995,
-    "isGeneratingReport": false
-  },
-  {
-    "id": "test_1760704904682",
-    "status": "failed",
-    "progress": 14,
-    "stepResults": [
-      {
-        "stepNumber": 1,
-        "stepStatus": "pass",
-        "stepDescription": "Open the invoify application in a web browser using the provided URL.",
-        "stepStatusReason": "Open the invoify application in a web browser using the provided URL.",
-        "isScreenShotcaptured": true,
-        "uiReviewResults": {
-          "total-checks-performed": 9,
-          "checks-passed": 8,
-          "checks-failed": 1,
-          "checks-results": [
-            {
-              "item": "Check visibility and alignment of form inputs and labels",
-              "status": "looks off",
-              "comment": "Labels and inputs are not aligned properly."
-            }
-          ]
-        },
-        "runTime": 16091
-      },
-      {
-        "stepNumber": 2,
-        "stepStatus": "fail",
-        "stepDescription": "Identify the currency selection control on the home or dashboard page.",
-        "stepStatusReason": "Cannot find the currency selection control on the page.",
-        "isScreenShotcaptured": false,
-        "uiReviewResults": {
-          "total-checks-performed": 9,
-          "checks-passed": 9,
-          "checks-failed": 0,
-          "checks-results": []
-        },
-        "summaryText": [
-          "Step failed: Cannot find the currency selection control on the page."
-        ],
-        "runTime": 11304
-      },
-      {
-        "stepNumber": 3,
-        "stepStatus": "pending",
-        "stepDescription": "Choose a different currency option from the available selections.",
-        "stepStatusReason": "awaiting status reason rationale",
-        "isScreenShotcaptured": false,
-        "summaryText": []
-      },
-      {
-        "stepNumber": 4,
-        "stepStatus": "pending",
-        "stepDescription": "Verify that the display updates to show the correct currency symbol.",
-        "stepStatusReason": "awaiting status reason rationale",
-        "isScreenShotcaptured": false,
-        "summaryText": []
-      },
-      {
-        "stepNumber": 5,
-        "stepStatus": "pending",
-        "stepDescription": "Enter numeric values into an invoice or calculation field to check that currency formatting adjusts accordingly.",
-        "stepStatusReason": "awaiting status reason rationale",
-        "isScreenShotcaptured": false,
-        "summaryText": []
-      },
-      {
-        "stepNumber": 6,
-        "stepStatus": "pending",
-        "stepDescription": "Confirm that invoice totals and related calculations reflect the chosen currency formatting correctly.",
-        "stepStatusReason": "awaiting status reason rationale",
-        "isScreenShotcaptured": false,
-        "summaryText": []
-      },
-      {
-        "stepNumber": 7,
-        "stepStatus": "pending",
-        "stepDescription": "Capture a screenshot of the final currency display and formatting for validation purposes.",
-        "stepStatusReason": "awaiting status reason rationale",
-        "isScreenShotcaptured": false,
-        "summaryText": []
-      }
-    ],
-    "startedAt": 1760707458051,
-    "screenshotDir": "/Users/apple/Desktop/Office/demo-projects/invoify/.geck/test-metadata/test_1760704904682/screenshots",
-    "isMarkDownReport": true,
-    "stepsSummary": "Test currency support functionality. Verify that users can select different currencies, currency symbols display correctly, and currency formatting works properly in calculations.",
-    "url": "https://invoify.vercel.app",
-    "testname": "Internationalization - Currency Support",
-    "finishedAt": 1760707485455,
-    "totalTimeElapsed": 27404,
-    "promptTokens": 21603,
-    "completionTokens": 1744,
-    "totalTokens": 23347,
-    "costEstimate": 0.00428685,
-    "isGeneratingReport": false
-  },
-  {
-    "id": "test_1760704930895",
-    "status": "failed",
-    "progress": 38,
-    "stepResults": [
-      {
-        "stepNumber": 1,
-        "stepStatus": "pass",
-        "stepDescription": "Open the web browser and navigate to https://invoify.vercel.app.",
-        "stepStatusReason": "Open the web browser and navigate to https://invoify.vercel.app.",
-        "isScreenShotcaptured": true,
-        "uiReviewResults": {
-          "total-checks-performed": 9,
-          "checks-passed": 7,
-          "checks-failed": 2,
-          "checks-results": [
-            {
-              "item": "Ensure consistent and appropriate typography",
-              "status": "looks off",
-              "comment": "Inconsistent font sizes between headers and body text."
-            },
-            {
-              "item": "Ensure consistent padding and margins throughout",
-              "status": "looks off",
-              "comment": "Uneven padding between sections and form fields."
-            }
-          ]
-        },
-        "runTime": 15563
-      },
-      {
-        "stepNumber": 2,
-        "stepStatus": "pass",
-        "stepDescription": "Confirm that the home page loads successfully and displays the expected content.",
-        "stepStatusReason": "Verify that the \"Invoify Logo\" is visible on the home page., Verify that the \"New Invoice\" button is visible on the home page., Verify that the \"Toggle theme\" button is visible on the home page., Verify that the \"Actions\" section is visible on the home page., Verify that the \"Next\" button is visible on the home page.",
-        "isScreenShotcaptured": true,
-        "summaryText": [
-          "Processing: Verify that the \"Invoify Logo\" is visible on the home page.",
-          "Completed: Verify that the \"Invoify Logo\" is visible on the home page.",
-          "Processing: Verify that the \"New Invoice\" button is visible on the home page.",
-          "Completed: Verify that the \"New Invoice\" button is visible on the home page.",
-          "Processing: Verify that the \"Toggle theme\" button is visible on the home page.",
-          "Completed: Verify that the \"Toggle theme\" button is visible on the home page.",
-          "Processing: Verify that the \"Actions\" section is visible on the home page.",
-          "Completed: Verify that the \"Actions\" section is visible on the home page.",
-          "Processing: Verify that the \"Next\" button is visible on the home page.",
-          "Completed: Verify that the \"Next\" button is visible on the home page."
-        ],
-        "uiReviewResults": {
-          "total-checks-performed": 9,
-          "checks-passed": 9,
-          "checks-failed": 0,
-          "checks-results": []
-        },
-        "runTime": 83577
-      },
-      {
-        "stepNumber": 3,
-        "stepStatus": "pass",
-        "stepDescription": "Locate the language selection control on the page.",
-        "stepStatusReason": "Locate the language selection control on the page.",
-        "isScreenShotcaptured": true,
-        "uiReviewResults": {
-          "total-checks-performed": 9,
-          "checks-passed": 8,
-          "checks-failed": 1,
-          "checks-results": [
-            {
-              "item": "Ensure consistent padding and margins throughout",
-              "status": "looks off",
-              "comment": "Margins between form fields are inconsistent."
-            }
-          ]
-        },
-        "runTime": 10293,
-        "summaryText": []
-      },
-      {
-        "stepNumber": 4,
-        "stepStatus": "fail",
-        "stepDescription": "Switch the application to a different language locale, for example, French or Spanish.",
-        "stepStatusReason": "locator.click: Timeout 5000ms exceeded.\nCall log:\n  - waiting for getByRole('button', { name: 'BETA English' })\n (1 sub-steps failed, 0 executed, 0 skipped)",
-        "isScreenShotcaptured": false,
-        "summaryText": [
-          "Processing: Click the \"BETA English\" button to open the language selection menu."
-        ],
-        "runTime": 55585
-      },
-      {
-        "stepNumber": 5,
-        "stepStatus": "pending",
-        "stepDescription": "Wait for the page to update and verify that all date formats change to match the selected locale.",
-        "stepStatusReason": "awaiting status reason rationale",
-        "isScreenShotcaptured": false,
-        "summaryText": []
-      },
-      {
-        "stepNumber": 6,
-        "stepStatus": "pending",
-        "stepDescription": "Navigate to the invoice template section to review the displayed dates.",
-        "stepStatusReason": "awaiting status reason rationale",
-        "isScreenShotcaptured": false,
-        "summaryText": []
-      },
-      {
-        "stepNumber": 7,
-        "stepStatus": "pending",
-        "stepDescription": "Check that the dates in the invoice template are formatted correctly according to the active locale.",
+        "stepDescription": "Locate the \"Generate PDF\" button in the Actions section (top right)",
         "stepStatusReason": "awaiting status reason rationale",
         "isScreenShotcaptured": false,
         "summaryText": []
@@ -2148,353 +1050,7 @@
       {
         "stepNumber": 8,
         "stepStatus": "pending",
-        "stepDescription": "Capture a screenshot of the invoice template to confirm the correct date formatting.",
-        "stepStatusReason": "awaiting status reason rationale",
-        "isScreenShotcaptured": false,
-        "summaryText": []
-      }
-    ],
-    "startedAt": 1760707515290,
-    "screenshotDir": "/Users/apple/Desktop/Office/demo-projects/invoify/.geck/test-metadata/test_1760704930895/screenshots",
-    "isMarkDownReport": true,
-    "stepsSummary": "Test date formatting for different locales. Verify that date formats change appropriately when switching languages, and dates display correctly in the invoice templates.",
-    "url": "https://invoify.vercel.app",
-    "testname": "Internationalization - Date Formatting",
-    "finishedAt": 1760707680323,
-    "totalTimeElapsed": 165033,
-    "promptTokens": 22996,
-    "completionTokens": 1623,
-    "totalTokens": 24619,
-    "costEstimate": 0.0044232,
-    "isGeneratingReport": false
-  },
-  {
-    "id": "test_1760704959601",
-    "status": "passed",
-    "progress": 100,
-    "stepResults": [
-      {
-        "stepNumber": 1,
-        "stepStatus": "pass",
-        "stepDescription": "Open the web browser and navigate to https://invoify.vercel.app on a desktop.",
-        "stepStatusReason": "Open the web browser and navigate to https://invoify.vercel.app on a desktop.",
-        "isScreenShotcaptured": true,
-        "uiReviewResults": {
-          "total-checks-performed": 9,
-          "checks-passed": 8,
-          "checks-failed": 1,
-          "checks-results": [
-            {
-              "item": "Ensure consistent padding and margins throughout",
-              "status": "looks off",
-              "comment": "Inconsistent spacing between form sections."
-            }
-          ]
-        },
-        "runTime": 15810
-      },
-      {
-        "stepNumber": 2,
-        "stepStatus": "pass",
-        "stepDescription": "Verify that the application elements are correctly displayed in the desktop layout.",
-        "stepStatusReason": "Verify that the header with the text \"BETA English Toggle theme\" is visible., Verify that the button with the text \"Toggle theme\" is visible., Verify that the button with the text \"Next\" is visible., Verify that the button with the text \"Generate PDF\" is visible.",
-        "isScreenShotcaptured": true,
-        "summaryText": [
-          "Processing: Verify that the header with the text \"BETA English Toggle theme\" is visible.",
-          "Completed: Verify that the header with the text \"BETA English Toggle theme\" is visible.",
-          "Processing: Verify that the button with the text \"Toggle theme\" is visible.",
-          "Completed: Verify that the button with the text \"Toggle theme\" is visible.",
-          "Processing: Verify that the button with the text \"Next\" is visible.",
-          "Completed: Verify that the button with the text \"Next\" is visible.",
-          "Processing: Verify that the button with the text \"Generate PDF\" is visible.",
-          "Completed: Verify that the button with the text \"Generate PDF\" is visible."
-        ],
-        "uiReviewResults": {
-          "total-checks-performed": 9,
-          "checks-passed": 8,
-          "checks-failed": 1,
-          "checks-results": [
-            {
-              "item": "Check visibility and alignment of form inputs and labels",
-              "status": "looks off",
-              "comment": "Form input labels are slightly misaligned."
-            }
-          ]
-        },
-        "runTime": 99465
-      },
-      {
-        "stepNumber": 3,
-        "stepStatus": "pass",
-        "stepDescription": "Resize the browser window to a tablet resolution and observe if the layout adapts properly.",
-        "stepStatusReason": "Resize the browser window to a tablet resolution.",
-        "isScreenShotcaptured": true,
-        "summaryText": [
-          "Processing: Resize the browser window to a tablet resolution.",
-          "Completed: Resize the browser window to a tablet resolution."
-        ],
-        "uiReviewResults": {
-          "total-checks-performed": 9,
-          "checks-passed": 8,
-          "checks-failed": 1,
-          "checks-results": [
-            {
-              "item": "Ensure consistent padding and margins throughout",
-              "status": "looks off",
-              "comment": "Some elements are too close to each other, needs better spacing."
-            }
-          ]
-        },
-        "runTime": 37002
-      },
-      {
-        "stepNumber": 4,
-        "stepStatus": "pass",
-        "stepDescription": "Change the screen size to a mobile resolution to ensure that the user interface remains usable and elements adjust appropriately.",
-        "stepStatusReason": "Resize the browser window to a mobile resolution., Verify that the user interface elements are visible and appropriately adjusted for mobile resolution.",
-        "isScreenShotcaptured": true,
-        "summaryText": [
-          "Processing: Resize the browser window to a mobile resolution.",
-          "Validation failed: Resize the browser window to a mobile resolution. - will retry in 1 * 100ms",
-          "Completed: Resize the browser window to a mobile resolution.",
-          "Processing: Verify that the user interface elements are visible and appropriately adjusted for mobile resolution.",
-          "Completed: Verify that the user interface elements are visible and appropriately adjusted for mobile resolution."
-        ],
-        "uiReviewResults": {
-          "total-checks-performed": 9,
-          "checks-passed": 7,
-          "checks-failed": 2,
-          "checks-results": [
-            {
-              "item": "Check visibility and alignment of form inputs and labels",
-              "status": "looks off",
-              "comment": "Inputs are misaligned with labels on mobile."
-            },
-            {
-              "item": "Ensure consistent padding and margins throughout",
-              "status": "looks off",
-              "comment": "Inconsistent margins between form elements on mobile."
-            }
-          ]
-        },
-        "runTime": 49338
-      },
-      {
-        "stepNumber": 5,
-        "stepStatus": "pass",
-        "stepDescription": "Interact with responsive elements such as the navigation menu or hamburger icon on the mobile view to confirm functionality.",
-        "stepStatusReason": "Click the button with the text \"Toggle theme\" to confirm functionality in the mobile view.",
-        "isScreenShotcaptured": true,
-        "summaryText": [
-          "Processing: Click the button with the text \"Toggle theme\" to confirm functionality in the mobile view.",
-          "Completed: Click the button with the text \"Toggle theme\" to confirm functionality in the mobile view."
-        ],
-        "uiReviewResults": {
-          "total-checks-performed": 9,
-          "checks-passed": 8,
-          "checks-failed": 1,
-          "checks-results": [
-            {
-              "item": "Check visibility and alignment of form inputs and labels",
-              "status": "looks off",
-              "comment": "Some input labels could be aligned better with fields."
-            }
-          ]
-        },
-        "runTime": 23282
-      },
-      {
-        "stepNumber": 6,
-        "stepStatus": "pass",
-        "stepDescription": "Scroll through the mobile view to ensure that all content is accessible and displays correctly.",
-        "stepStatusReason": "Scroll down the page to view more content in the mobile view.",
-        "isScreenShotcaptured": true,
-        "summaryText": [
-          "Processing: Scroll down the page to view more content in the mobile view.",
-          "Completed: Scroll down the page to view more content in the mobile view."
-        ],
-        "uiReviewResults": {
-          "total-checks-performed": 9,
-          "checks-passed": 7,
-          "checks-failed": 2,
-          "checks-results": [
-            {
-              "item": "Verify clear visual hierarchy (titles > subtitles > body)",
-              "status": "looks off",
-              "comment": "Titles and subtitles are not clearly distinguished."
-            },
-            {
-              "item": "Ensure consistent padding and margins throughout",
-              "status": "looks off",
-              "comment": "Padding appears inconsistent at the bottom."
-            }
-          ]
-        },
-        "runTime": 20444
-      },
-      {
-        "stepNumber": 7,
-        "stepStatus": "pass",
-        "stepDescription": "Take a screenshot of the responsive layout on mobile to document the final visual state.",
-        "stepStatusReason": "Take a screenshot of the responsive layout on mobile to document the final visual state.",
-        "isScreenShotcaptured": true,
-        "uiReviewResults": {
-          "total-checks-performed": 9,
-          "checks-passed": 6,
-          "checks-failed": 3,
-          "checks-results": [
-            {
-              "item": "Verify clear visual hierarchy (titles > subtitles > body)",
-              "status": "looks off",
-              "comment": "Title and content hierarchy is unclear."
-            },
-            {
-              "item": "Check visibility and alignment of form inputs and labels",
-              "status": "looks off",
-              "comment": "Form inputs lack clear alignment."
-            },
-            {
-              "item": "Ensure consistent padding and margins throughout",
-              "status": "looks off",
-              "comment": "Inconsistent padding and margins in some sections."
-            }
-          ]
-        },
-        "runTime": 8686,
-        "summaryText": []
-      }
-    ],
-    "startedAt": 1760707711312,
-    "screenshotDir": "/Users/apple/Desktop/Office/demo-projects/invoify/.geck/test-metadata/test_1760704959601/screenshots",
-    "isMarkDownReport": true,
-    "stepsSummary": "Test responsive design functionality. Verify that the application works correctly on different screen sizes, elements adapt properly, and the interface remains usable on mobile devices.",
-    "url": "https://invoify.vercel.app",
-    "testname": "User Interface - Responsive Design",
-    "finishedAt": 1760707965352,
-    "totalTimeElapsed": 254040,
-    "promptTokens": 25007,
-    "completionTokens": 1835,
-    "totalTokens": 26842,
-    "costEstimate": 0.00485205,
-    "isGeneratingReport": false
-  },
-  {
-    "id": "test_1760704979763",
-    "status": "failed",
-    "progress": 50,
-    "stepResults": [
-      {
-        "stepNumber": 1,
-        "stepStatus": "pass",
-        "stepDescription": "Open a web browser and navigate to the URL https://invoify.vercel.app",
-        "stepStatusReason": "Open a web browser and navigate to the URL https://invoify.vercel.app",
-        "isScreenShotcaptured": true,
-        "uiReviewResults": {
-          "total-checks-performed": 9,
-          "checks-passed": 8,
-          "checks-failed": 1,
-          "checks-results": [
-            {
-              "item": "Ensure consistent padding and margins throughout",
-              "status": "looks off",
-              "comment": "Some elements have inconsistent padding."
-            }
-          ]
-        },
-        "runTime": 13353
-      },
-      {
-        "stepNumber": 2,
-        "stepStatus": "pass",
-        "stepDescription": "Wait for the homepage to fully load and ensure the default (light) theme is applied",
-        "stepStatusReason": "Verify that the light theme is applied by checking the presence of the \"Toggle theme\" button.",
-        "isScreenShotcaptured": true,
-        "summaryText": [
-          "Processing: Verify that the light theme is applied by checking the presence of the \"Toggle theme\" button.",
-          "Completed: Verify that the light theme is applied by checking the presence of the \"Toggle theme\" button."
-        ],
-        "uiReviewResults": {
-          "total-checks-performed": 9,
-          "checks-passed": 9,
-          "checks-failed": 0,
-          "checks-results": []
-        },
-        "runTime": 25481
-      },
-      {
-        "stepNumber": 3,
-        "stepStatus": "pass",
-        "stepDescription": "Inspect the initial interface elements to confirm they display with the expected light theme styling",
-        "stepStatusReason": "Verify that the \"BETA\" label is visible on the page to confirm the light theme styling.",
-        "isScreenShotcaptured": true,
-        "summaryText": [
-          "Processing: Verify that the \"BETA\" label is visible on the page to confirm the light theme styling.",
-          "Completed: Verify that the \"BETA\" label is visible on the page to confirm the light theme styling."
-        ],
-        "uiReviewResults": {
-          "total-checks-performed": 9,
-          "checks-passed": 9,
-          "checks-failed": 0,
-          "checks-results": []
-        },
-        "runTime": 23463
-      },
-      {
-        "stepNumber": 4,
-        "stepStatus": "pass",
-        "stepDescription": "Locate the theme toggle control on the interface that allows switching themes",
-        "stepStatusReason": "Locate the theme toggle control on the interface that allows switching themes",
-        "isScreenShotcaptured": true,
-        "uiReviewResults": {
-          "total-checks-performed": 9,
-          "checks-passed": 9,
-          "checks-failed": 0,
-          "checks-results": []
-        },
-        "runTime": 13618,
-        "summaryText": []
-      },
-      {
-        "stepNumber": 5,
-        "stepStatus": "pass",
-        "stepDescription": "Activate the theme toggle to switch the interface from light to dark theme",
-        "stepStatusReason": "Click the \"Toggle theme\" button to switch the interface from light to dark theme.",
-        "isScreenShotcaptured": true,
-        "summaryText": [
-          "Processing: Click the \"Toggle theme\" button to switch the interface from light to dark theme.",
-          "Completed: Click the \"Toggle theme\" button to switch the interface from light to dark theme."
-        ],
-        "uiReviewResults": {
-          "total-checks-performed": 9,
-          "checks-passed": 9,
-          "checks-failed": 0,
-          "checks-results": []
-        },
-        "runTime": 19570
-      },
-      {
-        "stepNumber": 6,
-        "stepStatus": "fail",
-        "stepDescription": "Verify that the interface updates immediately and all elements are styled according to the dark theme",
-        "stepStatusReason": "Timed out 5000ms waiting for expect(locator).toHaveClass(expected)\n\nLocator: getByRole('button', { name: /Toggle theme/i })\nExpected pattern: /dark:rotate-0/\nReceived string:  \"items-center justify-center rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 hover:bg-accent hover:text-accent-foreground h-10 w-10 flex gap-2\"\nCall log:\n  - Expect \"to.have.class\" with timeout 5000ms\n  - waiting for getByRole('button', { name: /Toggle theme/i })\n    9 × locator resolved to <button type=\"button\" class=\"items-center justify-center rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 hover:bg-accent hover:text-accent-foreground h-10 w-10 flex gap-2\">…</button>\n      - unexpected value \"items-center justify-center rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 hover:bg-accent hover:text-accent-foreground h-10 w-10 flex gap-2\"\n (1 sub-steps failed, 0 executed, 0 skipped)",
-        "isScreenShotcaptured": false,
-        "summaryText": [
-          "Processing: Verify that the \"Toggle theme\" button is styled according to the dark theme by checking its class attributes for dark theme indicators."
-        ],
-        "runTime": 51371
-      },
-      {
-        "stepNumber": 7,
-        "stepStatus": "pending",
-        "stepDescription": "Examine key visual components such as text, backgrounds, and buttons to ensure proper dark theme styling is applied",
-        "stepStatusReason": "awaiting status reason rationale",
-        "isScreenShotcaptured": false,
-        "summaryText": []
-      },
-      {
-        "stepNumber": 8,
-        "stepStatus": "pending",
-        "stepDescription": "Toggle the theme control again to revert from dark theme back to light theme",
+        "stepDescription": "Click on the \"Generate PDF\" button",
         "stepStatusReason": "awaiting status reason rationale",
         "isScreenShotcaptured": false,
         "summaryText": []
@@ -2502,7 +1058,7 @@
       {
         "stepNumber": 9,
         "stepStatus": "pending",
-        "stepDescription": "Confirm that the interface immediately reverts to the light theme with all elements reflecting the correct styling",
+        "stepDescription": "Verify that the \"Final PDF:\" screen appears",
         "stepStatusReason": "awaiting status reason rationale",
         "isScreenShotcaptured": false,
         "summaryText": []
@@ -2510,157 +1066,289 @@
       {
         "stepNumber": 10,
         "stepStatus": "pending",
-        "stepDescription": "Take a screenshot of the final state to document the successful theme switching",
+        "stepDescription": "Verify that the success message \"Your invoice has been generated!\" is displayed",
+        "stepStatusReason": "awaiting status reason rationale",
+        "isScreenShotcaptured": false,
+        "summaryText": []
+      },
+      {
+        "stepNumber": 11,
+        "stepStatus": "pending",
+        "stepDescription": "Verify that the PDF preview is shown with all entered details",
+        "stepStatusReason": "awaiting status reason rationale",
+        "isScreenShotcaptured": false,
+        "summaryText": []
+      },
+      {
+        "stepNumber": 12,
+        "stepStatus": "pending",
+        "stepDescription": "Verify that action buttons are available: Preview, Download, Print, Save, Send to mail",
+        "stepStatusReason": "awaiting status reason rationale",
+        "isScreenShotcaptured": false,
+        "summaryText": []
+      },
+      {
+        "stepNumber": 13,
+        "stepStatus": "pending",
+        "stepDescription": "Verify that the \"Back to Live Preview\" option is available",
+        "stepStatusReason": "awaiting status reason rationale",
+        "isScreenShotcaptured": false,
+        "summaryText": []
+      },
+      {
+        "stepNumber": 14,
+        "stepStatus": "pending",
+        "stepDescription": "Click the \"Download\" button",
+        "stepStatusReason": "awaiting status reason rationale",
+        "isScreenShotcaptured": false,
+        "summaryText": []
+      },
+      {
+        "stepNumber": 15,
+        "stepStatus": "pending",
+        "stepDescription": "Verify that the PDF file is downloaded successfully",
+        "stepStatusReason": "awaiting status reason rationale",
+        "isScreenShotcaptured": false,
+        "summaryText": []
+      },
+      {
+        "stepNumber": 16,
+        "stepStatus": "pending",
+        "stepDescription": "Open the downloaded PDF and verify all details are correct",
         "stepStatusReason": "awaiting status reason rationale",
         "isScreenShotcaptured": false,
         "summaryText": []
       }
     ],
-    "startedAt": 1760708011196,
-    "screenshotDir": "/Users/apple/Desktop/Office/demo-projects/invoify/.geck/test-metadata/test_1760704979763/screenshots",
+    "startedAt": 1761310396275,
+    "screenshotDir": "d:\\Appening\\geck\\invoify geck test\\.geck\\test-metadata\\test_1761310055321\\screenshots",
     "isMarkDownReport": true,
-    "stepsSummary": "Test theme switching functionality. Verify that users can switch between light and dark themes, the interface updates immediately, and all elements are properly styled in both themes.",
-    "url": "https://invoify.vercel.app",
-    "testname": "User Interface - Theme Switching",
-    "finishedAt": 1760708158069,
-    "totalTimeElapsed": 146873,
-    "promptTokens": 26803,
-    "completionTokens": 1692,
-    "totalTokens": 28495,
-    "costEstimate": 0.00503565,
+    "stepsSummary": "To verify user can generate PDF invoice after filling all required details across all sections. Navigate to website, complete \"1. From & To\" tab with sender and receiver details and next on next button, complete \"2. Invoice Details\" tab with logo, invoice number, dates, and template and click on next button, complete \"3. Line Items\" tab with at least one item and click on next button, complete \"4. Payment Info\" tab and click on next button, complete \"5. Summary\" tab with signature and additional notes and click on next button, locate \"Generate PDF\" button in Actions section (top right), click on \"Generate PDF\" button, verify \"Final PDF:\" screen appears, verify success message \"Your invoice has been generated!\" is displayed, verify PDF preview is shown with all entered details, verify action buttons are available: Preview, Download, Print, Save, Send to mail, verify \"Back to Live Preview\" option is available, click \"Download\" button, verify PDF file is downloaded successfully, open downloaded PDF and verify all details are correct.",
+    "url": "https://invoify.vercel.app/en",
+    "testname": "Complete Invoice PDF Generation Verification",
+    "finishedAt": 1761310528609,
+    "totalTimeElapsed": 132334,
+    "promptTokens": 13807,
+    "completionTokens": 1334,
+    "totalTokens": 15141,
+    "costEstimate": 0.0028714500000000002,
     "isGeneratingReport": false
   },
   {
-    "id": "test_1760704999763",
-    "status": "failed",
-    "progress": 22,
+    "id": "test_1761310700780",
+    "status": "passed",
+    "progress": 100,
     "stepResults": [
       {
         "stepNumber": 1,
         "stepStatus": "pass",
-        "stepDescription": "Launch the web browser and navigate to the URL https://invoify.vercel.app",
-        "stepStatusReason": "Launch the web browser and navigate to the URL https://invoify.vercel.app",
+        "stepDescription": "Open the web browser and navigate to https://invoify.vercel.app/en",
+        "stepStatusReason": "Open the web browser and navigate to https://invoify.vercel.app/en",
         "isScreenShotcaptured": true,
-        "uiReviewResults": {
-          "total-checks-performed": 9,
-          "checks-passed": 9,
-          "checks-failed": 0,
-          "checks-results": []
-        },
-        "runTime": 15348
+        "runTime": 6727
       },
       {
         "stepNumber": 2,
         "stepStatus": "pass",
-        "stepDescription": "Ensure that the form is visible on the landing page and all necessary fields are present",
-        "stepStatusReason": "Verify that the form is visible on the landing page., Verify that the \"Name\" field is present in the form., Verify that the \"Address\" field is present in the form., Verify that the \"Zip\" field is present in the form., Verify that the \"City\" field is present in the form., Verify that the \"Country\" field is present in the form., Verify that the \"Email\" field is present in the form., Verify that the \"Phone\" field is present in the form.",
+        "stepDescription": "Complete the ‘1. From & To’ tab by entering sender and receiver details",
+        "stepStatusReason": "Fill the \"Name\" field under \"Bill From\" with the sender's name., Fill the \"Address\" field under \"Bill From\" with the sender's address., Fill the \"Zip\" field under \"Bill From\" with the sender's zip code., Fill the \"City\" field under \"Bill From\" with the sender's city., Fill the \"Country\" field under \"Bill From\" with the sender's country., Fill the \"Email\" field under \"Bill From\" with the sender's email., Fill the \"Phone\" field under \"Bill From\" with the sender's phone number., Fill the \"Name\" field under \"Bill To\" with the receiver's name., Fill the \"Address\" field under \"Bill To\" with the receiver's address., Fill the \"Zip\" field under \"Bill To\" with the receiver's zip code., Fill the \"City\" field under \"Bill To\" with the receiver's city., Fill the \"Country\" field under \"Bill To\" with the receiver's country., Fill the \"Email\" field under \"Bill To\" with the receiver's email., Fill the \"Phone\" field under \"Bill To\" with the receiver's phone number.",
         "isScreenShotcaptured": true,
         "summaryText": [
-          "Processing: Verify that the form is visible on the landing page.",
-          "Completed: Verify that the form is visible on the landing page.",
-          "Processing: Verify that the \"Name\" field is present in the form.",
-          "Completed: Verify that the \"Name\" field is present in the form.",
-          "Processing: Verify that the \"Address\" field is present in the form.",
-          "Completed: Verify that the \"Address\" field is present in the form.",
-          "Processing: Verify that the \"Zip\" field is present in the form.",
-          "Completed: Verify that the \"Zip\" field is present in the form.",
-          "Processing: Verify that the \"City\" field is present in the form.",
-          "Completed: Verify that the \"City\" field is present in the form.",
-          "Processing: Verify that the \"Country\" field is present in the form.",
-          "Completed: Verify that the \"Country\" field is present in the form.",
-          "Processing: Verify that the \"Email\" field is present in the form.",
-          "Completed: Verify that the \"Email\" field is present in the form.",
-          "Processing: Verify that the \"Phone\" field is present in the form.",
-          "Completed: Verify that the \"Phone\" field is present in the form."
+          "Processing: Fill the \"Name\" field under \"Bill From\" with the sender's name.",
+          "Completed: Fill the \"Name\" field under \"Bill From\" with the sender's name.",
+          "Processing: Fill the \"Address\" field under \"Bill From\" with the sender's address.",
+          "Completed: Fill the \"Address\" field under \"Bill From\" with the sender's address.",
+          "Processing: Fill the \"Zip\" field under \"Bill From\" with the sender's zip code.",
+          "Completed: Fill the \"Zip\" field under \"Bill From\" with the sender's zip code.",
+          "Processing: Fill the \"City\" field under \"Bill From\" with the sender's city.",
+          "Completed: Fill the \"City\" field under \"Bill From\" with the sender's city.",
+          "Processing: Fill the \"Country\" field under \"Bill From\" with the sender's country.",
+          "Completed: Fill the \"Country\" field under \"Bill From\" with the sender's country.",
+          "Processing: Fill the \"Email\" field under \"Bill From\" with the sender's email.",
+          "Completed: Fill the \"Email\" field under \"Bill From\" with the sender's email.",
+          "Processing: Fill the \"Phone\" field under \"Bill From\" with the sender's phone number.",
+          "Completed: Fill the \"Phone\" field under \"Bill From\" with the sender's phone number.",
+          "Processing: Fill the \"Name\" field under \"Bill To\" with the receiver's name.",
+          "Completed: Fill the \"Name\" field under \"Bill To\" with the receiver's name.",
+          "Processing: Fill the \"Address\" field under \"Bill To\" with the receiver's address.",
+          "Completed: Fill the \"Address\" field under \"Bill To\" with the receiver's address.",
+          "Processing: Fill the \"Zip\" field under \"Bill To\" with the receiver's zip code.",
+          "Completed: Fill the \"Zip\" field under \"Bill To\" with the receiver's zip code.",
+          "Processing: Fill the \"City\" field under \"Bill To\" with the receiver's city.",
+          "Completed: Fill the \"City\" field under \"Bill To\" with the receiver's city.",
+          "Processing: Fill the \"Country\" field under \"Bill To\" with the receiver's country.",
+          "Completed: Fill the \"Country\" field under \"Bill To\" with the receiver's country.",
+          "Processing: Fill the \"Email\" field under \"Bill To\" with the receiver's email.",
+          "Completed: Fill the \"Email\" field under \"Bill To\" with the receiver's email.",
+          "Processing: Fill the \"Phone\" field under \"Bill To\" with the receiver's phone number.",
+          "Validation failed: Fill the \"Phone\" field under \"Bill To\" with the receiver's phone number. - will retry in 1 * 100ms",
+          "Completed: Fill the \"Phone\" field under \"Bill To\" with the receiver's phone number."
         ],
-        "uiReviewResults": {
-          "total-checks-performed": 9,
-          "checks-passed": 9,
-          "checks-failed": 0,
-          "checks-results": []
-        },
-        "runTime": 123661
+        "runTime": 174385
       },
       {
         "stepNumber": 3,
-        "stepStatus": "fail",
-        "stepDescription": "Enter invalid data into the required form fields to trigger validation errors",
-        "stepStatusReason": "429 You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors. (1 sub-steps failed, 1 executed, 0 skipped)",
-        "isScreenShotcaptured": false,
+        "stepStatus": "pass",
+        "stepDescription": "Locate the 'New Invoice' button within the Actions section in the top right corner",
+        "stepStatusReason": "Click the 'New Invoice' button within the Actions section in the top right corner., Click the \"Create new invoice\" button.",
+        "isScreenShotcaptured": true,
         "summaryText": [
-          "Processing: Fill the \"Name\" field with an invalid value such as \"1234\".",
-          "Completed: Fill the \"Name\" field with an invalid value such as \"1234\".",
-          "Processing: Fill the \"Address\" field with an invalid value such as \"1234\"."
+          "Processing: Click the 'New Invoice' button within the Actions section in the top right corner.",
+          "Completed: Click the 'New Invoice' button within the Actions section in the top right corner.",
+          "Processing: Click the \"Create new invoice\" button.",
+          "Completed: Click the \"Create new invoice\" button."
         ],
-        "uiReviewResults": {
-          "total-checks-performed": 9,
-          "checks-passed": 9,
-          "checks-failed": 0,
-          "checks-results": []
-        },
-        "runTime": 62834
+        "runTime": 12179
       },
       {
         "stepNumber": 4,
-        "stepStatus": "pending",
-        "stepDescription": "Submit the form with the invalid inputs to check the error handling mechanism",
-        "stepStatusReason": "awaiting status reason rationale",
-        "isScreenShotcaptured": false,
+        "stepStatus": "pass",
+        "stepDescription": "Click on the 'New Invoice' button to initiate the invoice creation process",
+        "stepStatusReason": "Click on the 'New Invoice' button to initiate the invoice creation process",
+        "isScreenShotcaptured": true,
+        "runTime": 3122,
         "summaryText": []
       },
       {
         "stepNumber": 5,
-        "stepStatus": "pending",
-        "stepDescription": "Verify that the appropriate error messages are displayed for each invalid input",
-        "stepStatusReason": "awaiting status reason rationale",
-        "isScreenShotcaptured": false,
+        "stepStatus": "pass",
+        "stepDescription": "In the alert popup, click on the create new invoice option that appears",
+        "stepStatusReason": "In the alert popup, click on the create new invoice option that appears",
+        "isScreenShotcaptured": true,
+        "runTime": 3358,
         "summaryText": []
       },
       {
         "stepNumber": 6,
-        "stepStatus": "pending",
-        "stepDescription": "Review the error feedback to ensure that it clearly instructs users on correcting the mistakes",
-        "stepStatusReason": "awaiting status reason rationale",
-        "isScreenShotcaptured": false,
-        "summaryText": []
+        "stepStatus": "pass",
+        "stepDescription": "Verify that the '1. From & To' tab fields are reset and all appear blank",
+        "stepStatusReason": "Verify that the \"Name\" field under \"Bill From\" is empty., Verify that the \"Address\" field under \"Bill From\" is empty., Verify that the \"Zip\" field under \"Bill From\" is empty., Verify that the \"City\" field under \"Bill From\" is empty., Verify that the \"Country\" field under \"Bill From\" is empty., Verify that the \"Email\" field under \"Bill From\" is empty., Verify that the \"Phone\" field under \"Bill From\" is empty., Verify that the \"Name\" field under \"Bill To\" is empty., Verify that the \"Address\" field under \"Bill To\" is empty., Verify that the \"Zip\" field under \"Bill To\" is empty., Verify that the \"City\" field under \"Bill To\" is empty., Verify that the \"Country\" field under \"Bill To\" is empty., Verify that the \"Email\" field under \"Bill To\" is empty., Verify that the \"Phone\" field under \"Bill To\" is empty.",
+        "isScreenShotcaptured": true,
+        "summaryText": [
+          "Processing: Verify that the \"Name\" field under \"Bill From\" is empty.",
+          "Completed: Verify that the \"Name\" field under \"Bill From\" is empty.",
+          "Processing: Verify that the \"Address\" field under \"Bill From\" is empty.",
+          "Completed: Verify that the \"Address\" field under \"Bill From\" is empty.",
+          "Processing: Verify that the \"Zip\" field under \"Bill From\" is empty.",
+          "Completed: Verify that the \"Zip\" field under \"Bill From\" is empty.",
+          "Processing: Verify that the \"City\" field under \"Bill From\" is empty.",
+          "Completed: Verify that the \"City\" field under \"Bill From\" is empty.",
+          "Processing: Verify that the \"Country\" field under \"Bill From\" is empty.",
+          "Completed: Verify that the \"Country\" field under \"Bill From\" is empty.",
+          "Processing: Verify that the \"Email\" field under \"Bill From\" is empty.",
+          "Completed: Verify that the \"Email\" field under \"Bill From\" is empty.",
+          "Processing: Verify that the \"Phone\" field under \"Bill From\" is empty.",
+          "Completed: Verify that the \"Phone\" field under \"Bill From\" is empty.",
+          "Processing: Verify that the \"Name\" field under \"Bill To\" is empty.",
+          "Completed: Verify that the \"Name\" field under \"Bill To\" is empty.",
+          "Processing: Verify that the \"Address\" field under \"Bill To\" is empty.",
+          "Completed: Verify that the \"Address\" field under \"Bill To\" is empty.",
+          "Processing: Verify that the \"Zip\" field under \"Bill To\" is empty.",
+          "Completed: Verify that the \"Zip\" field under \"Bill To\" is empty.",
+          "Processing: Verify that the \"City\" field under \"Bill To\" is empty.",
+          "Completed: Verify that the \"City\" field under \"Bill To\" is empty.",
+          "Processing: Verify that the \"Country\" field under \"Bill To\" is empty.",
+          "Completed: Verify that the \"Country\" field under \"Bill To\" is empty.",
+          "Processing: Verify that the \"Email\" field under \"Bill To\" is empty.",
+          "Completed: Verify that the \"Email\" field under \"Bill To\" is empty.",
+          "Processing: Verify that the \"Phone\" field under \"Bill To\" is empty.",
+          "Completed: Verify that the \"Phone\" field under \"Bill To\" is empty."
+        ],
+        "runTime": 93375
       },
       {
         "stepNumber": 7,
-        "stepStatus": "pending",
-        "stepDescription": "Enter valid data into the previously invalid fields to remove error conditions",
-        "stepStatusReason": "awaiting status reason rationale",
-        "isScreenShotcaptured": false,
-        "summaryText": []
-      },
-      {
-        "stepNumber": 8,
-        "stepStatus": "pending",
-        "stepDescription": "Resubmit the form and confirm that no error messages are shown and validation passes successfully",
-        "stepStatusReason": "awaiting status reason rationale",
-        "isScreenShotcaptured": false,
-        "summaryText": []
-      },
-      {
-        "stepNumber": 9,
-        "stepStatus": "pending",
-        "stepDescription": "Capture a screenshot of the form's final state to ensure successful completion of the test",
-        "stepStatusReason": "awaiting status reason rationale",
-        "isScreenShotcaptured": false,
+        "stepStatus": "pass",
+        "stepDescription": "Take a screenshot of the completed task to confirm the invoice form has reset",
+        "stepStatusReason": "Take a screenshot of the completed task to confirm the invoice form has reset",
+        "isScreenShotcaptured": true,
+        "runTime": 2889,
         "summaryText": []
       }
     ],
-    "startedAt": 1760708217431,
-    "screenshotDir": "/Users/apple/Desktop/Office/demo-projects/invoify/.geck/test-metadata/test_1760704999763/screenshots",
+    "startedAt": 1761311521826,
+    "screenshotDir": "d:\\Appening\\geck\\invoify geck test\\.geck\\test-metadata\\test_1761310700780\\screenshots",
     "isMarkDownReport": true,
-    "stepsSummary": "Test form validation and error handling. Verify that form validation works correctly, error messages display properly, and users receive appropriate feedback for invalid inputs.",
-    "url": "https://invoify.vercel.app",
-    "testname": "User Interface - Form Validation",
-    "finishedAt": 1760708419287,
-    "totalTimeElapsed": 201856,
-    "promptTokens": 694981,
-    "completionTokens": 2721,
-    "totalTokens": 697702,
-    "costEstimate": 0.04740524999999999,
+    "stepsSummary": "Verify new invoice reset functionality",
+    "url": "https://invoify.vercel.app/en",
+    "testname": "New Invoice Button Reset Verification",
+    "finishedAt": 1761311817943,
+    "totalTimeElapsed": 296117,
+    "promptTokens": 16313,
+    "completionTokens": 2122,
+    "totalTokens": 18435,
+    "costEstimate": 0.0037201499999999998,
+    "isGeneratingReport": false
+  },
+  {
+    "id": "test_1761311973380",
+    "status": "passed",
+    "progress": 100,
+    "stepResults": [
+      {
+        "stepNumber": 1,
+        "stepStatus": "pass",
+        "stepDescription": "Open a web browser and navigate to the URL https://invoify.vercel.app/en",
+        "stepStatusReason": "Open a web browser and navigate to the URL https://invoify.vercel.app/en",
+        "isScreenShotcaptured": true,
+        "runTime": 7556
+      },
+      {
+        "stepNumber": 2,
+        "stepStatus": "pass",
+        "stepDescription": "Identify and click on the Generate Invoice button to attempt generating the PDF without entering required details",
+        "stepStatusReason": "Click the \"Generate PDF\" button.",
+        "isScreenShotcaptured": true,
+        "summaryText": [
+          "Processing: Click the \"Generate PDF\" button.",
+          "Completed: Click the \"Generate PDF\" button."
+        ],
+        "runTime": 7552
+      },
+      {
+        "stepNumber": 3,
+        "stepStatus": "pass",
+        "stepDescription": "Verify that the '1. From&To' tab fields showing error messages indicating validation error",
+        "stepStatusReason": "Verify that the error message \"Must be at least 2 characters\" is visible for the \"Name\" field in the '1. From&To' tab., Verify that the error message \"Must be at least 2 characters\" is visible for the \"Address\" field in the '1. From&To' tab., Verify that the error message \"Must be between 2 and 20 characters\" is visible for the \"Zip\" field in the '1. From&To' tab., Verify that the error message \"Must be between 1 and 50 characters\" is visible for the \"City\" field in the '1. From&To' tab., Verify that the error message \"Must be between 1 and 70 characters\" is visible for the \"Country\" field in the '1. From&To' tab., Verify that the error message \"Email must be a valid email\" is visible for the \"Email\" field in the '1. From&To' tab.",
+        "isScreenShotcaptured": true,
+        "summaryText": [
+          "Processing: Verify that the error message \"Must be at least 2 characters\" is visible for the \"Name\" field in the '1. From&To' tab.",
+          "Completed: Verify that the error message \"Must be at least 2 characters\" is visible for the \"Name\" field in the '1. From&To' tab.",
+          "Processing: Verify that the error message \"Must be at least 2 characters\" is visible for the \"Address\" field in the '1. From&To' tab.",
+          "Completed: Verify that the error message \"Must be at least 2 characters\" is visible for the \"Address\" field in the '1. From&To' tab.",
+          "Processing: Verify that the error message \"Must be between 2 and 20 characters\" is visible for the \"Zip\" field in the '1. From&To' tab.",
+          "Completed: Verify that the error message \"Must be between 2 and 20 characters\" is visible for the \"Zip\" field in the '1. From&To' tab.",
+          "Processing: Verify that the error message \"Must be between 1 and 50 characters\" is visible for the \"City\" field in the '1. From&To' tab.",
+          "Completed: Verify that the error message \"Must be between 1 and 50 characters\" is visible for the \"City\" field in the '1. From&To' tab.",
+          "Processing: Verify that the error message \"Must be between 1 and 70 characters\" is visible for the \"Country\" field in the '1. From&To' tab.",
+          "Completed: Verify that the error message \"Must be between 1 and 70 characters\" is visible for the \"Country\" field in the '1. From&To' tab.",
+          "Processing: Verify that the error message \"Email must be a valid email\" is visible for the \"Email\" field in the '1. From&To' tab.",
+          "Completed: Verify that the error message \"Email must be a valid email\" is visible for the \"Email\" field in the '1. From&To' tab."
+        ],
+        "runTime": 74302
+      },
+      {
+        "stepNumber": 4,
+        "stepStatus": "pass",
+        "stepDescription": "Capture a screenshot of the final state showing the validation errors for documentation",
+        "stepStatusReason": "Capture a screenshot of the final state showing the validation errors for documentation",
+        "isScreenShotcaptured": true,
+        "runTime": 2579,
+        "summaryText": []
+      }
+    ],
+    "startedAt": 1761312581316,
+    "screenshotDir": "d:\\Appening\\geck\\invoify geck test\\.geck\\test-metadata\\test_1761311973380\\screenshots",
+    "isMarkDownReport": true,
+    "stepsSummary": "Verify PDF generation validation errors",
+    "url": "https://invoify.vercel.app/en",
+    "testname": "PDF Generation Validation Errors Verification",
+    "finishedAt": 1761312673345,
+    "totalTimeElapsed": 92029,
+    "promptTokens": 17541,
+    "completionTokens": 1290,
+    "totalTokens": 18831,
+    "costEstimate": 0.00340515,
     "isGeneratingReport": false
   }
 ]

@@ -1,0 +1,183 @@
+{
+  "narrative": {
+    "steps": [
+      {
+        "title": "Landing on dashboard",
+        "stepStatus": "pass",
+        "details": [
+          "Site loads and user is welcomed by dashboard with Invoify logo."
+        ]
+      },
+      {
+        "title": "Editing “Bill From” basics",
+        "stepStatus": "pass",
+        "details": [
+          "User successfully types sender name and address; live-preview updates correctly."
+        ]
+      },
+      {
+        "title": "Default tab styling",
+        "stepStatus": "fail",
+        "details": [
+          "Expected “From & To” tab to look selected—system never renders the black background. First sign of UI/state mismatch."
+        ]
+      },
+      {
+        "title": "Adding a custom field",
+        "stepStatus": "fail",
+        "details": [
+          "User adds custom field (Gender=Male). Field appears in form but preview never reflects value – trust breaks."
+        ]
+      },
+      {
+        "title": "Deleting a custom field",
+        "stepStatus": "pass",
+        "details": [
+          "Delete control instantly removes field; behaviour feels solid."
+        ]
+      },
+      {
+        "title": "Navigating to Invoice Details",
+        "stepStatus": "pass",
+        "details": [
+          "‘Next’ button moves focus to second tab; heading visible. Navigation feels predictable."
+        ]
+      },
+      {
+        "title": "Uploading logo",
+        "stepStatus": "fail",
+        "details": [
+          "Tab button can’t be clicked (locator not found) in first attempt; second attempt hits 429 quota error. User blocked from adding logo."
+        ]
+      },
+      {
+        "title": "Removing uploaded logo",
+        "stepStatus": "fail",
+        "details": [
+          "Upload itself fails, so removal sequence never happens."
+        ]
+      },
+      {
+        "title": "Setting Issue Date",
+        "stepStatus": "fail",
+        "details": [
+          "Date picker fills field, but live preview never shows chosen date – data binding gap."
+        ]
+      },
+      {
+        "title": "Choosing Template 2",
+        "stepStatus": "fail",
+        "details": [
+          "Click executes but template does not appear selected nor preview updated – user uncertain which template is active."
+        ]
+      },
+      {
+        "title": "Full invoice creation & PDF",
+        "stepStatus": "fail",
+        "details": [
+          "Massive multi-step flow aborts early (script overrun). User cannot reach PDF generation end-to-end."
+        ]
+      },
+      {
+        "title": "Resetting form via ‘New Invoice’",
+        "stepStatus": "pass",
+        "details": [
+          "After filling many fields, ‘New Invoice’ empties them all – clear state reset works."
+        ]
+      },
+      {
+        "title": "Pressing Generate PDF with empty form",
+        "stepStatus": "pass",
+        "details": [
+          "Validation errors surface inline, preventing empty submission – good guidance."
+        ]
+      }
+    ]
+  },
+  "emotional_arc": "Starts with confidence (logo & basic inputs work). Mild satisfaction as live preview mirrors simple fields. First frustration appears when tab styling isn’t highlighted. Confidence dips sharply when custom-field and logo flows break—user questions reliability. Recovered slightly by smooth delete and navigation. Frustration deepens with date, template, and full PDF failures; sense that advanced features are flaky. Ending on a positive note: reset and validation behave correctly, but overall trust remains low.",
+  "qualitative_opportunities": [
+    {
+      "area": "Tab state indication & navigation",
+      "why_it_matters": "Users rely on clear visual cues to know where they are in a multi-step wizard; missing ‘active’ styles cause disorientation.",
+      "next_actions": [
+        "Verify CSS classes applied on initial load; add regression test.",
+        "Ensure focus/aria-selected attributes update for accessibility.",
+        "Add subtle animation when tab becomes active."
+      ]
+    },
+    {
+      "area": "Live Preview data binding",
+      "why_it_matters": "Preview is the product’s main value prop. When fields (custom input, issue date, template) don’t reflect immediately, users think the app is broken.",
+      "next_actions": [
+        "Audit state management: confirm every form slice dispatches to preview component.",
+        "Add unit tests for each field → preview expectation.",
+        "Throttle debounce (<=300 ms) so updates feel realtime."
+      ]
+    },
+    {
+      "area": "Custom fields workflow",
+      "why_it_matters": "Business users often need bespoke fields; seeing them ignored in preview undermines flexibility promise.",
+      "next_actions": [
+        "After adding custom input, inject into preview JSON/render layer.",
+        "Show toast confirmation: “Custom field added to invoice”."
+      ]
+    },
+    {
+      "area": "Logo upload & removal",
+      "why_it_matters": "Branding is critical; failing upload halts progress and causes churn.",
+      "next_actions": [
+        "QA file-input selector (id mismatch?).",
+        "Handle 4xx errors gracefully with user-friendly copy.",
+        "Allow drag-and-drop fallback."
+      ]
+    },
+    {
+      "area": "Template selection feedback",
+      "why_it_matters": "Without clear selection state (checkmark) and preview update, users cannot compare designs.",
+      "next_actions": [
+        "Ensure selected button gains ‘selected’ class & aria-pressed.",
+        "Trigger preview re-render on template id change.",
+        "Display tiny loader while assets switch to avoid flicker."
+      ]
+    },
+    {
+      "area": "Performance / timeout thresholds",
+      "why_it_matters": "Several steps time-out at 5 s; real users may experience similar stalls.",
+      "next_actions": [
+        "Profile API & render times; lazy-load heavy components.",
+        "Increase Playwright timeouts only after performance fixes."
+      ]
+    },
+    {
+      "area": "End-to-end PDF generation",
+      "why_it_matters": "Core business outcome; inability to complete destroys conversion.",
+      "next_actions": [
+        "Create shorter, saveable drafts so users don’t lose progress.",
+        "Add progress indicator while PDF is building.",
+        "Integrate server-side logging to capture build errors."
+      ]
+    }
+  ],
+  "first_tackles": [
+    {
+      "rank": 1,
+      "description": "Fix live-preview bindings for custom fields, issue date, and template—visible payoff and low code surface."
+    },
+    {
+      "rank": 2,
+      "description": "Restore and test tab ‘active’ styling so users always know current step."
+    },
+    {
+      "rank": 3,
+      "description": "Repair logo upload flow (input selector & error handling) to unblock branding."
+    },
+    {
+      "rank": 4,
+      "description": "Implement immediate visual confirmation on template selection (checkmark + preview switch)."
+    },
+    {
+      "rank": 5,
+      "description": "Optimize initial load/performance to prevent 5-second automation & user timeouts."
+    }
+  ]
+}

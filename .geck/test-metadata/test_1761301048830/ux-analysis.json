@@ -1,0 +1,129 @@
+{
+  "narrative": {
+    "steps": [
+      {
+        "title": "Visit landing page and reach dashboard",
+        "stepStatus": "pass",
+        "details": [
+          "Browser opens https://invoify.vercel.app/en",
+          "Dashboard loads, “Actions” heading visible.",
+          "Invoify logo confirmed in header."
+        ]
+      },
+      {
+        "title": "Enter sender (“Bill From”) name",
+        "stepStatus": "pass",
+        "details": [
+          "Locate Bill From section.",
+          "Click Name field and type “zeeshan”.",
+          "Live Preview eventually shows name after a short retry."
+        ]
+      },
+      {
+        "title": "Enter sender (“Bill From”) address",
+        "stepStatus": "pass",
+        "details": [
+          "Focus Address field, type “street 123”.",
+          "Live Preview eventually shows address after one retry (≈39 s total for this step)."
+        ]
+      },
+      {
+        "title": "Verify default tab state – From & To",
+        "stepStatus": "fail",
+        "details": [
+          "Test tries to assert black-background selected state.",
+          "Locator matching ‘1  .  From & To’ not found → timeout (5 s).",
+          "Screenshot not captured; flow stops here."
+        ]
+      },
+      {
+        "title": "Add custom input to Bill From",
+        "stepStatus": "fail",
+        "details": [
+          "Click “Add Custom Input”.",
+          "Type custom field name ‘Gender’ (took 318 s!).",
+          "Type value ‘Male’.",
+          "Assertion that preview shows ‘Male’ times out – element not found.",
+          "Flow stops, screenshot missing."
+        ]
+      },
+      {
+        "title": "Delete custom input field",
+        "stepStatus": "pass",
+        "details": [
+          "Add a custom field again then click delete icon.",
+          "Confirm field removed from DOM."
+        ]
+      }
+    ]
+  },
+  "emotional_arc": "User starts confident (site loads, logo visible). Slight impatience arises when Live Preview lags before reflecting name/address. Major frustration hits when visual cue of default tab is missing—user questions whether they are on the right step. Confidence crashes when newly-added custom data never appears in the preview, making the feature feel broken. Deleting a custom field works, offering mild relief but overall trust in the editor is dented.",
+  "qualitative_opportunities": [
+    {
+      "area": "Live Preview latency after form edits",
+      "why_it_matters": "Users expect real-time feedback; delays create uncertainty (“Did my input register?”).",
+      "next_actions": [
+        "Investigate state-update timing; remove unnecessary debounces.",
+        "Show skeleton/‘updating…’ micro-animation while preview renders.",
+        "Add instant inline confirmation (e.g., checkmark) next to edited field."
+      ]
+    },
+    {
+      "area": "Default tab visual indicator (“From & To”)",
+      "why_it_matters": "Clear orientation in a multi-step editor is critical; missing or subtle selection styles cause confusion and way-finding errors.",
+      "next_actions": [
+        "Ensure selected tab has high-contrast background that meets WCAG AA.",
+        "Use semantic <button role=\"tab\"> with aria-selected=\"true\" so both automation & screen-readers recognise state.",
+        "Simplify visible label to “1. From & To” (remove double spaces and dot) to avoid string-matching issues."
+      ]
+    },
+    {
+      "area": "Custom field value not propagating to preview",
+      "why_it_matters": "Bespoke invoice fields are a power feature; if they don’t render, users lose trust and may abandon the tool.",
+      "next_actions": [
+        "Fix data binding for dynamic fields—confirm both key and value push to preview component.",
+        "Add unit test covering add-edit-delete lifecycle.",
+        "Display inline error if a custom field cannot be rendered."
+      ]
+    },
+    {
+      "area": "Performance spikes (318 s to type into field)",
+      "why_it_matters": "Huge delays suggest blocking calls or memory leaks; even if automated test exaggerated, any multi-second lag is unacceptable for users.",
+      "next_actions": [
+        "Profile JavaScript when adding custom inputs; look for expensive re-renders.",
+        "Lazy-render only the changed part of preview rather than full refresh.",
+        "Monitor and cap image/font network requests on initial load."
+      ]
+    },
+    {
+      "area": "Missing fallback screenshots on failure",
+      "why_it_matters": "When things break, visual context speeds up debugging and reduces time-to-fix.",
+      "next_actions": [
+        "Enable always-capture-on-fail in test runner.",
+        "Embed error message overlay in screenshot for quick triage."
+      ]
+    }
+  ],
+  "first_tackles": [
+    {
+      "rank": 1,
+      "description": "Fix data binding so custom fields instantly appear in Live Preview."
+    },
+    {
+      "rank": 2,
+      "description": "Add clear, high-contrast selected state for default “From & To” tab (ARIA-compliant)."
+    },
+    {
+      "rank": 3,
+      "description": "Optimize preview update pipeline to display edits within <500 ms; show loading indicator during render."
+    },
+    {
+      "rank": 4,
+      "description": "Enable automatic screenshot capture on any failed test step for faster QA turnaround."
+    },
+    {
+      "rank": 5,
+      "description": "Run performance profiling on custom-input workflow to eliminate multi-minute freezes."
+    }
+  ]
+}

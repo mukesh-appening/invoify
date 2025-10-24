@@ -1,0 +1,172 @@
+{
+  "narrative": {
+    "steps": [
+      {
+        "title": "Land on Invoify dashboard",
+        "stepStatus": "pass",
+        "details": [
+          "Browser opens https://invoify.vercel.app/en",
+          "Dashboard and Invoify logo render successfully"
+        ]
+      },
+      {
+        "title": "Fill in “Bill From” – Name",
+        "stepStatus": "pass",
+        "details": [
+          "User types “zeeshan”",
+          "Name instantly appears in Live Preview"
+        ]
+      },
+      {
+        "title": "Fill in “Bill From” – Address",
+        "stepStatus": "pass",
+        "details": [
+          "User enters “street 123”",
+          "Address shows in Live Preview after a slight delay (retry needed)"
+        ]
+      },
+      {
+        "title": "Attempt to verify default ‘From & To’ tab styling",
+        "stepStatus": "fail",
+        "details": [
+          "Test could not locate button with expected label/role",
+          "Background-color class for selected tab not found"
+        ]
+      },
+      {
+        "title": "Add custom field (Gender → Male)",
+        "stepStatus": "fail",
+        "details": [
+          "Field can be added and values typed",
+          "Live Preview never shows new field; binding missing"
+        ]
+      },
+      {
+        "title": "Delete custom field",
+        "stepStatus": "pass",
+        "details": [
+          "User adds then removes a custom field",
+          "Field disappears as expected"
+        ]
+      },
+      {
+        "title": "Navigate to ‘Invoice Details’ via Next button",
+        "stepStatus": "pass",
+        "details": [
+          "Next button switches active tab",
+          "Invoice Details heading visible"
+        ]
+      },
+      {
+        "title": "Direct click on ‘2. Invoice Details’ tab",
+        "stepStatus": "fail",
+        "details": [
+          "Element with label ‘2 . Invoice Details’ not clickable/found without scrolling"
+        ]
+      },
+      {
+        "title": "Upload (and later remove) invoice logo",
+        "stepStatus": "fail",
+        "details": [
+          "File-upload control interaction flaky",
+          "Remove-logo flow never executed due to earlier failure"
+        ]
+      },
+      {
+        "title": "Set Issue Date (Oct 1 2025)",
+        "stepStatus": "fail",
+        "details": [
+          "Date picker updates form field",
+          "Live Preview does NOT reflect new date"
+        ]
+      },
+      {
+        "title": "Switch to Template 2 and check preview",
+        "stepStatus": "fail",
+        "details": [
+          "Template buttons visible",
+          "Selecting Template 2 does not show selected state or update preview"
+        ]
+      }
+    ]
+  },
+  "emotional_arc": "Starts with confidence as basic fields work. Mild annoyance when preview lags. Frustration rises when visual cues (active tab styling) and data-binding (custom field, date) fail. High friction and uncertainty during logo upload and template switch, ending journey on a negative note.",
+  "qualitative_opportunities": [
+    {
+      "area": "Tab navigation & visibility",
+      "why_it_matters": "Users need clear indication of where they are and intuitive ways to move between steps. Missing active-state styling and hidden buttons create disorientation.",
+      "next_actions": [
+        "Normalize tab text (remove extra spaces) and add aria-labels for reliable targeting",
+        "Ensure selected tab always carries a stable CSS class (e.g., .is-active)",
+        "Keep step tabs in viewport (sticky or scroll-into-view on load)"
+      ]
+    },
+    {
+      "area": "Live Preview data-binding",
+      "why_it_matters": "Instant visual feedback is the product’s core value proposition; delays or missing fields break trust.",
+      "next_actions": [
+        "Debounce input but guarantee update within 200 ms",
+        "Add loading spinner or subtle ‘saving…’ text while state propagates",
+        "Write unit tests for each field → preview mapping (custom fields, dates, invoice number, etc.)"
+      ]
+    },
+    {
+      "area": "Custom fields experience",
+      "why_it_matters": "Personalisation is powerful—if the preview ignores it, users assume the feature is broken.",
+      "next_actions": [
+        "Map dynamic fields to preview with generic renderer instead of hard-coded list",
+        "Show placeholder in preview the moment a custom field is added, even if value empty",
+        "Confirm deletion also removes preview artefact"
+      ]
+    },
+    {
+      "area": "File upload & logo management",
+      "why_it_matters": "Logos are brand identity; failed uploads or missing feedback erode professionalism.",
+      "next_actions": [
+        "Use native <input type=file> visible element with clear drag-and-drop zone",
+        "Display upload progress and success/error toast",
+        "Expose ‘Remove logo’ only after successful upload and ensure preview refreshes"
+      ]
+    },
+    {
+      "area": "Template selection feedback",
+      "why_it_matters": "Visual templates drive purchase intent. Lack of confirmation or preview update leaves users uncertain.",
+      "next_actions": [
+        "Add ‘selected’ badge/outline immediately upon click",
+        "Instantly rerender preview; show skeleton until render complete",
+        "Persist last chosen template in localStorage to reinforce selection on reload"
+      ]
+    },
+    {
+      "area": "Accessibility & testability",
+      "why_it_matters": "Stable roles/labels help both assistive tech and automated QA, reducing regressions.",
+      "next_actions": [
+        "Use semantic HTML and aria-labels for all interactive elements",
+        "Avoid injecting extra spaces/hidden characters in button text",
+        "Provide consistent IDs for critical controls (tabs, upload, select buttons)"
+      ]
+    }
+  ],
+  "first_tackles": [
+    {
+      "rank": 1,
+      "description": "Add a stable ‘selected’ CSS class and aria-label to each step tab; verify default tab gets class on load."
+    },
+    {
+      "rank": 2,
+      "description": "Ensure form → Live Preview binding for custom fields and date values fires on input/change, not on debounce timeout."
+    },
+    {
+      "rank": 3,
+      "description": "Standardise button text (remove whitespace anomalies like ‘2  .  Invoice Details’) so elements are findable and screen-reader friendly."
+    },
+    {
+      "rank": 4,
+      "description": "Show immediate visual confirmation when a template is selected (checkmark/outline) and trigger preview re-render."
+    },
+    {
+      "rank": 5,
+      "description": "Expose a native, always-visible file-input area with progress indicator to make logo uploads deterministic and testable."
+    }
+  ]
+}

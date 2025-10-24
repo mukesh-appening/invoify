@@ -1,0 +1,131 @@
+{
+  "narrative": {
+    "steps": [
+      {
+        "title": "Launch Invoify website",
+        "stepStatus": "pass",
+        "details": [
+          "User opens browser and navigates to https://invoify.vercel.app/en"
+        ]
+      },
+      {
+        "title": "Dashboard loads",
+        "stepStatus": "pass",
+        "details": [
+          "Page finishes loading and auto-redirects to dashboard view",
+          "\"Actions\" heading confirms correct view"
+        ]
+      },
+      {
+        "title": "Verify header branding",
+        "stepStatus": "pass",
+        "details": [
+          "User inspects header; Invoify logo is present and visible"
+        ]
+      },
+      {
+        "title": "Screenshot dashboard",
+        "stepStatus": "pass",
+        "details": [
+          "User captures proof of logo in header"
+        ]
+      },
+      {
+        "title": "Locate “Bill From” section",
+        "stepStatus": "pass",
+        "details": [
+          "Scroll/scan to find sender-information form area"
+        ]
+      },
+      {
+        "title": "Focus on Name field",
+        "stepStatus": "pass",
+        "details": [
+          "Clicks into the Name input inside “Bill From”"
+        ]
+      },
+      {
+        "title": "Enter sender name",
+        "stepStatus": "pass",
+        "details": [
+          "Types “zeeshan” into Name field"
+        ]
+      },
+      {
+        "title": "Confirm Live Preview updates",
+        "stepStatus": "pass",
+        "details": [
+          "System briefly fails then retries; “zeeshan” appears under sender name in real-time preview"
+        ]
+      },
+      {
+        "title": "Screenshot completed form",
+        "stepStatus": "pass",
+        "details": [
+          "User captures final state showing successful update"
+        ]
+      }
+    ]
+  },
+  "emotional_arc": "User starts confident and curious. Quick, successful logo verification builds trust. Slight anxiety arises when Live Preview momentarily fails to update, but automatic retry resolves it and restores confidence. Overall feeling ends positive but with a hint of concern about responsiveness.",
+  "qualitative_opportunities": [
+    {
+      "area": "Page load & perceived performance",
+      "why_it_matters": "Initial load took ~8-11 s each run. Long, silent waits erode trust and can cause abandonment.",
+      "next_actions": [
+        "Implement code-splitting and asset compression to reduce TTFB and JS payload",
+        "Display a branded skeleton loader or progress indicator to reassure users during load"
+      ]
+    },
+    {
+      "area": "Live Preview responsiveness",
+      "why_it_matters": "Validation initially failed and needed a retry; real users may think the feature is broken or their input didn’t register.",
+      "next_actions": [
+        "Investigate debounce / state-update timing for preview component",
+        "Provide micro-feedback (spinner or subtle shimmer) while preview updates"
+      ]
+    },
+    {
+      "area": "Form section discoverability (“Bill From”)",
+      "why_it_matters": "Users must visually scan to find the sender form; unclear hierarchy can slow task completion.",
+      "next_actions": [
+        "Increase heading weight or add iconography for major invoice sections",
+        "Add in-page navigation / sticky sidebar allowing quick jumps to sections"
+      ]
+    },
+    {
+      "area": "Positive feedback after data entry",
+      "why_it_matters": "Reinforcing successful actions increases user confidence and satisfaction.",
+      "next_actions": [
+        "Highlight changed preview field momentarily (e.g., fade-in highlight)",
+        "Consider a small checkmark or toast confirming field synced to preview"
+      ]
+    },
+    {
+      "area": "Localization clarity",
+      "why_it_matters": "URL includes /en but no visible language switcher; users may wonder how to change language.",
+      "next_actions": [
+        "Surface language selector in header/footer",
+        "Auto-detect locale and prompt user if different language is available"
+      ]
+    }
+  ],
+  "first_tackles": [
+    {
+      "rank": 1,
+      "description": "Fix Live Preview delay and add micro-loading state to avoid perceived failures."
+    },
+    {
+      "rank": 2,
+      "description": "Introduce a lightweight skeleton loader during the 8-11 s initial page load to keep users reassured."
+    },
+    {
+      "rank": 3,
+      "description": "Make invoice sections (e.g., “Bill From”, “Bill To”) more prominent with stronger headings or icons for faster scanning."
+    },
+    {
+      "rank": 4,
+      "description": "Add subtle success feedback (highlight or checkmark) when form fields successfully sync to preview."
+    }
+  ]
+}

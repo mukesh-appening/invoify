@@ -1,0 +1,152 @@
+{
+  "narrative": {
+    "steps": [
+      {
+        "title": "Launch site & reach dashboard",
+        "stepStatus": "pass",
+        "details": [
+          "User lands on https://invoify.vercel.app/en and sees dashboard."
+        ]
+      },
+      {
+        "title": "Header branding check",
+        "stepStatus": "pass",
+        "details": [
+          "Invoify logo visible in header, confirming brand presence."
+        ]
+      },
+      {
+        "title": "Enter sender name",
+        "stepStatus": "pass",
+        "details": [
+          "User types “zeeshan” in Bill-From › Name.",
+          "Name appears in Live Preview as expected."
+        ]
+      },
+      {
+        "title": "Enter sender address",
+        "stepStatus": "pass",
+        "details": [
+          "User types “street 123” in Bill-From › Address.",
+          "Address shows in Live Preview."
+        ]
+      },
+      {
+        "title": "Add custom field to Bill-From",
+        "stepStatus": "fail",
+        "details": [
+          "User adds custom input ‘Gender: Male’.",
+          "Live Preview never shows the new value → expectation broken."
+        ]
+      },
+      {
+        "title": "Delete custom field",
+        "stepStatus": "pass",
+        "details": [
+          "User removes the custom field.",
+          "Field disappears from form and DOM."
+        ]
+      },
+      {
+        "title": "Tab states & navigation",
+        "stepStatus": "fail",
+        "details": [
+          "Initial check that ‘From & To’ tab renders as selected (black bg) FAILS – element or style not found.",
+          "Later, ‘Next’ button successfully opens ‘Invoice Details’ tab and title is visible."
+        ]
+      },
+      {
+        "title": "Invoice logo upload",
+        "stepStatus": "fail",
+        "details": [
+          "User cannot click/locate ‘Invoice Details’ tab in one run; in another run upload itself fails with 429/quota error.",
+          "As a result, logo never appears and subsequent verification steps are skipped."
+        ]
+      },
+      {
+        "title": "Issue Date selection",
+        "stepStatus": "fail",
+        "details": [
+          "User picks 1 Oct 2025; field shows the date but Live Preview DOES NOT update, so verification times out."
+        ]
+      }
+    ]
+  },
+  "emotional_arc": "Starts confident (site loads, logo visible). Satisfaction grows as name & address mirror immediately in preview. Confidence dips when custom field fails to show—first sign of mismatch. Relief when deletion works. Frustration returns with unclear active-tab styling, then spikes during repeated logo-upload failures and missing date in preview. Journey ends in disappointment and doubt about reliability.",
+  "qualitative_opportunities": [
+    {
+      "area": "Live Preview synchronisation (custom fields, dates, logo)",
+      "why_it_matters": "When input changes aren’t reflected instantly, users question whether information is saved, creating distrust.",
+      "next_actions": [
+        "Audit all form fields & custom inputs to ensure they trigger preview re-render.",
+        "Add optimistic UI cue (spinner or subtle pulse) while preview is updating.",
+        "Write unit tests for each field → preview mapping to prevent regressions."
+      ]
+    },
+    {
+      "area": "Tab state visibility & accessibility",
+      "why_it_matters": "Clear indication of the current step keeps multi-step forms usable; missing/incorrect CSS or ARIA labels confuses users & breaks automated tests.",
+      "next_actions": [
+        "Ensure selected tab gets persistent ‘bg-primary text-foreground’ classes.",
+        "Standardise button labels (remove extra spaces/periods) and add aria-current attributes.",
+        "Add keyboard focus outline for WCAG compliance."
+      ]
+    },
+    {
+      "area": "Invoice logo upload & error handling",
+      "why_it_matters": "Uploading a logo is a key branding step. Silent failure or 429 errors leave users stuck with no guidance.",
+      "next_actions": [
+        "Throttle backend/API calls to prevent rate limits, or surface a helpful error toast.",
+        "Provide progress bar & success state (show thumbnail) after upload.",
+        "Make ‘Remove logo’ button visible only after successful upload, hide otherwise."
+      ]
+    },
+    {
+      "area": "Custom field UX",
+      "why_it_matters": "Custom fields differentiate invoices; if the value doesn’t display, user may assume feature is broken.",
+      "next_actions": [
+        "Bind custom field data to preview renderer like core fields.",
+        "Auto-scroll preview to new content so user sees success instantly.",
+        "Persist custom fields in saved invoice template."
+      ]
+    },
+    {
+      "area": "Performance feedback on slow actions (e.g., 300-second typing lag)",
+      "why_it_matters": "Perceived hangs drive abandonment.",
+      "next_actions": [
+        "Investigate long run-times; likely unnecessary waits in JS. Debounce expensive effects.",
+        "Show inline loader if operation >500 ms."
+      ]
+    },
+    {
+      "area": "Consistent selectors & testability",
+      "why_it_matters": "Flaky selectors (‘1  .  From & To’) indicate hidden characters; hurts both tests and screen-reader users.",
+      "next_actions": [
+        "Trim label text, avoid double spaces & stray punctuation.",
+        "Add data-testids for stable automation hooks."
+      ]
+    }
+  ],
+  "first_tackles": [
+    {
+      "rank": 1,
+      "description": "Fix Live Preview binding for custom inputs & Issue Date – fastest code change, biggest confidence gain."
+    },
+    {
+      "rank": 2,
+      "description": "Clamp & communicate file-upload errors; show logo thumbnail or clear failure message."
+    },
+    {
+      "rank": 3,
+      "description": "Harden active-tab styling/aria-current so the current step is unmistakable."
+    },
+    {
+      "rank": 4,
+      "description": "Clean up label text & add data-testids to eliminate flaky selectors and improve accessibility."
+    },
+    {
+      "rank": 5,
+      "description": "Add micro-loading indicators for any action that may exceed 1 s (preview render, upload)."
+    }
+  ]
+}

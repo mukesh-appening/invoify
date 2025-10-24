@@ -1,0 +1,110 @@
+{
+  "narrative": {
+    "steps": [
+      {
+        "title": "Landing on the app",
+        "stepStatus": "pass",
+        "details": [
+          "User opens browser and navigates to https://invoify.vercel.app/en.",
+          "Page loads and redirects automatically to the dashboard view (\"Actions\" heading visible)."
+        ]
+      },
+      {
+        "title": "Visual confirmation of brand",
+        "stepStatus": "pass",
+        "details": [
+          "User scans header and confirms the Invoify logo is visible.",
+          "Screenshot captured for record."
+        ]
+      },
+      {
+        "title": "Entering sender (Bill-From) name",
+        "stepStatus": "pass",
+        "details": [
+          "User scrolls/locates the “Bill From” section.",
+          "Clicks into the Name field, types “zeeshan”.",
+          "Looks at Live Preview ➜ name appears under sender name (small retry needed before it rendered).",
+          "Screenshot captured."
+        ]
+      },
+      {
+        "title": "Entering sender (Bill-From) address",
+        "stepStatus": "pass",
+        "details": [
+          "User focuses the Address field, types “street 123”.",
+          "Checks Live Preview ➜ address appears below Invoice # title (again a brief validation retry).",
+          "Screenshot captured."
+        ]
+      }
+    ]
+  },
+  "emotional_arc": "Starts curious and hopeful ➜ page load is on the slower side but still acceptable, confidence grows once dashboard appears ➜ small moment of doubt when Live Preview does not update instantly (retry) ➜ relief as info shows correctly ➜ ends feeling satisfied that inputs reflect in preview, overall positive but notices slight sluggishness.",
+  "qualitative_opportunities": [
+    {
+      "area": "Live Preview latency/robustness",
+      "why_it_matters": "Delayed updates make users wonder if the form worked, eroding confidence.",
+      "next_actions": [
+        "Debounce less aggressively or optimise state propagation so preview updates within 100 ms.",
+        "Add subtle spinner or ‘Updating…’ micro-copy while preview refreshes.",
+        "Include success animation (e.g., fade-in) to reassure users."
+      ]
+    },
+    {
+      "area": "Initial page load (7-10 s in tests)",
+      "why_it_matters": "First impressions set the tone; long loads risk abandonment.",
+      "next_actions": [
+        "Implement code-splitting & lazy-load heavy libraries.",
+        "Serve critical CSS inline and defer non-critical resources.",
+        "Add skeleton loaders to communicate progress."
+      ]
+    },
+    {
+      "area": "Field focus & guidance",
+      "why_it_matters": "Clear affordances reduce cognitive load, especially for first-time users.",
+      "next_actions": [
+        "Highlight focused input with stronger outline/contrast.",
+        "Provide placeholder examples (e.g., “Acme Corp.”, “123 Main St”).",
+        "Validate on blur and surface inline error/help text."
+      ]
+    },
+    {
+      "area": "Section labelling & hierarchy",
+      "why_it_matters": "Users scan forms; distinct headings speed comprehension.",
+      "next_actions": [
+        "Make “Bill From”, “Bill To”, etc., visually stronger (font-size, spacing).",
+        "Pin section headers so they remain visible when scrolling long forms."
+      ]
+    },
+    {
+      "area": "Accessibility & semantics",
+      "why_it_matters": "Improves usability for screen-reader users and overall SEO.",
+      "next_actions": [
+        "Ensure inputs have associated <label> elements (not just placeholders).",
+        "Add aria-live=\"polite\" region to the preview so screen-readers announce updates.",
+        "Check colour contrast for input borders, text and logo."
+      ]
+    }
+  ],
+  "first_tackles": [
+    {
+      "rank": 1,
+      "description": "Speed up Live Preview updates or at least show an ‘Updating…’ indicator to remove uncertainty."
+    },
+    {
+      "rank": 2,
+      "description": "Introduce lightweight skeleton loaders during initial page load to make 7-10 s wait feel faster."
+    },
+    {
+      "rank": 3,
+      "description": "Enhance field focus styling and add realistic placeholders for Name and Address to guide users."
+    },
+    {
+      "rank": 4,
+      "description": "Strengthen section headings (‘Bill From’, etc.) for quicker scanning and reduced form fatigue."
+    },
+    {
+      "rank": 5,
+      "description": "Add aria-live region to preview for accessibility; quick code change, high inclusivity impact."
+    }
+  ]
+}

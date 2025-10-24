@@ -1,0 +1,142 @@
+{
+  "narrative": {
+    "steps": [
+      {
+        "title": "Landing on the dashboard",
+        "stepStatus": "pass",
+        "details": [
+          "All scenarios start by opening https://invoify.vercel.app/en.",
+          "The app usually loads and presents the dashboard with the Invoify logo (confirmed in Test 1)."
+        ]
+      },
+      {
+        "title": "Header/logo confirmation",
+        "stepStatus": "pass",
+        "details": [
+          "User verifies the Invoify logo is visible in the header (Test 1)."
+        ]
+      },
+      {
+        "title": "‘Bill From’ – basic inputs",
+        "stepStatus": "pass",
+        "details": [
+          "User types a sender name (\"zeeshan\") – input is reflected in live preview (Test 2).",
+          "User types a sender address (\"street 123\") – input is reflected in live preview (Test 3)."
+        ]
+      },
+      {
+        "title": "Tab default state – From & To",
+        "stepStatus": "fail",
+        "details": [
+          "Expectation: ‘From & To’ tab should appear selected with a black background.",
+          "Result: locator not found / CSS not present – step times out (Test 4, Step 2)."
+        ]
+      },
+      {
+        "title": "Adding a custom field",
+        "stepStatus": "pass",
+        "details": [
+          "User clicks “Add Custom Input”, names it “Gender”, sets value “Male” (Test 5, up to Step 5)."
+        ]
+      },
+      {
+        "title": "Previewing the custom field",
+        "stepStatus": "fail",
+        "details": [
+          "Expectation: Preview should display the value ‘Male’.",
+          "Result: text not found within 5 s, test fails (Test 5, Step 6)."
+        ]
+      },
+      {
+        "title": "Deleting a custom field",
+        "stepStatus": "pass",
+        "details": [
+          "User adds then deletes a custom field; confirmation that it is removed from the DOM (Test 6)."
+        ]
+      },
+      {
+        "title": "Using the Next button",
+        "stepStatus": "pass",
+        "details": [
+          "Clicking Next in ‘From & To’ correctly activates the ‘Invoice Details’ tab and shows its form (Test 7)."
+        ]
+      },
+      {
+        "title": "Directly selecting the ‘Invoice Details’ tab",
+        "stepStatus": "fail",
+        "details": [
+          "Attempt to click tab labeled ‘2. Invoice Details’ times out – locator not found (Test 8, Step 2). Subsequent steps (logo upload) never run."
+        ]
+      }
+    ]
+  },
+  "emotional_arc": "The journey begins with confidence as the site loads and basic form fields work. Delight grows when live preview updates correctly. Friction appears when expected visual cues (selected tab background) are missing. Frustration spikes as custom fields do not show in preview and when tabs cannot be clicked, blocking progress. Overall emotion: a mix of early optimism followed by trust-eroding inconsistencies.",
+  "qualitative_opportunities": [
+    {
+      "area": "Tab navigation & visual state",
+      "why_it_matters": "Users rely on clear visual feedback to understand where they are in a multi-step form. Missing or inconsistent active-state styling and inaccessible tab buttons create doubt and block progression.",
+      "next_actions": [
+        "Audit tab buttons for consistent text, accessible labels and predictable classes.",
+        "Ensure the first tab receives the ‘selected’ styling on page load.",
+        "Increase locator stability: add data-testids or ARIA labels without extra spaces or hidden characters."
+      ]
+    },
+    {
+      "area": "Live Preview synchronization",
+      "why_it_matters": "Real-time reflection of user inputs builds confidence. When inputs like custom fields do not appear, users question if data is saved.",
+      "next_actions": [
+        "Introduce debounce but guarantee update within <500 ms.",
+        "Add loading indicator or subtle animation when preview refreshes.",
+        "Add unit tests for custom-field rendering path."
+      ]
+    },
+    {
+      "area": "Custom field performance",
+      "why_it_matters": "Step 4 of Test 5 took ~318 s to type ‘Gender’—likely due to expensive re-renders. Long lags destroy perceived quality.",
+      "next_actions": [
+        "Profile component updates when adding custom inputs.",
+        "Virtualize or memoize repeated form elements.",
+        "Throttle costly layout recalculations."
+      ]
+    },
+    {
+      "area": "Element discoverability & selectors",
+      "why_it_matters": "Automated and human users struggled to find ‘Invoice Details’ tab and logo upload control; likely low contrast, off-screen, or mislabeled.",
+      "next_actions": [
+        "Review layout at typical laptop height; ensure all critical buttons are above the fold or auto-scroll into view when focused.",
+        "Use semantic HTML (button, aria-label) for all interactive elements.",
+        "Add visible focus states for keyboard navigation."
+      ]
+    },
+    {
+      "area": "Success feedback on uploads/actions",
+      "why_it_matters": "After uploading a logo or deleting a field, users need explicit confirmation to feel safe.",
+      "next_actions": [
+        "Show toast or inline ‘Uploaded!’ message after successful image upload.",
+        "Animate removal of a custom field and allow undo for a few seconds."
+      ]
+    }
+  ],
+  "first_tackles": [
+    {
+      "rank": 1,
+      "description": "Stabilize tab button selectors and active-state CSS so that ‘From & To’ and ‘Invoice Details’ are always clickable and visibly active."
+    },
+    {
+      "rank": 2,
+      "description": "Fix live preview pipeline for custom fields; ensure new key-value pairs render instantly."
+    },
+    {
+      "rank": 3,
+      "description": "Add data-testids/ARIA labels to high-value elements (tabs, upload controls); improves both accessibility and test reliability with minimal dev effort."
+    },
+    {
+      "rank": 4,
+      "description": "Provide immediate visual/ textual confirmation after image upload and custom-field deletion."
+    },
+    {
+      "rank": 5,
+      "description": "Profile and optimize the add-custom-input flow to eliminate >300 s pauses—likely a single rendering bug that is quick to patch."
+    }
+  ]
+}

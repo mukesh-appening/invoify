@@ -1,0 +1,160 @@
+{
+  "narrative": {
+    "steps": [
+      {
+        "title": "Landing on Invoify dashboard",
+        "stepStatus": "pass",
+        "details": [
+          "User opens https://invoify.vercel.app/en and sees the dashboard with ‘Actions’ header and Invoify logo."
+        ]
+      },
+      {
+        "title": "Entering ‘Bill From / Bill To’ basic fields",
+        "stepStatus": "pass",
+        "details": [
+          "Typing sender name and address immediately reflects in Live Preview (after a short delay / retry)."
+        ]
+      },
+      {
+        "title": "Adding a custom field in ‘Bill From’",
+        "stepStatus": "fail",
+        "details": [
+          "Field ‘Gender / Male’ can be added, but Live Preview never shows the new value → test times-out."
+        ]
+      },
+      {
+        "title": "Deleting the custom field",
+        "stepStatus": "pass",
+        "details": [
+          "Delete icon removes the custom row and it disappears from DOM as expected."
+        ]
+      },
+      {
+        "title": "Navigating with the ‘Next’ button",
+        "stepStatus": "pass",
+        "details": [
+          "Clicking Next switches to ‘2. Invoice Details’ and the tab gets correct active styling."
+        ]
+      },
+      {
+        "title": "Default tab highlight on first load",
+        "stepStatus": "fail",
+        "details": [
+          "Automated check cannot find black background on ‘From & To’ tab – either CSS doesn’t match spec or element lacks robust selector/role."
+        ]
+      },
+      {
+        "title": "Uploading invoice logo",
+        "stepStatus": "fail",
+        "details": [
+          "Test cannot even click ‘Invoice Details’ tab in one run; another run reaches file-picker but API quota error stops upload. No UI confirmation captured."
+        ]
+      },
+      {
+        "title": "Removing invoice logo",
+        "stepStatus": "fail",
+        "details": [
+          "After (attempted) upload, clicking ‘Remove logo’ fails – element/state not found; possibly upload never succeeded."
+        ]
+      },
+      {
+        "title": "Setting Issue Date",
+        "stepStatus": "fail",
+        "details": [
+          "Date picker populates field, but Live Preview does not update (‘Invoice date: …’ missing)."
+        ]
+      },
+      {
+        "title": "Choosing Template 2",
+        "stepStatus": "fail",
+        "details": [
+          "Selecting Template 2 button works, but no visual ‘selected’ class / check-mark appears and preview layout stays the same."
+        ]
+      },
+      {
+        "title": "Full happy-path invoice → PDF",
+        "stepStatus": "fail",
+        "details": [
+          "Script exceeds sub-step limit while filling ‘From & To’— suggests form is heavy / slow; later steps never executed."
+        ]
+      },
+      {
+        "title": "Resetting with ‘New Invoice’",
+        "stepStatus": "pass",
+        "details": [
+          "Alert confirmation clears every field; form resets correctly (but operation takes ~90 s)."
+        ]
+      }
+    ]
+  },
+  "emotional_arc": "Initial confidence (logo & basic fields work) turns to mild friction (small delays), then frustration as key actions—custom fields, logo upload, date preview, template change—fail to reflect in Live Preview. Navigation itself feels okay, but unreliable feedback leaves the shopper uncertain. A long wait while filling large forms or resetting adds impatience. Overall sentiment dips into distrust of whether their invoice will generate correctly.",
+  "qualitative_opportunities": [
+    {
+      "area": "Live Preview data binding (custom fields, dates, template selection)",
+      "why_it_matters": "Preview is the user’s immediate confirmation that data is saved; missing or stale info erodes trust and causes re-entry or abandonment.",
+      "next_actions": [
+        "Audit all form fields and custom inputs to ensure they publish changes to preview state/store.",
+        "Add inline loading spinners or ‘saving…’ text when computation is async so user knows update is coming.",
+        "Create automated tests around preview diffing to catch regressions."
+      ]
+    },
+    {
+      "area": "Visual state indicators for selected tabs & templates",
+      "why_it_matters": "Clear active styling prevents user confusion about where they are in the flow and which template is applied.",
+      "next_actions": [
+        "Ensure CSS tokens/classes (e.g., bg-primary) are present on load for the default ‘From & To’ tab.",
+        "Add an explicit ‘selected’ / aria-selected attribute to template cards and show a check-mark overlay.",
+        "Include focus styles for accessibility and easier automated locating."
+      ]
+    },
+    {
+      "area": "File upload feedback (invoice logo)",
+      "why_it_matters": "Users need confidence that the file actually uploaded and appears in the final PDF.",
+      "next_actions": [
+        "Show thumbnail immediately after successful upload with a progress bar for slow networks.",
+        "Display toast ‘Logo uploaded’ with error fallback if format/size invalid.",
+        "Keep a persistent ‘Remove’ button that is always in the same DOM hierarchy so automation & screen readers can find it."
+      ]
+    },
+    {
+      "area": "Performance & long blocking operations",
+      "why_it_matters": "Runs show 15–180 s waits for simple field filling, causing perceived sluggishness and potential browser freezes.",
+      "next_actions": [
+        "Lazy-load heavy components only when their tab is open.",
+        "Debounce validation to avoid rerender storms while typing.",
+        "Profile and optimise large form renders (React devtools / performance tab)."
+      ]
+    },
+    {
+      "area": "Automation / testability hooks",
+      "why_it_matters": "Several failures stem from fragile selectors (‘button with text 2  .  Invoice Details’). Stable data-testids improve QA speed and catch real UX bugs sooner.",
+      "next_actions": [
+        "Add data-testid attributes to critical controls (tabs, upload, template cards).",
+        "Use semantic roles & aria-labels that double-serve accessibility and automation.",
+        "Document a selector catalogue for QA."
+      ]
+    }
+  ],
+  "first_tackles": [
+    {
+      "rank": 1,
+      "description": "Fix Live Preview bindings for custom fields, issue date, and template change—single source of truth sync."
+    },
+    {
+      "rank": 2,
+      "description": "Add unmistakable active/selected styles (CSS + aria-selected) to tabs and template cards."
+    },
+    {
+      "rank": 3,
+      "description": "Provide immediate, persistent feedback after logo upload—including thumbnail and ‘Remove’ button."
+    },
+    {
+      "rank": 4,
+      "description": "Introduce lightweight data-testid attributes to all main interactive elements to stabilise regression tests."
+    },
+    {
+      "rank": 5,
+      "description": "Profile and trim render/validation cycles to cut big form interactions down to sub-second responses."
+    }
+  ]
+}

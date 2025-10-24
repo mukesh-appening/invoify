@@ -1,0 +1,158 @@
+{
+  "narrative": {
+    "steps": [
+      {
+        "title": "Landing on the app / Dashboard",
+        "stepStatus": "pass",
+        "details": [
+          "Site loads quickly; logo visible – confidence starts high."
+        ]
+      },
+      {
+        "title": "Basic field inputs – Name & Address (Bill From)",
+        "stepStatus": "pass",
+        "details": [
+          "Typing into text fields immediately reflects in Live Preview – experience feels responsive."
+        ]
+      },
+      {
+        "title": "Tab default (‘From & To’) styling",
+        "stepStatus": "fail",
+        "details": [
+          "Expected black background not present; tester cannot confirm active state. First visible UI inconsistency."
+        ]
+      },
+      {
+        "title": "Adding a custom input (‘Gender = Male’)",
+        "stepStatus": "fail",
+        "details": [
+          "Field accepts entry but value never appears in Live Preview → user doubts data integrity."
+        ]
+      },
+      {
+        "title": "Deleting a custom input",
+        "stepStatus": "pass",
+        "details": [
+          "Removal works and field disappears – control feels reliable here."
+        ]
+      },
+      {
+        "title": "Navigating to ‘Invoice Details’ via Next button",
+        "stepStatus": "pass",
+        "details": [
+          "Tab switch and heading render correctly – regains trust."
+        ]
+      },
+      {
+        "title": "Uploading invoice logo",
+        "stepStatus": "fail",
+        "details": [
+          "Click on Invoice Details tab fails (element not found) in one run; later run hits 429 error when uploading image. Blocker for brand-critical feature."
+        ]
+      },
+      {
+        "title": "Selecting / Removing logo",
+        "stepStatus": "fail",
+        "details": [
+          "Upload already failed; subsequent ‘remove’ scenario cannot proceed. UX for logo management remains unverified."
+        ]
+      },
+      {
+        "title": "Issue Date picker",
+        "stepStatus": "fail",
+        "details": [
+          "Date can be chosen and field shows value, but Live Preview never updates → user confused whether date saved."
+        ]
+      },
+      {
+        "title": "Choosing invoice template",
+        "stepStatus": "fail",
+        "details": [
+          "Both templates visible, but selecting Template 2 doesn’t show ‘selected’ state; preview doesn’t flip layout. Core personalization feels broken."
+        ]
+      },
+      {
+        "title": "End-to-end PDF generation",
+        "stepStatus": "fail",
+        "details": [
+          "Automation hits complexity limit filling long form; indicates flow is lengthy / high-friction for real users too."
+        ]
+      }
+    ]
+  },
+  "emotional_arc": "Starts confident (logo, basic inputs work). First styling bug causes mild doubt. Live Preview mismatches (custom input, date) increase frustration. Successful deletion and tab navigation give brief relief. Repeated blockers with logo upload, template selection, and final PDF generation lead to high frustration and loss of trust by the end.",
+  "qualitative_opportunities": [
+    {
+      "area": "Active-tab visibility (navigation bar)",
+      "why_it_matters": "Clear state keeps users oriented; missing styles look broken and hamper trust.",
+      "next_actions": [
+        "Ensure default ‘From & To’ tab ships with explicit active styles (bg + contrast).",
+        "Add aria/current attributes for accessibility & easier testing."
+      ]
+    },
+    {
+      "area": "Live Preview sync reliability",
+      "why_it_matters": "Preview is the product’s differentiator; any lag or omission makes users question whether data will be saved/exported.",
+      "next_actions": [
+        "Debounce but guarantee update after each field change (custom inputs, dates).",
+        "Add subtle loading indicator if generation takes >300 ms."
+      ]
+    },
+    {
+      "area": "Custom input workflow",
+      "why_it_matters": "Businesses rely on custom fields; if value doesn’t surface in preview, feature is useless.",
+      "next_actions": [
+        "Bind custom field values to preview schema.",
+        "Add inline validation + instant preview highlight."
+      ]
+    },
+    {
+      "area": "Logo upload & management",
+      "why_it_matters": "Branding is critical; failed upload or unclear errors create hard blockers.",
+      "next_actions": [
+        "Add drop-zone with progress + error messages (‘file too big’, ‘network error’).",
+        "Persist logo to local state so refresh doesn’t lose it.",
+        "Provide deterministic selector/ID for test automation & accessibility."
+      ]
+    },
+    {
+      "area": "Template selection feedback",
+      "why_it_matters": "Users expect immediate visual confirmation; absent check-mark or unchanged preview causes confusion.",
+      "next_actions": [
+        "After ‘Select’, apply selected style class and scroll preview into view.",
+        "Animate preview change to make switch obvious."
+      ]
+    },
+    {
+      "area": "Overall flow length & guidance",
+      "why_it_matters": "Five tabs + actions can feel heavy; users may abandon.",
+      "next_actions": [
+        "Add progress bar (20 % increments).",
+        "Enable ‘Save draft’ so users don’t fear losing work.",
+        "Inline tips (e.g., ‘You can skip logo now and add later’)."
+      ]
+    }
+  ],
+  "first_tackles": [
+    {
+      "rank": 1,
+      "description": "Fix Live Preview bindings for custom inputs and date fields – highest visibility, low code change."
+    },
+    {
+      "rank": 2,
+      "description": "Add/repair ‘active’ styling for navigation tabs so selected state is unmistakable."
+    },
+    {
+      "rank": 3,
+      "description": "Ensure template ‘Select’ button toggles a selected class and triggers preview re-render."
+    },
+    {
+      "rank": 4,
+      "description": "Return clear client-side error messages for logo upload failures; fallback to default placeholder."
+    },
+    {
+      "rank": 5,
+      "description": "Introduce lightweight progress indicator across the 5-step flow to reduce perceived friction."
+    }
+  ]
+}

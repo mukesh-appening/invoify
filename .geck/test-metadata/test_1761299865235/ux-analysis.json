@@ -1,0 +1,116 @@
+{
+  "narrative": {
+    "steps": [
+      {
+        "title": "Launch site & land on dashboard",
+        "stepStatus": "pass",
+        "details": [
+          "All 3 ‘happy-path’ tests (logo, name input, address input) begin by loading https://invoify.vercel.app/en and land on the dashboard without issue."
+        ]
+      },
+      {
+        "title": "Verify header logo",
+        "stepStatus": "pass",
+        "details": [
+          "Logo visible; screenshot captured."
+        ]
+      },
+      {
+        "title": "Fill in “Bill From – Name” and preview",
+        "stepStatus": "pass",
+        "details": [
+          "User types “zeeshan”; after one retry it appears in Live Preview."
+        ]
+      },
+      {
+        "title": "Fill in “Bill From – Address” and preview",
+        "stepStatus": "pass",
+        "details": [
+          "User types “street 123”; after one retry and a 39-second wait it shows in Live Preview."
+        ]
+      },
+      {
+        "title": "FAILED – Default ‘From & To’ tab styling",
+        "stepStatus": "fail",
+        "details": [
+          "Step 2 cannot locate a button labelled “1 · From & To” with black background (timeout 5 s). Test halts. Real users would not see a selected state."
+        ]
+      },
+      {
+        "title": "Add custom field (‘Gender/Male’)",
+        "stepStatus": "fail",
+        "details": [
+          "Adding the custom input itself works, but typing the field label took 5 min (318 s!). Verification that “Male” shows in preview times out (49 s) and fails."
+        ]
+      }
+    ]
+  },
+  "emotional_arc": "Starts confident (site loads fast, logo visible). Mild friction when live preview lags (retries & 30-40 s waits). Major frustration when the primary navigation tab gives no visual feedback — user is unsure which step they’re on. Confidence sinks further when custom fields feel painfully slow to add and don’t appear in the preview, leaving the user uncertain whether the feature works at all.",
+  "qualitative_opportunities": [
+    {
+      "area": "Step-navigation (‘From & To’, ‘Items’, etc.) visual state",
+      "why_it_matters": "Without a clear selected state users lose orientation in a multi-step form.",
+      "next_actions": [
+        "Ensure the default/active tab has unmistakable contrast (e.g., solid brand colour, underline) that meets WCAG AA.",
+        "Add ARIA attributes (aria-current) for accessibility & automated tests.",
+        "Include analytics event to confirm users click next rather than abandon."
+      ]
+    },
+    {
+      "area": "Live Preview latency & reliability",
+      "why_it_matters": "Slow or missed updates make users doubt the accuracy of their invoice and add cognitive load.",
+      "next_actions": [
+        "Debounce inputs but push updates within <300 ms.",
+        "Show a subtle skeleton loader or spinner while preview refreshes.",
+        "Write unit tests for preview rendering instead of 40-second polling."
+      ]
+    },
+    {
+      "area": "Custom input field UX",
+      "why_it_matters": "Custom fields are power-user features; if they feel broken users will abandon or create work-arounds outside the product.",
+      "next_actions": [
+        "Investigate 318 s delay—likely an async validation or unnecessary re-render; profile and fix.",
+        "After saving, auto-scroll to the preview and flash/highlight the new field.",
+        "Map Bill From custom fields to Bill From section; current selector points to Bill To causing test failure."
+      ]
+    },
+    {
+      "area": "Form field labels & placeholders",
+      "why_it_matters": "Generic placeholders (“Name”, “Value”) force users to think.",
+      "next_actions": [
+        "Rename to “Field label (e.g., Tax ID)” and “Field value”.",
+        "Add inline example beneath to shorten learning curve."
+      ]
+    },
+    {
+      "area": "Performance guardrails in CI tests",
+      "why_it_matters": "Very long step runtimes hide real regressions and exhaust budgets.",
+      "next_actions": [
+        "Set max-time threshold (e.g., fail any step >15 s).",
+        "Run Lighthouse perf audits on each PR."
+      ]
+    }
+  ],
+  "first_tackles": [
+    {
+      "rank": 1,
+      "description": "Add unmistakable active-tab styling to the step navigation to fix orientation and the failing ‘From & To’ test."
+    },
+    {
+      "rank": 2,
+      "description": "Profile and fix the Live Preview rendering path so updates appear <300 ms (will resolve retries and build user trust)."
+    },
+    {
+      "rank": 3,
+      "description": "Resolve custom-field binding so newly added fields instantly show in the correct preview section."
+    },
+    {
+      "rank": 4,
+      "description": "Clarify custom-field labels (‘Field label’ / ‘Field value’) to reduce user guesswork."
+    },
+    {
+      "rank": 5,
+      "description": "Introduce a performance budget in tests to catch any future 30-second+ render regressions early."
+    }
+  ]
+}

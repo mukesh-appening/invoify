@@ -1,0 +1,101 @@
+{
+  "narrative": {
+    "steps": [
+      {
+        "title": "Test 1 – Invoify Logo Header Verification",
+        "stepStatus": "pass",
+        "details": [
+          "User lands on https://invoify.vercel.app/en.",
+          "Dashboard loads correctly; ‘Actions’ heading visible.",
+          "Header shows Invoify logo.",
+          "Screenshot captured for proof."
+        ]
+      },
+      {
+        "title": "Test 2 – Bill-From Name Field Input",
+        "stepStatus": "pass",
+        "details": [
+          "User opens site and scrolls to ‘Bill From’ block.",
+          "Clicks into Name input and types “zeeshan”.",
+          "Live Preview eventually shows the name (1 validation retry, ±14 s wait).",
+          "Screenshot saved."
+        ]
+      },
+      {
+        "title": "Test 3 – Bill-From Address Field Input",
+        "stepStatus": "pass",
+        "details": [
+          "User opens site and locates ‘Your address’ field.",
+          "Types “street 123”.",
+          "Live Preview reflects change after noticeable delay (1 retry, ±39 s wait).",
+          "Screenshot saved."
+        ]
+      },
+      {
+        "title": "Test 4 – From & To Tab Default State",
+        "stepStatus": "fail",
+        "details": [
+          "User opens site.",
+          "Test tries to verify that the “From & To” step-tab appears selected (black background) but locator is not found within 5 s.",
+          "Flow stops; no screenshot captured."
+        ]
+      }
+    ]
+  },
+  "emotional_arc": "Starts smooth and confident (logo + simple inputs work). Mild impatience builds during long waits for Live Preview updates. Final abrupt failure on the navigation tab would create confusion and frustration—user is unsure whether the tab is missing, unselected, or test is broken.",
+  "qualitative_opportunities": [
+    {
+      "area": "Step-tab (‘From & To’) default visual state",
+      "why_it_matters": "First-time visitors rely on clear progress indicators; missing or un-styled current step erodes orientation and trust.",
+      "next_actions": [
+        "Confirm element exists and is visible on initial load.",
+        "Ensure selected tab gets a distinctly darker/filled style via CSS, independent of JS timing.",
+        "Add aria-current=\"step\" for accessibility."
+      ]
+    },
+    {
+      "area": "Live Preview update latency (Name & Address)",
+      "why_it_matters": "Users expect near-instant feedback; 10-40 s delays can be mistaken for broken functionality.",
+      "next_actions": [
+        "Debounce input but render preview within 200 ms.",
+        "Lazy-load heavy fonts/images separately so text renders quickly.",
+        "Show a small spinner or ‘Updating…’ label until preview refreshes."
+      ]
+    },
+    {
+      "area": "Field-to-Preview mapping clarity",
+      "why_it_matters": "Users had to look below ‘Invoice #’ title to validate address—location is not obvious, causing extra eye-scanning.",
+      "next_actions": [
+        "Add subtle highlight animation on updated preview elements.",
+        "Include helper hint under each field like “Shown under sender name in preview →”."
+      ]
+    },
+    {
+      "area": "Performance of first paint & dashboard load (~8-11 s)",
+      "why_it_matters": "Perceived slowness sets a negative tone before any interaction.",
+      "next_actions": [
+        "Audit bundle size; enable code-splitting.",
+        "Serve images/logo in modern formats (WebP/SVG).",
+        "Implement server-side rendering or static caching for landing dashboard."
+      ]
+    }
+  ],
+  "first_tackles": [
+    {
+      "rank": 1,
+      "description": "Fix/tab style: guarantee ‘From & To’ tab renders as selected on page load (CSS + proper DOM id)."
+    },
+    {
+      "rank": 2,
+      "description": "Optimize Live Preview rendering to respond within 1 s; add loading indicator meanwhile."
+    },
+    {
+      "rank": 3,
+      "description": "Add micro-copy or visual cue linking each form input to its spot in the preview (reduces cognitive load)."
+    },
+    {
+      "rank": 4,
+      "description": "Trim initial bundle & image sizes to cut first paint times (Webpack split, static assets)."
+    }
+  ]
+}

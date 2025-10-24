@@ -1,0 +1,90 @@
+{
+  "narrative": {
+    "steps": [
+      {
+        "title": "Launch site",
+        "stepStatus": "pass",
+        "details": [
+          "User opens a browser and navigates to https://invoify.vercel.app/en (10.8 s)."
+        ]
+      },
+      {
+        "title": "Landing / redirect",
+        "stepStatus": "pass",
+        "details": [
+          "Page loads and auto-redirects to dashboard; user confirms presence of “Actions” heading (9.2 s)."
+        ]
+      },
+      {
+        "title": "Header check",
+        "stepStatus": "pass",
+        "details": [
+          "User scans header and sees the Invoify logo (9.9 s)."
+        ]
+      },
+      {
+        "title": "Screenshot for record",
+        "stepStatus": "pass",
+        "details": [
+          "User captures screenshot of dashboard with logo (2.5 s)."
+        ]
+      }
+    ]
+  },
+  "emotional_arc": "Initial curiosity → brief wait while page loads (slight impatience) → relief when dashboard appears → quick confirmation of branding (confidence) → neutral close.",
+  "qualitative_opportunities": [
+    {
+      "area": "Page-load performance (≈10 s before content)",
+      "why_it_matters": "Slow first paint risks bounce; impatience grows quickly on first visit.",
+      "next_actions": [
+        "Audit bundle size & 3rd-party scripts.",
+        "Implement image compression & lazy-loading.",
+        "Add lightweight skeleton loader to reassure users."
+      ]
+    },
+    {
+      "area": "Auto-redirect clarity",
+      "why_it_matters": "Users landing on “/en” may not expect an immediate dashboard; lack of context can feel disorienting.",
+      "next_actions": [
+        "Show brief loading/intro message explaining redirect reason.",
+        "Ensure URL updates cleanly to /dashboard to set expectation.",
+        "Add breadcrumb or page title that reinforces location."
+      ]
+    },
+    {
+      "area": "Logo usability & accessibility",
+      "why_it_matters": "Header logo doubles as important navigation and brand signal; accessibility issues erode trust.",
+      "next_actions": [
+        "Make logo a clickable link back to dashboard/home.",
+        "Add descriptive alt text (e.g., “Invoify home”).",
+        "Verify sufficient contrast and responsive sizing for mobile."
+      ]
+    },
+    {
+      "area": "Visual feedback after actions",
+      "why_it_matters": "Beyond this test, users perform tasks that need confirmation; consistent feedback builds confidence.",
+      "next_actions": [
+        "Introduce subtle ‘saved’ toast/notification pattern.",
+        "Use progress indicators on longer operations."
+      ]
+    }
+  ],
+  "first_tackles": [
+    {
+      "rank": 1,
+      "description": "Compress and lazy-load hero assets to cut initial load time by 2-3 s."
+    },
+    {
+      "rank": 2,
+      "description": "Add alt text and make header logo a home link for better accessibility/navigation."
+    },
+    {
+      "rank": 3,
+      "description": "Display a short skeleton loader or loading message during redirect to orient users."
+    },
+    {
+      "rank": 4,
+      "description": "Rename dashboard route (/dashboard) or show breadcrumb to clarify current page immediately."
+    }
+  ]
+}

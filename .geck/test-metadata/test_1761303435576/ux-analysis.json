@@ -1,0 +1,152 @@
+{
+  "narrative": {
+    "steps": [
+      {
+        "title": "Open dashboard & verify header logo",
+        "stepStatus": "pass",
+        "details": [
+          "User lands on /en dashboard, sees ‘Actions’ heading and Invoify logo."
+        ]
+      },
+      {
+        "title": "Enter sender name",
+        "stepStatus": "pass",
+        "details": [
+          "Types “zeeshan” in Bill-From → Name.",
+          "Live-preview updates after a short delay (retry needed)."
+        ]
+      },
+      {
+        "title": "Enter sender address",
+        "stepStatus": "pass",
+        "details": [
+          "Types “street 123” in Bill-From → Address.",
+          "Live-preview updates but only after ~40 s polling."
+        ]
+      },
+      {
+        "title": "Check default tab styling",
+        "stepStatus": "fail",
+        "details": [
+          "Expected ‘1. From & To’ tab to appear selected (black background).",
+          "Locator not found → either label differs or element missing selected style."
+        ]
+      },
+      {
+        "title": "Add custom field",
+        "stepStatus": "fail",
+        "details": [
+          "Adds custom field (“Gender: Male”).",
+          "Field appears in form, but NOT in Live-preview → expectation times out."
+        ]
+      },
+      {
+        "title": "Delete custom field",
+        "stepStatus": "pass",
+        "details": [
+          "Creates then deletes a custom field; DOM element disappears as expected."
+        ]
+      },
+      {
+        "title": "Use Next button to go to Invoice Details",
+        "stepStatus": "pass",
+        "details": [
+          "Clicking ‘Next’ switches to tab 2; ‘Invoice Details:’ heading visible."
+        ]
+      },
+      {
+        "title": "Click tab to open Invoice Details & upload logo",
+        "stepStatus": "fail",
+        "details": [
+          "Direct click on “2. Invoice Details” tab not possible (locator timeout).",
+          "Sub-steps to upload and verify logo never run."
+        ]
+      },
+      {
+        "title": "Upload & remove logo (partial)",
+        "stepStatus": "fail",
+        "details": [
+          "‘Next’ navigation works, upload attempt fails (file path & UI).",
+          "Sub-steps to verify / remove logo never executed."
+        ]
+      }
+    ]
+  },
+  "emotional_arc": "Initial confidence (logo, simple inputs) → mild friction (preview lags) → confusion (missing selected-tab style) → frustration (custom field not reflected) → relief (deletion works, Next navigation works) → renewed frustration (can’t access Invoice Details via tab click, logo upload fails).",
+  "qualitative_opportunities": [
+    {
+      "area": "Tab labeling & selection styling",
+      "why_it_matters": "Users rely on clear visual cues and predictable labels to know where they are. Missing or malformed labels break accessibility and cause locator failures.",
+      "next_actions": [
+        "Remove extra spaces/emoji/bullet chars from tab text.",
+        "Set explicit aria-labels and role=“tab”.",
+        "Ensure selected tab has consistent visible style (bg-color) across load states."
+      ]
+    },
+    {
+      "area": "Live-preview responsiveness",
+      "why_it_matters": "Slow or inconsistent preview undermines trust; users may think input was lost.",
+      "next_actions": [
+        "Debounce front-end updates to ≤500 ms.",
+        "Show a tiny spinner or ‘updating…’ text until preview refreshes.",
+        "Add automated tests that wait on a dedicated ‘data-status=updated’ attribute instead of arbitrary timeouts."
+      ]
+    },
+    {
+      "area": "Custom input → preview mapping",
+      "why_it_matters": "Custom fields are core to flexible invoices; if a user can’t see them reflected, feature feels broken.",
+      "next_actions": [
+        "Ensure new custom fields are appended to preview JSON & rendered.",
+        "Add unit test for mapping logic, not only E2E.",
+        "Surface an inline error if a field name duplicates existing keys."
+      ]
+    },
+    {
+      "area": "Invoice Details tab discoverability",
+      "why_it_matters": "Some users click the numbered tabs, others the Next button. Both paths must work.",
+      "next_actions": [
+        "Give each tab a stable, sanitized id or data-testid.",
+        "Shrink click-target whitespace so label text is literal ‘2. Invoice Details’."
+      ]
+    },
+    {
+      "area": "File upload UX",
+      "why_it_matters": "Logo is high-visibility. Failed uploads or unclear states cause frustration.",
+      "next_actions": [
+        "Accept drag-and-drop and clipboard paste.",
+        "Show thumbnail + filename on success, error toast on fail.",
+        "Store a temp logo in localStorage so refreshes keep state."
+      ]
+    },
+    {
+      "area": "Automation-friendly hooks",
+      "why_it_matters": "Stable selectors reduce flaky tests and benefit screen readers.",
+      "next_actions": [
+        "Add data-testid attributes to key elements (tabs, buttons, preview slots).",
+        "Document them for QA and assistive-tech parity."
+      ]
+    }
+  ],
+  "first_tackles": [
+    {
+      "rank": 1,
+      "description": "Standardize tab text/aria and selected styling so ‘From & To’ is reliably detected and visually highlighted."
+    },
+    {
+      "rank": 2,
+      "description": "Fix custom-field mapping so values instantly appear in Live preview."
+    },
+    {
+      "rank": 3,
+      "description": "Add loading indicator & throttle logic so preview updates feel instantaneous and tests don’t need long retries."
+    },
+    {
+      "rank": 4,
+      "description": "Provide stable data-testid hooks on tabs, inputs, and preview sections to cut automated test flakiness."
+    },
+    {
+      "rank": 5,
+      "description": "Improve logo upload component: clear empty-state, drag-and-drop support, visible thumbnail on success."
+    }
+  ]
+}
